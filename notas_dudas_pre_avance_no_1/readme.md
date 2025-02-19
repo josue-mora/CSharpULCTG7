@@ -24,11 +24,11 @@ R/ ...
 
 R/ ...
 
-4) "Registrar los datos de clientes que separan/reservan un auto". Con esto se entiende que los usuarios pueden "rentar" un auto.
+4) "Registrar los datos de clientes que separan/reservan un auto". ¿Con esto se entiende que los usuarios pueden "rentar" un auto?.
 
 R/ ...
 
-5) Se mencionan capaz del sistema (base de datos y aplicación que consuma los datos). ¿Con esto se refiere a 2 (o más) diferentes "soluciones" de Visual Studio en el proyecto?
+5) Se mencionan capas del sistema (base de datos y aplicación que consuma los datos). ¿Con esto se refiere a 2 (o más) diferentes "soluciones" de Visual Studio en el proyecto?
 
 R/ ...
 
