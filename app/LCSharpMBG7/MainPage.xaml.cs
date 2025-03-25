@@ -1,4 +1,7 @@
-﻿namespace LCSharpMBG7
+﻿using LCSharpMBG7.Code.Controllers;
+using LCSharpMBG7.Code.Logical;
+
+namespace LCSharpMBG7
 {
     public partial class MainPage : ContentPage
     {
@@ -6,6 +9,16 @@
 
         public MainPage()
         {
+            // Testing output of dummy created vehicles.
+            VehicleController controller = new VehicleController();
+            controller.LoadDummyVehicles();
+            System.Diagnostics.Debug.WriteLine("eeeeeeeeeeeeeeeeeeeeeeeeeeee");
+            foreach (var vehicle in State.vehicles)
+            {
+                System.Diagnostics.Debug.WriteLine(vehicle.ToString());
+            }
+            System.Diagnostics.Debug.WriteLine("eeeeeeeeeeeeeeeeeeeeeeeeeeee");
+
             InitializeComponent();
         }
 
