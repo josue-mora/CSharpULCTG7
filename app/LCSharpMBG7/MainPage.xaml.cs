@@ -9,6 +9,7 @@ namespace LCSharpMBG7
 
         public MainPage()
         {
+            // --------------------------------------------------------
             // Testing output of dummy created vehicles.
             VehicleController controller = new VehicleController();
             controller.LoadDummyVehicles();
@@ -16,6 +17,17 @@ namespace LCSharpMBG7
             foreach (var vehicle in State.vehicles)
             {
                 System.Diagnostics.Debug.WriteLine(vehicle.ToString());
+            }
+            System.Diagnostics.Debug.WriteLine("eeeeeeeeeeeeeeeeeeeeeeeeeeee");
+
+            // --------------------------------------------------------
+            // Testing output of dummy created users.
+            UserController userController = new UserController();
+            userController.LoadDummyUsers();
+            System.Diagnostics.Debug.WriteLine("eeeeeeeeeeeeeeeeeeeeeeeeeeee");
+            foreach (var user in State.users)
+            {
+                System.Diagnostics.Debug.WriteLine(user.ToString());
             }
             System.Diagnostics.Debug.WriteLine("eeeeeeeeeeeeeeeeeeeeeeeeeeee");
 

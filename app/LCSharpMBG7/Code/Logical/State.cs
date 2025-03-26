@@ -10,5 +10,6 @@ namespace LCSharpMBG7.Code.Logical
         // 2 = Dummies and Firebase
         public readonly static int DATA_SOURCE = 0;
         public static List<VehicleModel> vehicles;
+        public static List<UserModel> users;
     }
 }

@@ -1,5 +1,4 @@
-﻿using LCSharpMBG7.Code.Controllers;
-using LCSharpMBG7.Code.Models;
+﻿using LCSharpMBG7.Code.Models;
 
 namespace LCSharpMBG7.Code.DB.Dummies
 {
