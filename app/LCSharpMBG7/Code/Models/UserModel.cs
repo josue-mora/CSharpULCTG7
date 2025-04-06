@@ -82,7 +82,7 @@ namespace LCSharpMBG7.Code.Models
             return this;
         }
 
-        public string Password()
+        public string GetPassword()
         {
             return this.password;
         }
