@@ -12,5 +12,6 @@ namespace LCSharpMBG7.Code.Logical
         public static List<VehicleModel> vehicles;
         public static List<UserModel> users;
         public static List<SellModel> sells;
+        public static List<ReservationModel> reservations;
     }
 }

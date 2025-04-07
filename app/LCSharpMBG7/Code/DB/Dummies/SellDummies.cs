@@ -15,7 +15,7 @@ namespace LCSharpMBG7.Code.DB.Dummies
                 sold_car_id = State.vehicles[0].GetId();
             }
 
-            sellModels.Add(new SellModel(sold_car_id, DateFormatter.GetUNIXTimestamp() + "", "1-2222-3333", "John Doe"));
+            sellModels.Add(new SellModel(sold_car_id, DateFormatter.GetUNIXTimestamp() + "", "122223333", "John Doe"));
             return sellModels;
         }
     }

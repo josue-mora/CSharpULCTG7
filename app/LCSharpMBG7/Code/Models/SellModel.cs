@@ -86,7 +86,7 @@ namespace LCSharpMBG7.Code.Models
             }
             else
             {
-                this.buyer_id_card_number = "1-2222-3333";
+                this.buyer_id_card_number = "122223333";
             }
             return this;
         }
@@ -105,7 +105,7 @@ namespace LCSharpMBG7.Code.Models
             }
             else
             {
-                this.buyer_name = "Pepe";
+                this.buyer_name = "John Doe";
             }
             return this;
         }

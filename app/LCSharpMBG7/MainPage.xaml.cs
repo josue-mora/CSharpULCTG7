@@ -47,6 +47,16 @@ namespace LCSharpMBG7
             System.Diagnostics.Debug.WriteLine(unix_date);
             System.Diagnostics.Debug.WriteLine(DateFormatter.FormatUNIXToDate(unix_date));
 
+            // --------------------------------------------------------
+            // Testing output of dummy created reservations.
+            ReservationController.LoadDummyReservations();
+            System.Diagnostics.Debug.WriteLine("eeeeeeeeeeeeeeeeeeeeeeeeeeee");
+            foreach (var res in State.reservations)
+            {
+                System.Diagnostics.Debug.WriteLine(res.ToString());
+            }
+            System.Diagnostics.Debug.WriteLine("eeeeeeeeeeeeeeeeeeeeeeeeeeee");
+
             InitializeComponent();
         }
 
