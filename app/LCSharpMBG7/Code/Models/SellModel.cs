@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using LCSharpMBG7.Code.Logical;
+﻿using LCSharpMBG7.Code.Logical;
 
 namespace LCSharpMBG7.Code.Models
 {
@@ -11,6 +6,7 @@ namespace LCSharpMBG7.Code.Models
     {
 
         private string id;
+        private string id_vehicle;
         private string date_sell;
         private string buyer_id_card_number;
         private string buyer_name;
@@ -19,12 +15,14 @@ namespace LCSharpMBG7.Code.Models
 
         public SellModel
         (
+            string id_vehicle,
             string date_sell,
             string buyer_id_card_number,
             string buyer_name
         )
         {
             this.SetId()
+                .SetIdVehicle(id_vehicle)
                 .SetDateSell(date_sell)
                 .SetBuyerIdCardNumber(buyer_id_card_number)
                 .SetBuyerName(buyer_name);
@@ -42,6 +40,17 @@ namespace LCSharpMBG7.Code.Models
         public SellModel SetId()
         {
             this.id = "" + DateFormatter.GetUNIXTimestamp();
+            return this;
+        }
+
+        public string GetIdVehicle()
+        {
+            return id;
+        }
+
+        public SellModel SetIdVehicle(string id_vehicle)
+        {
+            this.id_vehicle = id_vehicle;
             return this;
         }
 
@@ -101,5 +110,9 @@ namespace LCSharpMBG7.Code.Models
             return this;
         }
 
+        public override string ToString()
+        {
+            return $"Venta. ID Vehiculo: {this.id_vehicle}. Comprador: {this.buyer_name} - {this.buyer_id_card_number}";
+        }
     }
 }

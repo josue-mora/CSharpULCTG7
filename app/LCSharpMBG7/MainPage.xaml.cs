@@ -31,6 +31,16 @@ namespace LCSharpMBG7
             }
             System.Diagnostics.Debug.WriteLine("eeeeeeeeeeeeeeeeeeeeeeeeeeee");
 
+            // --------------------------------------------------------
+            // Testing output of dummy created sells.
+            SellController.LoadDummySells();
+            System.Diagnostics.Debug.WriteLine("eeeeeeeeeeeeeeeeeeeeeeeeeeee");
+            foreach (var sell in State.sells)
+            {
+                System.Diagnostics.Debug.WriteLine(sell.ToString());
+            }
+            System.Diagnostics.Debug.WriteLine("eeeeeeeeeeeeeeeeeeeeeeeeeeee");
+
             InitializeComponent();
         }
 
