@@ -49,10 +49,7 @@ namespace LCSharpMBG7.Code.Models
 
         public VehicleModel SetId()
         {
-            // Generates an ID based on UNIX time.
-            DateTimeOffset dto = DateTimeOffset.UtcNow;
-            long unixTime = dto.ToUnixTimeSeconds();
-            this.id = unixTime + "";
+            this.id = "" + DateFormatter.GetUNIXTimestamp();
             return this;
         }
 

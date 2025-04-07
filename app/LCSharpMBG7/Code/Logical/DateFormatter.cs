@@ -1,18 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace LCSharpMBG7.Code.Logical
+﻿namespace LCSharpMBG7.Code.Logical
 {
     public class DateFormatter
     {
-        public static int GetUNIXTimestamp()
+        public static long GetUNIXTimestamp()
         {
             DateTimeOffset dto = DateTimeOffset.UtcNow;
-            long unixTime = dto.ToUnixTimeSeconds();
-            return int.Parse(unixTime.ToString());
+            long unixTime = dto.ToUnixTimeMilliseconds();
+            return long.Parse(unixTime.ToString());
+        }
+
+        public static string FormatUNIXToDate(string unix_time)
+        {
+            try
+            {
+                DateTimeOffset date = DateTimeOffset.FromUnixTimeMilliseconds(long.Parse(unix_time));
+                return date.ToString("dd-MM-yyyy");
+            }
+            catch (Exception)
+            {
+                return "01-01-1911";
+            }
         }
     }
 }

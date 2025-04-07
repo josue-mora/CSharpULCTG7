@@ -41,6 +41,12 @@ namespace LCSharpMBG7
             }
             System.Diagnostics.Debug.WriteLine("eeeeeeeeeeeeeeeeeeeeeeeeeeee");
 
+            // --------------------------------------------------------
+            // Testing on date formatter.
+            string unix_date = "" + DateFormatter.GetUNIXTimestamp();
+            System.Diagnostics.Debug.WriteLine(unix_date);
+            System.Diagnostics.Debug.WriteLine(DateFormatter.FormatUNIXToDate(unix_date));
+
             InitializeComponent();
         }
 
