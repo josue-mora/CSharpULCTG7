@@ -8,8 +8,8 @@ namespace LCSharpMBG7.Code.Models
         private string id;
         private string id_vehicle;
         private string date_sell;
-        private string buyer_id_card_number;
-        private string buyer_name;
+        private string client_id_card_number;
+        private string client_name;
 
         public SellModel() { }
 
@@ -17,15 +17,15 @@ namespace LCSharpMBG7.Code.Models
         (
             string id_vehicle,
             string date_sell,
-            string buyer_id_card_number,
-            string buyer_name
+            string client_id_card_number,
+            string client_name
         )
         {
             this.SetId()
                 .SetIdVehicle(id_vehicle)
                 .SetDateSell(date_sell)
-                .SetBuyerIdCardNumber(buyer_id_card_number)
-                .SetBuyerName(buyer_name);
+                .SetClientIdCardNumber(client_id_card_number)
+                .SetClientName(client_name);
         }
 
         // ================================================
@@ -72,47 +72,47 @@ namespace LCSharpMBG7.Code.Models
             return this;
         }
 
-        public string GetBuyerIdCardNumber()
+        public string GetClientIdCardNumber()
         {
-            return buyer_id_card_number;
+            return client_id_card_number;
         }
 
-        public SellModel SetBuyerIdCardNumber(string buyer_id_card_number)
+        public SellModel SetClientIdCardNumber(string client_id_card_number)
         {
-            if (!string.IsNullOrWhiteSpace(buyer_id_card_number) &&
-                buyer_id_card_number.All(char.IsDigit))
+            if (!string.IsNullOrWhiteSpace(client_id_card_number) &&
+                client_id_card_number.All(char.IsDigit))
             {
-                this.buyer_id_card_number = buyer_id_card_number.Trim();
+                this.client_id_card_number = client_id_card_number.Trim();
             }
             else
             {
-                this.buyer_id_card_number = "122223333";
+                this.client_id_card_number = "122223333";
             }
             return this;
         }
 
-        public string GetBuyerName()
+        public string GetClientName()
         {
-            return buyer_name;
+            return client_name;
         }
 
-        public SellModel SetBuyerName(string buyer_name)
+        public SellModel SetClientName(string client_name)
         {
             // "Xi" is a Chinese name, so 2 as length is valid.
-            if (!string.IsNullOrWhiteSpace(buyer_name) && buyer_name.Trim().Length > 1)
+            if (!string.IsNullOrWhiteSpace(client_name) && client_name.Trim().Length > 1)
             {
-                this.buyer_name = buyer_name.Trim();
+                this.client_name = client_name.Trim();
             }
             else
             {
-                this.buyer_name = "John Doe";
+                this.client_name = "John Doe";
             }
             return this;
         }
 
         public override string ToString()
         {
-            return $"Venta. ID Vehiculo: {this.id_vehicle}. Comprador: {this.buyer_name} - {this.buyer_id_card_number}";
+            return $"Venta. ID Vehiculo: {this.id_vehicle}. Comprador: {this.client_name} - {this.client_id_card_number}";
         }
     }
 }
