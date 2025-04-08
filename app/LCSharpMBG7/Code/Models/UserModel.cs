@@ -44,10 +44,7 @@ namespace LCSharpMBG7.Code.Models
 
         public UserModel SetId()
         {
-            // Generates an ID based on UNIX time.
-            DateTimeOffset dto = DateTimeOffset.UtcNow;
-            long unixTime = dto.ToUnixTimeSeconds();
-            this.id = unixTime + "";
+            this.id = "" + DateFormatter.GetUNIXTimestamp();
             return this;
         }
         public string GetName()
@@ -82,7 +79,7 @@ namespace LCSharpMBG7.Code.Models
             return this;
         }
 
-        public string Password()
+        public string GetPassword()
         {
             return this.password;
         }

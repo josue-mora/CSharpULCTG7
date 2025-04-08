@@ -11,6 +11,7 @@ namespace LCSharpMBG7.Code.Models
         private int price; // Price in CRC. No decimals.
         private string state; // Used or new.
         private string page_content; // JSON structure.
+        private bool active;
 
         public VehicleModel()
         {
@@ -21,7 +22,8 @@ namespace LCSharpMBG7.Code.Models
                 .SetYear(2025)
                 .SetPrice(5000000)
                 .SetState("NEW")
-                .SetPageContent("");
+                .SetPageContent("")
+                .SetActive(true);
         }
 
         public VehicleModel(string model, string name, int year, int price, string state, string page_content)
@@ -32,7 +34,8 @@ namespace LCSharpMBG7.Code.Models
                 .SetYear(year)
                 .SetPrice(price)
                 .SetState(state)
-                .SetPageContent(page_content);
+                .SetPageContent(page_content)
+                .SetActive(true);
         }
 
         // ------------------------------------------------
@@ -46,10 +49,7 @@ namespace LCSharpMBG7.Code.Models
 
         public VehicleModel SetId()
         {
-            // Generates an ID based on UNIX time.
-            DateTimeOffset dto = DateTimeOffset.UtcNow;
-            long unixTime = dto.ToUnixTimeSeconds();
-            this.id = unixTime + "";
+            this.id = "" + DateFormatter.GetUNIXTimestamp();
             return this;
         }
 
@@ -153,6 +153,17 @@ namespace LCSharpMBG7.Code.Models
         public VehicleModel SetPageContent(string page_content)
         {
             this.page_content = page_content;
+            return this;
+        }
+
+        public bool GetActive()
+        {
+            return this.active;
+        }
+
+        public VehicleModel SetActive(bool active)
+        {
+            this.active = active;
             return this;
         }
 
