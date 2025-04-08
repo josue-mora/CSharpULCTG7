@@ -11,5 +11,7 @@ namespace LCSharpMBG7.Code.Logical
         public readonly static int DATA_SOURCE = 0;
         public static List<VehicleModel> vehicles;
         public static List<UserModel> users;
+        public static List<SellModel> sells;
+        public static List<ReservationModel> reservations;
     }
 }

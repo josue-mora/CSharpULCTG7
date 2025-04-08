@@ -20,5 +20,22 @@ namespace LCSharpMBG7.Code.Helpers
                 .SetRole(Constants.USER_ROLES[Constants.USER_ROLES.Length - 1]);
             return userModel;
         }
+
+        public static bool IsPasswordCorrect(UserModel user, string password)
+        {
+            if (user == null)
+            {
+                return false;
+            }
+            if (password == null)
+            {
+                return false;
+            }
+            if (user.GetPassword() == password)
+            {
+                return true;
+            }
+            return false;
+        }
     }
 }
