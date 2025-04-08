@@ -12,6 +12,7 @@ namespace LCSharpMBG7.Code.Models
         private string state; // Used or new.
         private string page_content; // JSON structure.
         private bool active;
+        private string image_carousel;
 
         public VehicleModel()
         {
@@ -23,10 +24,11 @@ namespace LCSharpMBG7.Code.Models
                 .SetPrice(5000000)
                 .SetState("NEW")
                 .SetPageContent("")
-                .SetActive(true);
+                .SetActive(true)
+                .SetImageCarousel(null);
         }
 
-        public VehicleModel(string model, string name, int year, int price, string state, string page_content)
+        public VehicleModel(string model, string name, int year, int price, string state, string page_content, string image_carousel)
         {
             this.SetId()
                 .SetModel(model)
@@ -35,7 +37,8 @@ namespace LCSharpMBG7.Code.Models
                 .SetPrice(price)
                 .SetState(state)
                 .SetPageContent(page_content)
-                .SetActive(true);
+                .SetActive(true)
+                .SetImageCarousel(image_carousel);
         }
 
         // ------------------------------------------------
@@ -167,12 +170,34 @@ namespace LCSharpMBG7.Code.Models
             return this;
         }
 
+        public string GetImageCarousel()
+        {
+            return this.image_carousel;
+        }
+
+        public VehicleModel SetImageCarousel(string img)
+        {
+            if
+            (
+                string.IsNullOrWhiteSpace(img) == true ||
+                img == ""
+            )
+            {
+                this.image_carousel = "missing_asset.png";
+            }
+            else
+            {
+                this.image_carousel = img;
+            }
+            return this;
+        }
+
         // ------------------------------------------------
         // Utils.
         // ------------------------------------------------
         public override string ToString()
         {
-            return $"Vehículo. Modelo: {this.model}. Nombre: {this.name}.";
+            return $"Vehículo. Modelo: {this.model}. Nombre: {this.name}. Imagen: {this.image_carousel}";
         }
     }
 }
