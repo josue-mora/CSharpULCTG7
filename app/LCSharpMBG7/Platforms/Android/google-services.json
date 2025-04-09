@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "677032462192",
+    "project_id": "mercedesshowroom-679f7",
+    "storage_bucket": "mercedesshowroom-679f7.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:677032462192:android:a7131fa418747b18c8b1b5",
+        "android_client_info": {
+          "package_name": "com.companyname.lcsharpmbg7"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCIc36X5Z1fTE7SfMUC6uPi2Wu-oISgYoc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

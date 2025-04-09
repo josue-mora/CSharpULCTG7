@@ -1,203 +1,132 @@
-﻿using LCSharpMBG7.Code.Logical;
+﻿using Newtonsoft.Json;
+using LCSharpMBG7.Code.Logical;
 
 namespace LCSharpMBG7.Code.Models
 {
+    // Clase que representa un modelo de vehículo
     public class VehicleModel
     {
-        private string id;
-        private string model; // Car Body (carroceria).
-        private string name;
-        private int year;
-        private int price; // Price in CRC. No decimals.
-        private string state; // Used or new.
-        private string page_content; // JSON structure.
-        private bool active;
-        private string image_carousel;
+        // Propiedades públicas decoradas con JsonProperty para serialización
+        [JsonProperty("id")]
+        public string Id { get; set; }
 
+        [JsonProperty("model")] 
+        public string Model { get; set; }
+
+        [JsonProperty("name")]
+        public string Name { get; set; }
+
+        [JsonProperty("year")]
+        public int Year { get; set; }
+
+        [JsonProperty("price")]
+        public int Price { get; set; }
+
+        [JsonProperty("state")]
+        public string State { get; set; }
+
+        [JsonProperty("page_content")]
+        public string PageContent { get; set; }
+
+        [JsonProperty("active")]
+        public bool Active { get; set; }
+
+        [JsonProperty("image_carousel")]
+        public string ImageCarousel { get; set; }
+
+        // Constructor por defecto con valores predeterminados
         public VehicleModel()
         {
-            this.SetId()
-            // Default values.
-                .SetModel("SUV")
-                .SetName("GLA")
-                .SetYear(2025)
-                .SetPrice(5000000)
-                .SetState("NEW")
-                .SetPageContent("")
-                .SetActive(true)
-                .SetImageCarousel(null);
+            // Genera un ID único usando timestamp UNIX
+            this.Id = DateFormatter.GetUNIXTimestamp().ToString();
+
+            // Valida y asigna valores por defecto
+            this.Model = Constants.VEHICLE_MODELS.Contains("SUV") ? "SUV" : Constants.VEHICLE_MODELS.First();
+            this.Name = "GLA";
+            this.Year = 2025;
+            this.Price = 5000000;
+            this.State = Constants.VEHICLE_STATES.Contains("NEW") ? "NEW" : Constants.VEHICLE_STATES.First();
+            this.PageContent = "";
+            this.Active = true;
+            this.ImageCarousel = "missing_asset.png";
         }
 
+        // Constructor parametrizado que aplica lógica de validación
         public VehicleModel(string model, string name, int year, int price, string state, string page_content, string image_carousel)
         {
-            this.SetId()
-                .SetModel(model)
-                .SetName(name)
-                .SetYear(year)
-                .SetPrice(price)
-                .SetState(state)
-                .SetPageContent(page_content)
-                .SetActive(true)
-                .SetImageCarousel(image_carousel);
-        }
+            // Genera un ID único
+            this.Id = DateFormatter.GetUNIXTimestamp().ToString();
 
-        // ------------------------------------------------
-        // Get and Set.
-        // ------------------------------------------------
-
-        public string GetId()
-        {
-            return this.id;
-        }
-
-        public VehicleModel SetId()
-        {
-            this.id = "" + DateFormatter.GetUNIXTimestamp();
-            return this;
-        }
-
-        public string GetModel()
-        {
-            return this.model;
-        }
-
-        /// <summary>
-        /// Sets vehicle model.
-        /// </summary>
-        /// <param name="model">
-        /// The vehicle model listed in Constants.VEHICLE_MODELS.
-        /// </param>
-        /// <returns>Current Vehicle instance for chaining.</returns>
-        public VehicleModel SetModel(string model)
-        {
+            // Valida el modelo
             if (Constants.VEHICLE_MODELS.Contains(model))
             {
-                this.model = model;
+                this.Model = model;
             }
             else
             {
-                Console.WriteLine($"Invalid vehicle model '{model}'.");
-                this.model = Constants.VEHICLE_MODELS[0];
+                Console.WriteLine($"Modelo de vehículo inválido '{model}'.");
+                this.Model = Constants.VEHICLE_MODELS.First();
             }
-            return this;
-        }
 
-        public string GetName()
-        {
-            return this.name;
-        }
+            // Asigna el nombre
+            this.Name = name;
 
-        public VehicleModel SetName(string name)
-        {
-            this.name = name;
-            return this;
-        }
-
-        public int GetYear()
-        {
-            return this.year;
-        }
-
-        public VehicleModel SetYear(int year)
-        {
+            // Valida el año
             if (year > 2025)
             {
-                this.year = 2025;
-                return this;
+                this.Year = 2025;
             }
             else if (year < 1926)
             {
-                this.year = 1926;
-                return this;
+                this.Year = 1926;
             }
-            this.year = year;
-            return this;
-        }
+            else
+            {
+                this.Year = year;
+            }
 
-        public int GetPrice()
-        {
-            return this.price;
-        }
-
-        public VehicleModel SetPrice(int price)
-        {
+            // Valida el precio
             if (price < 0)
             {
-                this.price = 5000000;
+                this.Price = 5000000;
             }
-            this.price = price;
-            return this;
-        }
+            else
+            {
+                this.Price = price;
+            }
 
-        public string GetState()
-        {
-            return this.state;
-        }
-
-        public VehicleModel SetState(string state)
-        {
+            // Valida el estado
             if (Constants.VEHICLE_STATES.Contains(state))
             {
-                this.state = state;
+                this.State = state;
             }
             else
             {
-                Console.WriteLine($"Invalid vehicle state '{state}'.");
-                this.state = Constants.VEHICLE_STATES[0];
+                Console.WriteLine($"Estado de vehículo inválido '{state}'.");
+                this.State = Constants.VEHICLE_STATES.First();
             }
-            return this;
-        }
 
-        public string GetPageContent()
-        {
-            return this.page_content;
-        }
+            // Asigna el contenido de la página
+            this.PageContent = page_content;
 
-        public VehicleModel SetPageContent(string page_content)
-        {
-            this.page_content = page_content;
-            return this;
-        }
+            // Establece el vehículo como activo
+            this.Active = true;
 
-        public bool GetActive()
-        {
-            return this.active;
-        }
-
-        public VehicleModel SetActive(bool active)
-        {
-            this.active = active;
-            return this;
-        }
-
-        public string GetImageCarousel()
-        {
-            return this.image_carousel;
-        }
-
-        public VehicleModel SetImageCarousel(string img)
-        {
-            if
-            (
-                string.IsNullOrWhiteSpace(img) == true ||
-                img == ""
-            )
+            // Valida la imagen del carrusel
+            if (string.IsNullOrWhiteSpace(image_carousel))
             {
-                this.image_carousel = "missing_asset.png";
+                this.ImageCarousel = "missing_asset.png";
             }
             else
             {
-                this.image_carousel = img;
+                this.ImageCarousel = image_carousel;
             }
-            return this;
         }
 
-        // ------------------------------------------------
-        // Utils.
-        // ------------------------------------------------
+        // Sobreescribe el método ToString para mostrar información del vehículo
         public override string ToString()
         {
-            return $"Vehículo. Modelo: {this.model}. Nombre: {this.name}. Imagen: {this.image_carousel}";
+            return $"Vehículo. Modelo: {this.Model}. Nombre: {this.Name}. Imagen: {this.ImageCarousel}";
         }
     }
 }

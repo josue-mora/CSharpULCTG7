@@ -1,125 +1,72 @@
-﻿using LCSharpMBG7.Code.Logical;
+﻿using Newtonsoft.Json;
+using LCSharpMBG7.Code.Logical;
 
 namespace LCSharpMBG7.Code.Models
 {
+    // Modelo de usuario que representa la información almacenada en Firebase
     public class UserModel
     {
-        private string id;
-        private string name;
-        private string email;
-        private string password;
-        private int role;
+        // Propiedades públicas para la serialización en Firebase
+        [JsonProperty("id")]
+        public string Id { get; set; }
+        
+        // Nombre del usuario
+        [JsonProperty("name")] 
+        public string Name { get; set; }
+        
+        // Correo electrónico del usuario
+        [JsonProperty("email")]
+        public string Email { get; set; }
+        
+        // Contraseña del usuario (puede ser nula)
+        [JsonProperty("password")]
+        public string Password { get; set; }
+        
+        // Rol/nivel de acceso del usuario (número entero)
+        [JsonProperty("role")]
+        public int Role { get; set; }
 
-        // Default anonymous user.
+        // Constructor por defecto - crea un usuario anónimo
         public UserModel()
         {
-            this.SetId()
-                .SetName("")
-                .SetEmail("")
-                .SetPassword("")
-                .SetRole(0);
+            // Genera el ID usando la marca de tiempo UNIX
+            this.Id = DateFormatter.GetUNIXTimestamp().ToString();
+            
+            // Establece valores predeterminados
+            this.Name = "Anónimo";
+            this.Email = "annon@mail.com";
+            this.Password = null;
+            this.SetRole(0);
         }
 
-        // Settled user in database or memory.
-        public UserModel
-        (
-            string id,
-            string name,
-            string email,
-            string password,
-            int role
-        )
+        // Constructor para usuario existente - inicializa con datos de la base de datos o memoria
+        public UserModel(string id, string name, string email, string password, int role)
         {
-            this.id = id;
-            this.name = name;
-            this.email = email;
-            this.password = password;
-            this.role = role;
+            this.Id = id;
+            this.Name = string.IsNullOrWhiteSpace(name) ? "Anónimo" : name;
+            this.Email = string.IsNullOrWhiteSpace(email) ? "annon@mail.com" : email;
+            this.Password = string.IsNullOrWhiteSpace(password) ? null : password;
+            this.SetRole(role);
         }
 
-        public string GetId()
-        {
-            return id;
-        }
-
-        public UserModel SetId()
-        {
-            this.id = "" + DateFormatter.GetUNIXTimestamp();
-            return this;
-        }
-        public string GetName()
-        {
-            return name;
-        }
-
-        public UserModel SetName(string name)
-        {
-            if (name == "")
-            {
-                this.name = "Anónimo";
-                return this;
-            }
-            this.name = name;
-            return this;
-        }
-
-        public string GetEmail()
-        {
-            return this.email;
-        }
-
-        public UserModel SetEmail(string email)
-        {
-            if (email == "")
-            {
-                this.email = "annon@mail.com";
-                return this;
-            }
-            this.email = email;
-            return this;
-        }
-
-        public string GetPassword()
-        {
-            return this.password;
-        }
-
-        public UserModel SetPassword(string password)
-        {
-            if (password == "")
-            {
-                this.password = null;
-                return this;
-            }
-            this.password = password;
-            return this;
-        }
-
-        public int GetRole()
-        {
-            return this.role;
-        }
-
-        public UserModel SetRole(int role)
+        // Método privado para validar y establecer el rol del usuario
+        private void SetRole(int role)
         {
             if (Constants.USER_ROLES.Contains(role))
             {
-                this.role = role;
+                this.Role = role;
             }
             else
             {
                 Console.WriteLine($"Invalid role '{role}'.");
-                this.role = Constants.USER_ROLES[0];
+                this.Role = Constants.USER_ROLES[0];
             }
-            return this;
         }
 
-        // ------------------------------------------------
-        // Utils.
-        // ------------------------------------------------
+        // Sobrescribe el método ToString para mostrar información del usuario
         public override string ToString()
         {
-            return $"Usuario. Nombre: {this.name}. Password: {this.password}. Rol: {this.role}";
+            return $"Usuario. Nombre: {this.Name}. Password: {this.Password}. Rol: {this.Role}";
         }
     }
 }
