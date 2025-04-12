@@ -2,6 +2,7 @@
 using LCSharpMBG7.Code.DB.Dummies;
 using LCSharpMBG7.Code.Logical;
 using LCSharpMBG7.Code.Services;
+using Firebase.Database.Query;
 
 namespace LCSharpMBG7.Code.Controllers
 {
@@ -22,7 +23,7 @@ namespace LCSharpMBG7.Code.Controllers
             try
             {
                 // Obtiene la lista de vehículos de Firebase
-                List<VehicleModel> vehicles = await firebaseHelper.GetAllVehiclesAsync();
+                List<VehicleModel> vehicles = await GetAllVehiclesAsync();
                 State.vehicles = vehicles;
             }
             catch (Exception ex)
@@ -51,6 +52,39 @@ namespace LCSharpMBG7.Code.Controllers
                 LoadDummyVehicles();
                 await LoadVehiclesFromFirebaseAsync();
             }
+        }
+
+        public static async Task<string> AddVehicleAsync(VehicleModel vehicle)
+        {
+            var result = await FirebaseHelper.CreateConnection()
+                .Child("Vehicles")
+                .PostAsync(vehicle);
+            return result.Key;
+        }
+
+        public static async Task<List<VehicleModel>> GetAllVehiclesAsync()
+        {
+            return (await FirebaseHelper.CreateConnection()
+                .Child("Vehicles")
+                .OnceAsync<VehicleModel>())
+                .Select(item => item.Object)
+                .ToList();
+        }
+
+        public static async Task UpdateVehicleAsync(string key, VehicleModel vehicle)
+        {
+            await FirebaseHelper.CreateConnection()
+                .Child("Vehicles")
+                .Child(key)
+                .PutAsync(vehicle);
+        }
+
+        public static async Task DeleteVehicleAsync(string key)
+        {
+            await FirebaseHelper.CreateConnection()
+                .Child("Vehicles")
+                .Child(key)
+                .DeleteAsync();
         }
     }
 }

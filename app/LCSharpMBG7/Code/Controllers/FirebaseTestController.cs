@@ -12,9 +12,6 @@ namespace LCSharpMBG7.Code.Controllers
         {
             try
             {
-                // Crear una instancia del helper de Firebase
-                var firebaseHelper = new FirebaseHelper();
-
                 // ========= Prueba de Vehículo =========
                 // Crear un registro de vehículo de prueba
                 VehicleModel testVehicle = new VehicleModel(
@@ -26,7 +23,7 @@ namespace LCSharpMBG7.Code.Controllers
                     "Test vehicle for Firebase connection.", 
                     null);
                 // Insertar vehículo en Firebase y capturar la clave generada
-                string vehicleKey = await firebaseHelper.AddVehicleAsync(testVehicle);
+                string vehicleKey = await VehicleController.AddVehicleAsync(testVehicle);
                 System.Diagnostics.Debug.WriteLine("Vehicle inserted with Firebase key: " + vehicleKey);
 
                 // ========= Prueba de Reservación =========
@@ -39,7 +36,7 @@ namespace LCSharpMBG7.Code.Controllers
                     "12223333", 
                     "John Doe", 
                     "Reservation test record.");
-                string reservationKey = await firebaseHelper.AddReservationAsync(testReservation);
+                string reservationKey = await ReservationController.AddReservationAsync(testReservation);
                 System.Diagnostics.Debug.WriteLine("Reservation inserted with Firebase key: " + reservationKey);
 
                 // ========= Prueba de Venta =========
@@ -49,7 +46,7 @@ namespace LCSharpMBG7.Code.Controllers
                     DateFormatter.GetUNIXTimestamp().ToString(), 
                     "122223333", 
                     "John Doe");
-                string sellKey = await firebaseHelper.AddSellAsync(testSell);
+                string sellKey = await SellController.AddSellAsync(testSell);
                 System.Diagnostics.Debug.WriteLine("Sell inserted with Firebase key: " + sellKey);
 
                 // ========= Prueba de Usuario =========
@@ -60,7 +57,7 @@ namespace LCSharpMBG7.Code.Controllers
                     "test@mail.com", 
                     "test123", 
                     0);
-                string userKey = await firebaseHelper.AddUserAsync(testUser);
+                string userKey = await UserController.AddUserAsync(testUser);
                 System.Diagnostics.Debug.WriteLine("User inserted with Firebase key: " + userKey);
 
                 // Opcionalmente, agregar un pequeño retraso o llamar operaciones de lectura para verificar los datos insertados

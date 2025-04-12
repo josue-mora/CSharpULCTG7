@@ -2,6 +2,7 @@
 using LCSharpMBG7.Code.DB.Dummies;
 using LCSharpMBG7.Code.Logical;
 using LCSharpMBG7.Code.Services;
+using Firebase.Database.Query;
 
 namespace LCSharpMBG7.Code.Controllers
 {
@@ -22,7 +23,7 @@ namespace LCSharpMBG7.Code.Controllers
             try
             {
                 // Obtiene la lista de usuarios desde Firebase
-                List<UserModel> users = await firebaseHelper.GetAllUsersAsync();
+                List<UserModel> users = await GetAllUsersAsync();
                 State.users = users;
             }
             catch (Exception ex)
@@ -51,6 +52,39 @@ namespace LCSharpMBG7.Code.Controllers
                 LoadDummyUsers();
                 await LoadUsersFromFirebaseAsync();
             }
+        }
+
+        public static async Task<string> AddUserAsync(UserModel user)
+        {
+            var result = await FirebaseHelper.CreateConnection()
+                .Child("Users")
+                .PostAsync(user);
+            return result.Key;
+        }
+
+        public static async Task<List<UserModel>> GetAllUsersAsync()
+        {
+            return (await FirebaseHelper.CreateConnection()
+                .Child("Users")
+                .OnceAsync<UserModel>())
+                .Select(item => item.Object)
+                .ToList();
+        }
+
+        public static async Task UpdateUserAsync(string key, UserModel user)
+        {
+            await FirebaseHelper.CreateConnection()
+                .Child("Users")
+                .Child(key)
+                .PutAsync(user);
+        }
+
+        public static async Task DeleteSellAsync(string key)
+        {
+            await FirebaseHelper.CreateConnection()
+                .Child("Sells")
+                .Child(key)
+                .DeleteAsync();
         }
     }
 }

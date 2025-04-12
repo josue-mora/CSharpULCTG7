@@ -2,6 +2,7 @@
 using LCSharpMBG7.Code.DB.Dummies;
 using LCSharpMBG7.Code.Logical;
 using LCSharpMBG7.Code.Services;
+using Firebase.Database.Query;
 
 namespace LCSharpMBG7.Code.Controllers
 {
@@ -22,7 +23,7 @@ namespace LCSharpMBG7.Code.Controllers
             try
             {
                 // Obtiene todas las reservaciones de Firebase y las almacena en el estado
-                List<ReservationModel> reservations = await firebaseHelper.GetAllReservationsAsync();
+                List<ReservationModel> reservations = await GetAllReservationsAsync();
                 State.reservations = reservations;
             }
             catch (Exception ex)
@@ -52,6 +53,47 @@ namespace LCSharpMBG7.Code.Controllers
                 LoadDummyReservations();
                 await LoadReservationsFromFirebaseAsync();
             }
+        }
+
+        public static async Task<string> AddReservationAsync(ReservationModel reservation)
+        {
+            var result = await FirebaseHelper.CreateConnection()
+                .Child("Reservations")
+                .PostAsync(reservation);
+            return result.Key;
+        }
+
+        public static async Task<List<ReservationModel>> GetAllReservationsAsync()
+        {
+            return (await FirebaseHelper.CreateConnection()
+                .Child("Reservations")
+                .OnceAsync<ReservationModel>())
+                .Select(item => item.Object)
+                .ToList();
+        }
+
+        public static async Task<ReservationModel> GetReservationAsync(string key)
+        {
+            return await FirebaseHelper.CreateConnection()
+                .Child("Reservations")
+                .Child(key)
+                .OnceSingleAsync<ReservationModel>();
+        }
+
+        public static async Task UpdateReservationAsync(string key, ReservationModel reservation)
+        {
+            await FirebaseHelper.CreateConnection()
+                .Child("Reservations")
+                .Child(key)
+                .PutAsync(reservation);
+        }
+
+        public static async Task DeleteReservationAsync(string key)
+        {
+            await FirebaseHelper.CreateConnection()
+                .Child("Reservations")
+                .Child(key)
+                .DeleteAsync();
         }
     }
 }
