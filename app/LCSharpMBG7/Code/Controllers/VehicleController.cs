@@ -55,10 +55,21 @@ namespace LCSharpMBG7.Code.Controllers
 
         public static async Task<string> AddVehicleAsync(VehicleModel vehicle)
         {
-            var result = await FirebaseHelper.CreateConnection()
-                .Child("Vehicles")
-                .PostAsync(vehicle);
-            return result.Key;
+            if (State.DATA_SOURCE == 0)
+            {
+                State.vehicles.Add(vehicle);
+                return vehicle.Id;
+            }
+            // 1
+            else
+            {
+                var result = await FirebaseHelper.CreateConnection()
+                    .Child("Vehicles")
+                    .PostAsync(vehicle);
+                vehicle.Id = result.Key;
+                State.vehicles.Add(vehicle);
+                return result.Key;
+            }
         }
 
         public static async Task<List<VehicleModel>> GetAllVehiclesAsync()

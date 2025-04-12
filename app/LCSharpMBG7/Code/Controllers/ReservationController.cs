@@ -56,10 +56,21 @@ namespace LCSharpMBG7.Code.Controllers
 
         public static async Task<string> AddReservationAsync(ReservationModel reservation)
         {
-            var result = await FirebaseHelper.CreateConnection()
+            if (State.DATA_SOURCE == 0)
+            {
+                State.reservations.Add(reservation);
+                return reservation.Id;
+            }
+            // 1
+            else
+            {
+                var result = await FirebaseHelper.CreateConnection()
                 .Child("Reservations")
                 .PostAsync(reservation);
-            return result.Key;
+                reservation.Id = result.Key;
+                State.reservations.Add(reservation);
+                return result.Key;
+            }
         }
 
         public static async Task<List<ReservationModel>> GetAllReservationsAsync()

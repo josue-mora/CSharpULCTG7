@@ -55,10 +55,21 @@ namespace LCSharpMBG7.Code.Controllers
 
         public static async Task<string> AddUserAsync(UserModel user)
         {
-            var result = await FirebaseHelper.CreateConnection()
+            if (State.DATA_SOURCE == 0)
+            {
+                State.users.Add(user);
+                return user.Id;
+            }
+            // 1
+            else
+            {
+                var result = await FirebaseHelper.CreateConnection()
                 .Child("Users")
                 .PostAsync(user);
-            return result.Key;
+                user.Id = result.Key;
+                State.users.Add(user);
+                return result.Key;
+            }
         }
 
         public static async Task<List<UserModel>> GetAllUsersAsync()

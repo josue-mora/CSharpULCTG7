@@ -55,10 +55,21 @@ namespace LCSharpMBG7.Code.Controllers
 
         public static async Task<string> AddSellAsync(SellModel sell)
         {
-            var result = await FirebaseHelper.CreateConnection()
+            if (State.DATA_SOURCE == 0)
+            {
+                State.sells.Add(sell);
+                return sell.Id;
+            }
+            // 1
+            else
+            {
+                var result = await FirebaseHelper.CreateConnection()
                 .Child("Sells")
                 .PostAsync(sell);
-            return result.Key;
+                sell.Id = result.Key;
+                State.sells.Add(sell);
+                return result.Key;
+            }
         }
 
         public static async Task<List<SellModel>> GetAllSellsAsync()
