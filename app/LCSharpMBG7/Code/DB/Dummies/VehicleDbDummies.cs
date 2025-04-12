@@ -1,5 +1,4 @@
 ﻿using LCSharpMBG7.Code.Models;
-using System.Collections.Generic;
 
 namespace LCSharpMBG7.Code.DB.Dummies
 {
@@ -7,6 +6,7 @@ namespace LCSharpMBG7.Code.DB.Dummies
     {
         public static List<VehicleModel> CreateVehicles()
         {
+            //return new List<VehicleModel>();
             List<VehicleModel> vehicleModels = new List<VehicleModel>();
             vehicleModels.Add(new VehicleModel("SUV", "GLA", 2025, 0, "NEW", "Auto blanco", null));
             vehicleModels.Add(new VehicleModel("SUV", "EQA", 2025, 0, "NEW", "Lorem Ipsum", null));
