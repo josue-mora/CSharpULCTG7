@@ -17,23 +17,19 @@ namespace LCSharpMBG7
             base.OnAppearing();
 
             // Load Vehicles from Firebase
-            var vehicleController = new VehicleController();
-            await vehicleController.LoadVehiclesFromFirebaseAsync();
+            await VehicleController.LoadVehiclesFromFirebaseAsync();
             VehiclesCollectionView.ItemsSource = State.vehicles;
 
             // Load Reservations from Firebase
-            var reservationController = new ReservationController();
-            await reservationController.LoadReservationsFromFirebaseAsync();
+            await ReservationController.LoadReservationsFromFirebaseAsync();
             ReservationsCollectionView.ItemsSource = State.reservations;
 
             // Load Sells from Firebase
-            var sellController = new SellController();
-            await sellController.LoadSellsFromFirebaseAsync();
+            await SellController.LoadSellsFromFirebaseAsync();
             SellsCollectionView.ItemsSource = State.sells;
 
             // Load Users from Firebase
-            var userController = new UserController();
-            await userController.LoadUsersFromFirebaseAsync();
+            await UserController.LoadUsersFromFirebaseAsync();
             UsersCollectionView.ItemsSource = State.users;
 
             Debug.WriteLine("Data loaded from Firebase for all models.");

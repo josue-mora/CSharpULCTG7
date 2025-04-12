@@ -17,7 +17,7 @@ namespace LCSharpMBG7.Code.Controllers
         }
 
         // Carga de manera asíncrona las ventas desde Firebase
-        public async Task LoadSellsFromFirebaseAsync()
+        public static async Task LoadSellsFromFirebaseAsync()
         {
             var firebaseHelper = new FirebaseHelper();
             try
@@ -34,7 +34,7 @@ namespace LCSharpMBG7.Code.Controllers
         }
 
         // Método combinado que carga ventas según la fuente de datos configurada
-        public async Task LoadSellsAsync()
+        public static async Task LoadSellsAsync()
         {
             // DATA_SOURCE == 0: Carga solo datos dummy
             if (State.DATA_SOURCE == 0)

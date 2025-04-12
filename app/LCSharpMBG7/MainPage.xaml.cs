@@ -21,8 +21,7 @@ namespace LCSharpMBG7
                     Debug.WriteLine(vehicle.ToString());
             }
 
-            var userController = new UserController();
-            userController.LoadDummyUsers();
+            UserController.LoadDummyUsers();
             Debug.WriteLine("Dummy Users:");
             if (State.users != null)
             {

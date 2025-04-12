@@ -17,7 +17,7 @@ namespace LCSharpMBG7.Code.Controllers
         }
 
         // Carga vehículos de forma asíncrona desde Firebase
-        public async Task LoadVehiclesFromFirebaseAsync()
+        public static async Task LoadVehiclesFromFirebaseAsync()
         {
             var firebaseHelper = new FirebaseHelper();
             try
@@ -34,7 +34,7 @@ namespace LCSharpMBG7.Code.Controllers
         }
 
         // Método combinado que carga vehículos según la fuente de datos configurada
-        public async Task LoadVehiclesAsync()
+        public static async Task LoadVehiclesAsync()
         {
             // DATA_SOURCE == 0: Carga solo datos ficticios
             if (State.DATA_SOURCE == 0)

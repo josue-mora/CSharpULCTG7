@@ -17,7 +17,7 @@ namespace LCSharpMBG7.Code.Controllers
         }
 
         // Carga de manera asíncrona las reservaciones desde Firebase
-        public async Task LoadReservationsFromFirebaseAsync()
+        public static async Task LoadReservationsFromFirebaseAsync()
         {
             var firebaseHelper = new FirebaseHelper();
             try
@@ -34,7 +34,7 @@ namespace LCSharpMBG7.Code.Controllers
         }
 
         // Método combinado de carga basado en la configuración de DATA_SOURCE
-        public async Task LoadReservationsAsync()
+        public static async Task LoadReservationsAsync()
         {
             // Si DATA_SOURCE es 0, carga solo datos ficticios
             if (State.DATA_SOURCE == 0)

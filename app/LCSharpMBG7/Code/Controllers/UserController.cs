@@ -10,14 +10,14 @@ namespace LCSharpMBG7.Code.Controllers
     public class UserController
     {
         // Carga usuarios ficticios desde datos dummy
-        public void LoadDummyUsers()
+        public static void LoadDummyUsers()
         {
             List<UserModel> userModels = UserDBDummies.CreateUsers();
             State.users = userModels;
         }
 
         // Carga usuarios de forma asíncrona desde Firebase
-        public async Task LoadUsersFromFirebaseAsync()
+        public static async Task LoadUsersFromFirebaseAsync()
         {
             var firebaseHelper = new FirebaseHelper();
             try
@@ -34,7 +34,7 @@ namespace LCSharpMBG7.Code.Controllers
         }
 
         // Método combinado que carga usuarios según la fuente de datos configurada
-        public async Task LoadUsersAsync()
+        public static async Task LoadUsersAsync()
         {
             // DATA_SOURCE == 0: Carga solo usuarios dummy
             if (State.DATA_SOURCE == 0)
