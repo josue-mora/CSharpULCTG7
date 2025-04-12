@@ -1,19 +1,19 @@
 ﻿using System.Diagnostics;
 using LCSharpMBG7.Code.Controllers;
 using LCSharpMBG7.Code.Logical;
+using LCSharpMBG7.Code.DB;
 
 namespace LCSharpMBG7
 {
     public partial class MainPage : ContentPage
     {
-        int count = 0;
-
         public MainPage()
         {
             InitializeComponent();
+            LoadDataAsync();
 
-            // Dummy data tests (displaying debug output).
-            VehicleController.LoadDummyVehicles();
+            // Console printing of items.
+            // Note: currently not working with Firebase incoming data.
             Debug.WriteLine("Dummy Vehicles:");
             if (State.vehicles != null)
             {
@@ -21,7 +21,6 @@ namespace LCSharpMBG7
                     Debug.WriteLine(vehicle.ToString());
             }
 
-            UserController.LoadDummyUsers();
             Debug.WriteLine("Dummy Users:");
             if (State.users != null)
             {
@@ -29,7 +28,6 @@ namespace LCSharpMBG7
                     Debug.WriteLine(user.ToString());
             }
 
-            SellController.LoadDummySells();
             Debug.WriteLine("Dummy Sells:");
             if (State.sells != null)
             {
@@ -37,7 +35,6 @@ namespace LCSharpMBG7
                     Debug.WriteLine(sell.ToString());
             }
 
-            ReservationController.LoadDummyReservations();
             Debug.WriteLine("Dummy Reservations:");
             if (State.reservations != null)
             {
@@ -45,12 +42,18 @@ namespace LCSharpMBG7
                     Debug.WriteLine(res.ToString());
             }
 
-            // Testing the date formatter.
+            // Testing date formatter.
             string unixDate = DateFormatter.GetUNIXTimestamp().ToString();
             Debug.WriteLine("Unix Date: " + unixDate);
             Debug.WriteLine("Formatted Date: " + DateFormatter.FormatUNIXToDate(unixDate));
         }
 
+
+        private async void LoadDataAsync()
+        {
+            // Load data from data source.
+            await InitializeDataLoad.LoadAllData();
+        }
 
         // Handle the Firebase test button click.
         private async void OnTestFirebaseConnectionClicked(object sender, EventArgs e)

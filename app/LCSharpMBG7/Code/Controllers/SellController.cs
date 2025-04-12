@@ -19,7 +19,6 @@ namespace LCSharpMBG7.Code.Controllers
         // Carga de manera asíncrona las ventas desde Firebase
         public static async Task LoadSellsFromFirebaseAsync()
         {
-            var firebaseHelper = new FirebaseHelper();
             try
             {
                 // Obtiene todas las ventas de Firebase y las almacena en el estado

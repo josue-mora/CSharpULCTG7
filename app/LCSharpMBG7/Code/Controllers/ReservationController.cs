@@ -19,7 +19,6 @@ namespace LCSharpMBG7.Code.Controllers
         // Carga de manera asíncrona las reservaciones desde Firebase
         public static async Task LoadReservationsFromFirebaseAsync()
         {
-            var firebaseHelper = new FirebaseHelper();
             try
             {
                 // Obtiene todas las reservaciones de Firebase y las almacena en el estado

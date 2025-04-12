@@ -1,4 +1,5 @@
 using LCSharpMBG7.Code.Controllers;
+using LCSharpMBG7.Code.DB;
 using LCSharpMBG7.Code.Logical;
 using System.Diagnostics;
 
@@ -16,23 +17,11 @@ namespace LCSharpMBG7
         {
             base.OnAppearing();
 
-            // Load Vehicles from Firebase
-            await VehicleController.LoadVehiclesFromFirebaseAsync();
+            // Set state elements into local GUI context.
             VehiclesCollectionView.ItemsSource = State.vehicles;
-
-            // Load Reservations from Firebase
-            await ReservationController.LoadReservationsFromFirebaseAsync();
             ReservationsCollectionView.ItemsSource = State.reservations;
-
-            // Load Sells from Firebase
-            await SellController.LoadSellsFromFirebaseAsync();
             SellsCollectionView.ItemsSource = State.sells;
-
-            // Load Users from Firebase
-            await UserController.LoadUsersFromFirebaseAsync();
             UsersCollectionView.ItemsSource = State.users;
-
-            Debug.WriteLine("Data loaded from Firebase for all models.");
         }
     }
 }

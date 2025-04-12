@@ -19,7 +19,6 @@ namespace LCSharpMBG7.Code.Controllers
         // Carga usuarios de forma asíncrona desde Firebase
         public static async Task LoadUsersFromFirebaseAsync()
         {
-            var firebaseHelper = new FirebaseHelper();
             try
             {
                 // Obtiene la lista de usuarios desde Firebase

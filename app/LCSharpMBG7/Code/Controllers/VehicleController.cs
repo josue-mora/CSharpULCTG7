@@ -19,7 +19,6 @@ namespace LCSharpMBG7.Code.Controllers
         // Carga vehículos de forma asíncrona desde Firebase
         public static async Task LoadVehiclesFromFirebaseAsync()
         {
-            var firebaseHelper = new FirebaseHelper();
             try
             {
                 // Obtiene la lista de vehículos de Firebase
