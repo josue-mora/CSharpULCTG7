@@ -10,14 +10,14 @@ namespace LCSharpMBG7.Code.Controllers
     public class ReservationController
     {
         // Carga reservaciones ficticias desde datos de prueba
-        public static void LoadDummyReservations()
+        private static void LoadDummyReservations()
         {
             List<ReservationModel> models = ReservationDummies.CreateReservations();
             State.reservations = models;
         }
 
         // Carga de manera asíncrona las reservaciones desde Firebase
-        public static async Task LoadReservationsFromFirebaseAsync()
+        private static async Task LoadReservationsFromFirebaseAsync()
         {
             try
             {
@@ -64,11 +64,18 @@ namespace LCSharpMBG7.Code.Controllers
             // 1
             else
             {
+                // Post object on db.
                 var result = await FirebaseHelper.CreateConnection()
-                .Child("Reservations")
-                .PostAsync(reservation);
+                    .Child("Reservations")
+                    .PostAsync(reservation);
+                // Saves unique Firebase key in Id property and memory.
                 reservation.Id = result.Key;
                 State.reservations.Add(reservation);
+                // Updates Id property in object saved on the DB.
+                await FirebaseHelper.CreateConnection()
+                    .Child("Reservations")
+                    .Child(result.Key)
+                    .PutAsync(reservation);
                 return result.Key;
             }
         }
@@ -92,10 +99,21 @@ namespace LCSharpMBG7.Code.Controllers
 
         public static async Task UpdateReservationAsync(string key, ReservationModel reservation)
         {
-            await FirebaseHelper.CreateConnection()
-                .Child("Reservations")
-                .Child(key)
-                .PutAsync(reservation);
+            for (int i = 0; i < State.reservations.Count; i++)
+            {
+                if (State.reservations[i].Id == key)
+                {
+                    State.reservations[i] = reservation;
+                    break;
+                }
+            }
+            if (State.DATA_SOURCE == 1)
+            {
+                await FirebaseHelper.CreateConnection()
+                    .Child("Reservations")
+                    .Child(key)
+                    .PutAsync(reservation);
+            }
         }
 
         public static async Task DeleteReservationAsync(string key)

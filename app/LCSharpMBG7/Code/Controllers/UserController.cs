@@ -10,14 +10,14 @@ namespace LCSharpMBG7.Code.Controllers
     public class UserController
     {
         // Carga usuarios ficticios desde datos dummy
-        public static void LoadDummyUsers()
+        private static void LoadDummyUsers()
         {
             List<UserModel> userModels = UserDBDummies.CreateUsers();
             State.users = userModels;
         }
 
         // Carga usuarios de forma asíncrona desde Firebase
-        public static async Task LoadUsersFromFirebaseAsync()
+        private static async Task LoadUsersFromFirebaseAsync()
         {
             try
             {
@@ -63,11 +63,18 @@ namespace LCSharpMBG7.Code.Controllers
             // 1
             else
             {
+                // Post object on db.
                 var result = await FirebaseHelper.CreateConnection()
-                .Child("Users")
-                .PostAsync(user);
+                    .Child("Users")
+                    .PostAsync(user);
+                // Saves unique Firebase key in Id property and memory.
                 user.Id = result.Key;
                 State.users.Add(user);
+                // Updates Id property in object saved on the DB.
+                await FirebaseHelper.CreateConnection()
+                    .Child("Users")
+                    .Child(result.Key)
+                    .PutAsync(user);
                 return result.Key;
             }
         }
@@ -83,10 +90,21 @@ namespace LCSharpMBG7.Code.Controllers
 
         public static async Task UpdateUserAsync(string key, UserModel user)
         {
-            await FirebaseHelper.CreateConnection()
-                .Child("Users")
-                .Child(key)
-                .PutAsync(user);
+            for (int i = 0; i < State.users.Count; i++)
+            {
+                if (State.users[i].Id == key)
+                {
+                    State.users[i] = user;
+                    break;
+                }
+            }
+            if (State.DATA_SOURCE == 1)
+            {
+                await FirebaseHelper.CreateConnection()
+                    .Child("Users")
+                    .Child(key)
+                    .PutAsync(user);
+            }
         }
 
         public static async Task DeleteSellAsync(string key)

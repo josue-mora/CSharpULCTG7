@@ -10,14 +10,14 @@ namespace LCSharpMBG7.Code.Controllers
     public class VehicleController
     {
         // Carga vehículos de prueba desde datos ficticios
-        public static void LoadDummyVehicles()
+        private static void LoadDummyVehicles()
         {
             List<VehicleModel> vehicleModels = VehicleDbDummies.CreateVehicles();
             State.vehicles = vehicleModels;
         }
 
         // Carga vehículos de forma asíncrona desde Firebase
-        public static async Task LoadVehiclesFromFirebaseAsync()
+        private static async Task LoadVehiclesFromFirebaseAsync()
         {
             try
             {
@@ -63,11 +63,18 @@ namespace LCSharpMBG7.Code.Controllers
             // 1
             else
             {
+                // Post object on db.
                 var result = await FirebaseHelper.CreateConnection()
                     .Child("Vehicles")
                     .PostAsync(vehicle);
+                // Saves unique Firebase key in Id property and memory.
                 vehicle.Id = result.Key;
                 State.vehicles.Add(vehicle);
+                // Updates Id property in object saved on the DB.
+                await FirebaseHelper.CreateConnection()
+                    .Child("Vehicles")
+                    .Child(result.Key)
+                    .PutAsync(vehicle);
                 return result.Key;
             }
         }
@@ -83,10 +90,21 @@ namespace LCSharpMBG7.Code.Controllers
 
         public static async Task UpdateVehicleAsync(string key, VehicleModel vehicle)
         {
-            await FirebaseHelper.CreateConnection()
-                .Child("Vehicles")
-                .Child(key)
-                .PutAsync(vehicle);
+            for (int i = 0; i < State.vehicles.Count; i++)
+            {
+                if (State.vehicles[i].Id == key)
+                {
+                    State.vehicles[i] = vehicle;
+                    break;
+                }
+            }
+            if (State.DATA_SOURCE == 1)
+            {
+                await FirebaseHelper.CreateConnection()
+                    .Child("Vehicles")
+                    .Child(key)
+                    .PutAsync(vehicle);
+            }
         }
 
         public static async Task DeleteVehicleAsync(string key)

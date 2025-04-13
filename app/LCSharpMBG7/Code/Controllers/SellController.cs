@@ -10,14 +10,14 @@ namespace LCSharpMBG7.Code.Controllers
     public class SellController
     {
         // Carga datos de ventas ficticios desde la fuente de datos dummy
-        public static void LoadDummySells()
+        private static void LoadDummySells()
         {
             List<SellModel> sellModels = SellDummies.CreateSells();
             State.sells = sellModels;
         }
 
         // Carga de manera asíncrona las ventas desde Firebase
-        public static async Task LoadSellsFromFirebaseAsync()
+        private static async Task LoadSellsFromFirebaseAsync()
         {
             try
             {
@@ -63,11 +63,18 @@ namespace LCSharpMBG7.Code.Controllers
             // 1
             else
             {
+                // Post object on db.
                 var result = await FirebaseHelper.CreateConnection()
-                .Child("Sells")
-                .PostAsync(sell);
+                    .Child("Sells")
+                    .PostAsync(sell);
+                // Saves unique Firebase key in Id property and memory.
                 sell.Id = result.Key;
                 State.sells.Add(sell);
+                // Updates Id property in object saved on the DB.
+                await FirebaseHelper.CreateConnection()
+                    .Child("Sells")
+                    .Child(result.Key)
+                    .PutAsync(sell);
                 return result.Key;
             }
         }
@@ -83,10 +90,21 @@ namespace LCSharpMBG7.Code.Controllers
 
         public static async Task UpdateSellAsync(string key, SellModel sell)
         {
-            await FirebaseHelper.CreateConnection()
-                .Child("Sells")
-                .Child(key)
-                .PutAsync(sell);
+            for (int i = 0; i < State.sells.Count; i++)
+            {
+                if (State.sells[i].Id == key)
+                {
+                    State.sells[i] = sell;
+                    break;
+                }
+            }
+            if (State.DATA_SOURCE == 1)
+            {
+                await FirebaseHelper.CreateConnection()
+                    .Child("Sells")
+                    .Child(key)
+                    .PutAsync(sell);
+            }
         }
 
         public static async Task DeleteSellAsync(string key)
