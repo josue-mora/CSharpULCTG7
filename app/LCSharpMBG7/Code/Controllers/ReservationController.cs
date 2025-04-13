@@ -118,10 +118,21 @@ namespace LCSharpMBG7.Code.Controllers
 
         public static async Task DeleteReservationAsync(string key)
         {
-            await FirebaseHelper.CreateConnection()
-                .Child("Reservations")
-                .Child(key)
-                .DeleteAsync();
+            for (int i = State.reservations.Count - 1; i >= 0; i--)
+            {
+                if (State.reservations[i].Id == key)
+                {
+                    State.reservations.RemoveAt(i);
+                    break;
+                }
+            }
+            if (State.DATA_SOURCE == 1)
+            {
+                await FirebaseHelper.CreateConnection()
+                    .Child("Reservations")
+                    .Child(key)
+                    .DeleteAsync();
+            }
         }
     }
 }

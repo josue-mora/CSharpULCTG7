@@ -107,12 +107,23 @@ namespace LCSharpMBG7.Code.Controllers
             }
         }
 
-        public static async Task DeleteSellAsync(string key)
+        public static async Task DeleteUserAsync(string key)
         {
-            await FirebaseHelper.CreateConnection()
-                .Child("Sells")
-                .Child(key)
-                .DeleteAsync();
+            for (int i = State.users.Count - 1; i >= 0; i--)
+            {
+                if (State.users[i].Id == key)
+                {
+                    State.users.RemoveAt(i);
+                    break;
+                }
+            }
+            if (State.DATA_SOURCE == 1)
+            {
+                await FirebaseHelper.CreateConnection()
+                    .Child("Users")
+                    .Child(key)
+                    .DeleteAsync();
+            }
         }
     }
 }

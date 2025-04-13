@@ -109,10 +109,21 @@ namespace LCSharpMBG7.Code.Controllers
 
         public static async Task DeleteSellAsync(string key)
         {
-            await FirebaseHelper.CreateConnection()
-                .Child("Sells")
-                .Child(key)
-                .DeleteAsync();
+            for (int i = State.sells.Count - 1; i >= 0; i--)
+            {
+                if (State.sells[i].Id == key)
+                {
+                    State.sells.RemoveAt(i);
+                    break;
+                }
+            }
+            if (State.DATA_SOURCE == 1)
+            {
+                await FirebaseHelper.CreateConnection()
+                    .Child("Sells")
+                    .Child(key)
+                    .DeleteAsync();
+            }
         }
     }
 }

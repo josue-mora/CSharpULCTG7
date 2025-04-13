@@ -109,11 +109,21 @@ namespace LCSharpMBG7.Code.Controllers
 
         public static async Task DeleteVehicleAsync(string key)
         {
-            await FirebaseHelper.CreateConnection()
-                .Child("Vehicles")
-                .Child(key)
-                .DeleteAsync();
+            for (int i = State.vehicles.Count - 1; i >= 0; i--)
+            {
+                if (State.vehicles[i].Id == key)
+                {
+                    State.vehicles.RemoveAt(i);
+                    break;
+                }
+            }
+            if (State.DATA_SOURCE == 1)
+            {
+                await FirebaseHelper.CreateConnection()
+                    .Child("Vehicles")
+                    .Child(key)
+                    .DeleteAsync();
+            }
         }
     }
 }
-
