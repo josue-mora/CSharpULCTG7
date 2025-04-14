@@ -4,14 +4,6 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     Title="Home">
-  <ScrollView>
-    <VerticalStackLayout Padding="30" Spacing="25">
-     
-      <Label Text="Hello, MAUI!" FontSize="24" HorizontalOptions="Center" />
-
-      <Button Text="Test Firebase Connection" Clicked="OnTestFirebaseConnectionClicked" />
-
-      <Button Text="View Vehicles" Clicked="OnViewVehiclesClicked" />
-    </VerticalStackLayout>
-  </ScrollView>
+    <ScrollView>
+    </ScrollView>
 </ContentPage>

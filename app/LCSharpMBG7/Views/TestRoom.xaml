@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LCSharpMBG7.TestRoom"
+             Title="TestRoom">
+    <ScrollView>
+        <VerticalStackLayout Padding="30" Spacing="25">
+
+            <Label Text="Hello, MAUI!" FontSize="24" HorizontalOptions="Center" />
+
+            <Button Text="Test Firebase Connection" Clicked="OnTestFirebaseConnectionClicked" />
+
+            <Button Text="View Vehicles" Clicked="OnViewVehiclesClicked" />
+
+            <Entry x:Name="LabelEditFirstVehicleName" Placeholder="First vehicle in list name"/>
+            <Button Text="Edit First Vehicle name" Clicked="Button_Clicked_Edit_First_Vehicle_name" />
+
+            <Entry x:Name="LabelEditSellName" Placeholder="Sell name"/>
+            <Button Text="Edit Sell client name" Clicked="Button_Clicked_Edit_Sell_name" />
+
+            <Entry x:Name="LabelEditReservationName" Placeholder="Reservation name"/>
+            <Button Text="Edit Reservation name" Clicked="Button_Clicked_Edit_Reservation_name" />
+
+            <Entry x:Name="LabelEditUserName" Placeholder="User name"/>
+            <Button Text="Edit User name" Clicked="Button_Clicked_Edit_User_name" />
+
+            <Button Text="Delete Vehicle index 0" Clicked="Button_Clicked_Delete_Vehicle_Index_0"/>
+            <Button Text="Delete Sell index 0" Clicked="Button_Clicked_Delete_Sell_Index_0"/>
+            <Button Text="Delete User index 0" Clicked="Button_Clicked_Delete_User_Index_0"/>
+            <Button Text="Delete Reservation index 0" Clicked="Button_Clicked_Reservation_Index_0"/>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

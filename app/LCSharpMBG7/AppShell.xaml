@@ -8,8 +8,8 @@
     Title="LCSharpMBG7">
 
     <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+        Title="TestRoom"
+        ContentTemplate="{DataTemplate local:TestRoom}"
+        Route="TestRoom" />
 
 </Shell>

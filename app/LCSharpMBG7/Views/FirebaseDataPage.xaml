@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    x:Class="LCSharpMBG7.FirebaseDataPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Firebase Data">
+  <ScrollView>
+    <VerticalStackLayout Padding="10" Spacing="20">
+      <!-- Vehicles Section -->
+      <Label Text="Vehicles" FontSize="20" FontAttributes="Bold"/>
+      <CollectionView x:Name="VehiclesCollectionView">
+        <CollectionView.ItemTemplate>
+          <DataTemplate>
+            <Frame BorderColor="Gray" CornerRadius="5" Padding="10" Margin="5">
+              <StackLayout>
+                <Label Text="{Binding Id}" FontSize="18" FontAttributes="Bold"/>
+                <Label Text="{Binding Model}" FontSize="18" FontAttributes="Bold"/>
+                <Label Text="{Binding Name}" FontSize="16"/>
+                <StackLayout Orientation="Horizontal" Spacing="10">
+                  <Label Text="Year:" FontAttributes="Bold"/>
+                  <Label Text="{Binding Year}"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" Spacing="10">
+                  <Label Text="Price:" FontAttributes="Bold"/>
+                  <Label Text="{Binding Price}"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" Spacing="10">
+                  <Label Text="State:" FontAttributes="Bold"/>
+                  <Label Text="{Binding State}"/>
+                </StackLayout>
+              </StackLayout>
+            </Frame>
+          </DataTemplate>
+        </CollectionView.ItemTemplate>
+      </CollectionView>
+
+      <!-- Reservations Section -->
+      <Label Text="Reservations" FontSize="20" FontAttributes="Bold"/>
+      <CollectionView x:Name="ReservationsCollectionView">
+        <CollectionView.ItemTemplate>
+          <DataTemplate>
+            <Frame BorderColor="Gray" CornerRadius="5" Padding="10" Margin="5">
+              <StackLayout>
+                <Label Text="{Binding ClientName}" FontSize="18" FontAttributes="Bold"/>
+                <StackLayout Orientation="Horizontal" Spacing="10">
+                  <Label Text="ID Card:" FontAttributes="Bold"/>
+                  <Label Text="{Binding ClientIdCardNumber}"/>
+                </StackLayout>
+                <Label Text="{Binding ClientComment}" FontSize="14"/>
+                <StackLayout Orientation="Horizontal" Spacing="10">
+                  <Label Text="Reserved:" FontAttributes="Bold"/>
+                  <Label Text="{Binding DateReservation}"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" Spacing="10">
+                  <Label Text="Appointment:" FontAttributes="Bold"/>
+                  <Label Text="{Binding DateAppointment}"/>
+                </StackLayout>
+              </StackLayout>
+            </Frame>
+          </DataTemplate>
+        </CollectionView.ItemTemplate>
+      </CollectionView>
+
+      <!-- Sells Section -->
+      <Label Text="Sells" FontSize="20" FontAttributes="Bold"/>
+      <CollectionView x:Name="SellsCollectionView">
+        <CollectionView.ItemTemplate>
+          <DataTemplate>
+            <Frame BorderColor="Gray" CornerRadius="5" Padding="10" Margin="5">
+              <StackLayout>
+                <Label Text="{Binding ClientName}" FontSize="18" FontAttributes="Bold"/>
+                <StackLayout Orientation="Horizontal" Spacing="10">
+                  <Label Text="Client ID:" FontAttributes="Bold"/>
+                  <Label Text="{Binding ClientIdCardNumber}"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" Spacing="10">
+                  <Label Text="Sell Date:" FontAttributes="Bold"/>
+                  <Label Text="{Binding DateSell}"/>
+                </StackLayout>
+              </StackLayout>
+            </Frame>
+          </DataTemplate>
+        </CollectionView.ItemTemplate>
+      </CollectionView>
+
+      <!-- Users Section -->
+      <Label Text="Users" FontSize="20" FontAttributes="Bold"/>
+      <CollectionView x:Name="UsersCollectionView">
+        <CollectionView.ItemTemplate>
+          <DataTemplate>
+            <Frame BorderColor="Gray" CornerRadius="5" Padding="10" Margin="5">
+              <StackLayout>
+                <Label Text="{Binding Name}" FontSize="18" FontAttributes="Bold"/>
+                <StackLayout Orientation="Horizontal" Spacing="10">
+                  <Label Text="Email:" FontAttributes="Bold"/>
+                  <Label Text="{Binding Email}"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" Spacing="10">
+                  <Label Text="Role:" FontAttributes="Bold"/>
+                  <Label Text="{Binding Role}"/>
+                </StackLayout>
+              </StackLayout>
+            </Frame>
+          </DataTemplate>
+        </CollectionView.ItemTemplate>
+      </CollectionView>
+    </VerticalStackLayout>
+  </ScrollView>
+</ContentPage>
