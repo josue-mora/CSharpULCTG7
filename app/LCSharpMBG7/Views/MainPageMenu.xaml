@@ -1,0 +1,147 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LCSharpMBG7.Views.MainPageMenu"
+             BackgroundColor="White"
+             Title="">
+
+    <!-- Distribución principal en 3 filas -->
+    <Grid RowDefinitions="Auto,*,Auto">
+
+        <!-- 🟡 BARRA SUPERIOR -->
+        <Grid Grid.Row="0"
+              BackgroundColor="Black"
+              HeightRequest="60"
+              VerticalOptions="Start">
+            <Image Source="mercedeslogo.png"
+                   HeightRequest="40"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center" />
+        </Grid>
+
+        <!--CONTENIDO SCROLLABLE -->
+        <ScrollView Grid.Row="1">
+            <VerticalStackLayout Padding="20" Spacing="30">
+
+                <!--Vehículo 1 -->
+                <Image Source="gle_suv.png"
+                       Aspect="Center"
+                       HeightRequest="200" />
+
+                <StackLayout BackgroundColor="Transparent" Padding="10,5" Spacing="3">
+                    <Label Text="GLE SUV"
+                           FontSize="24"
+                           FontAttributes="Bold"
+                           TextColor="Black"
+                           HorizontalOptions="Center" />
+                </StackLayout>
+
+                <Button Text="Saber más"
+                        BackgroundColor="Black"
+                        TextColor="White"
+                        FontAttributes="Bold"
+                        CornerRadius="12"
+                        WidthRequest="200"
+                        HorizontalOptions="Center"
+                        Clicked="OnSaberMasClickedGLE" />
+
+                <!--Vehículo 2 -->
+                <Image Source="glc_suv.png"
+                       Aspect="Center"
+                       HeightRequest="200" />
+
+                <StackLayout BackgroundColor="Transparent" Padding="10,5" Spacing="3">
+                    <Label Text="GLC SUV"
+                           FontSize="24"
+                           FontAttributes="Bold"
+                           TextColor="Black"
+                           HorizontalOptions="Center" />
+                </StackLayout>
+
+                <Button Text="Saber más"
+                        BackgroundColor="Black"
+                        TextColor="White"
+                        FontAttributes="Bold"
+                        CornerRadius="12"
+                        WidthRequest="200"
+                        HorizontalOptions="Center"
+                        Clicked="OnSaberMasClickedGLC" />
+
+                <!--Vehículo 3 -->
+                <Image Source="clase_c_sedan.png"
+        Aspect="Center"
+        HeightRequest="200" />
+
+                <StackLayout BackgroundColor="Transparent" Padding="10,5" Spacing="3">
+                    <Label Text="Clase C Sedan"
+            FontSize="24"
+            FontAttributes="Bold"
+            TextColor="Black"
+            HorizontalOptions="Center" />
+                </StackLayout>
+
+          <Button Text="Saber más"
+         BackgroundColor="Black"
+         TextColor="White"
+         FontAttributes="Bold"
+         CornerRadius="12"
+         WidthRequest="200"
+         HorizontalOptions="Center"
+         Clicked="OnSaberMasClickedClaseC" />
+
+            </VerticalStackLayout>
+        </ScrollView>
+
+        <!-- BARRA INFERIOR FIJA -->
+        <Grid Grid.Row="2"
+      BackgroundColor="#007AFF"
+      HeightRequest="60"
+      Padding="10"
+      ColumnSpacing="15">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- VEHICULOS -->
+            <VerticalStackLayout Grid.Column="0" HorizontalOptions="Center">
+                <Image Source="caricon.png" HeightRequest="24">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="GoToVehiculos"/>
+                    </Image.GestureRecognizers>
+                </Image>
+                <Label Text="Vehiculos"
+               FontSize="11"
+               TextColor="White"
+               HorizontalTextAlignment="Center"/>
+            </VerticalStackLayout>
+
+            <!-- COTIZAR -->
+            <VerticalStackLayout Grid.Column="1" HorizontalOptions="Center">
+                <Image Source="quote_icon.png" HeightRequest="24">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="GoToCotizador"/>
+                    </Image.GestureRecognizers>
+                </Image>
+                <Label Text="Cotizador"
+               FontSize="11"
+               TextColor="White"
+               HorizontalTextAlignment="Center"/>
+            </VerticalStackLayout>
+
+            <!-- SUCURSALES -->
+            <VerticalStackLayout Grid.Column="2" HorizontalOptions="Center">
+                <Image Source="location_icon.png" HeightRequest="24">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="GoToSucursales"/>
+                    </Image.GestureRecognizers>
+                </Image>
+                <Label Text="Sucursales"
+               FontSize="11"
+               TextColor="White"
+               HorizontalTextAlignment="Center"/>
+            </VerticalStackLayout>
+        </Grid>
+
+    </Grid>
+</ContentPage>

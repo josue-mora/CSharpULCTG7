@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LCSharpMBG7.Views.AmgGlc"
+             Background="Black"
+             Title="AmgGlc">
+    
+    
+    <ScrollView>
+        <VerticalStackLayout Padding="25" Spacing="25">
+
+            <!-- Título del vehículo -->
+
+            <Label Text="Mercedes-AMG GLC"
+                FontSize="32"
+                TextColor="White"
+                FontAttributes="Bold"
+                HorizontalOptions="Center" />
+
+            <!-- Botón Cotizar -->
+            <Button Text="Quiero Cotizar"
+                 BackgroundColor="#007AFF"
+                 TextColor="White"
+                 FontAttributes="Bold"
+                 CornerRadius="10"
+                 HeightRequest="45"
+                 HorizontalOptions="Center"
+                 WidthRequest="200"
+                 Clicked="OnCotizarClicked" />
+
+            <!-- Especificaciones -->
+            <StackLayout Spacing="20">
+                <StackLayout>
+                    <Label Text="Hasta" FontSize="12" TextColor="White"/>
+                    <Label Text="421 hp" FontSize="28" FontAttributes="Bold" TextColor="White"/>
+                    <Label Text="Potencia" FontSize="12" TextColor="White"/>
+                </StackLayout>
+
+                <StackLayout>
+                    <Label Text="Hasta" FontSize="12" TextColor="White"/>
+                    <Label Text="500 Nm" FontSize="28" FontAttributes="Bold" TextColor="White"/>
+                    <Label Text="Par" FontSize="12" TextColor="White"/>
+                </StackLayout>
+
+                <StackLayout>
+                    <Label Text="Aceleración hasta en" FontSize="12" TextColor="White"/>
+                    <Label Text="4.8 s" FontSize="28" FontAttributes="Bold" TextColor="White"/>
+                    <Label Text="de 0 a 100 km/h" FontSize="12" TextColor="White"/>
+                </StackLayout>
+
+                <StackLayout>
+                    <Label Text="Hasta" FontSize="12" TextColor="White"/>
+                    <Label Text="250 km/h" FontSize="28" FontAttributes="Bold" TextColor="White"/>
+                    <Label Text="Velocidad máxima" FontSize="12" TextColor="White"/>
+                </StackLayout>
+            </StackLayout>
+
+          
+
+            <!-- Imagen ilustrativa -->
+            <Image Source="gle_suv_offroad.png"
+                Aspect="AspectFill"
+                HeightRequest="200"
+                Margin="0,10,0,30" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

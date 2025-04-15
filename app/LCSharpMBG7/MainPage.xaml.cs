@@ -1,5 +1,6 @@
 ﻿using LCSharpMBG7.Code.Controllers;
 using LCSharpMBG7.Code.Logical;
+using LCSharpMBG7.Views;
 
 namespace LCSharpMBG7
 {
@@ -60,17 +61,16 @@ namespace LCSharpMBG7
             InitializeComponent();
         }
 
-        private void OnCounterClicked(object sender, EventArgs e)
+        private async void BtnContinuar_Clicked(object sender, EventArgs e)
         {
-            count++;
-
-            if (count == 1)
-                CounterBtn.Text = $"Clicked {count} time";
-            else
-                CounterBtn.Text = $"Clicked {count} times";
-
-            SemanticScreenReader.Announce(CounterBtn.Text);
+            await Shell.Current.GoToAsync("MainPageMenu");
         }
-    }
 
+        private async void LogInAdmin(object sender, EventArgs e)
+        {
+            await Shell.Current.GoToAsync("LogInAdmin");
+        }
+
+
+    }
 }

@@ -12,6 +12,7 @@ namespace LCSharpMBG7.Code.Models
         private string state; // Used or new.
         private string page_content; // JSON structure.
         private bool active;
+        private string image;
 
         public VehicleModel()
         {
@@ -23,10 +24,12 @@ namespace LCSharpMBG7.Code.Models
                 .SetPrice(5000000)
                 .SetState("NEW")
                 .SetPageContent("")
-                .SetActive(true);
+                .SetActive(true)
+                .SetImage("default_vehicle.png");
+            
         }
 
-        public VehicleModel(string model, string name, int year, int price, string state, string page_content)
+        public VehicleModel(string model, string name, int year, int price, string state, string page_content, string image)
         {
             this.SetId()
                 .SetModel(model)
@@ -35,7 +38,8 @@ namespace LCSharpMBG7.Code.Models
                 .SetPrice(price)
                 .SetState(state)
                 .SetPageContent(page_content)
-                .SetActive(true);
+                .SetActive(true)
+                .SetImage(image);
         }
 
         // ------------------------------------------------
@@ -167,12 +171,22 @@ namespace LCSharpMBG7.Code.Models
             return this;
         }
 
+        public string GetImage()
+        {
+            return this.image;
+        }
+        public VehicleModel SetImage(string image)
+        {
+            this.image = image;
+            return this;
+        }
+
         // ------------------------------------------------
         // Utils.
         // ------------------------------------------------
         public override string ToString()
         {
-            return $"Vehículo. Modelo: {this.model}. Nombre: {this.name}.";
+            return $"Vehículo. Modelo: {this.model}. Nombre: {this.name}. Image: {this.image}";
         }
     }
 }
