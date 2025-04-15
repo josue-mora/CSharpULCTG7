@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LCSharpMBG7.Views.VehicleDetails"
+             BackgroundColor="Black">
+    <VerticalStackLayout x:Name="ContentBlock">
+        <Editor x:Name="EditorPayload" Text="T_TITLE_1Diseño" TextColor="White" />
+        <Button Text="Process payload" Clicked="Button_Clicked_Process_Payload" />
+        <Label Text="Test" />
+        <BoxView HeightRequest="3" HorizontalOptions="Start" />
+    </VerticalStackLayout>
+</ContentPage>

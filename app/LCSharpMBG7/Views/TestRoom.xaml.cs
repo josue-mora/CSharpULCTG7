@@ -2,6 +2,7 @@ using System.Diagnostics;
 using LCSharpMBG7.Code.Controllers;
 using LCSharpMBG7.Code.Logical;
 using LCSharpMBG7.Code.DB;
+using LCSharpMBG7.Views;
 
 namespace LCSharpMBG7;
 public partial class TestRoom : ContentPage
@@ -45,6 +46,7 @@ public partial class TestRoom : ContentPage
         string unixDate = DateFormatter.GetUNIXTimestamp().ToString();
         Debug.WriteLine("Unix Date: " + unixDate);
         Debug.WriteLine("Formatted Date: " + DateFormatter.FormatUNIXToDate(unixDate));
+        Navigation.PushAsync(new VehicleDetails());
     }
     private async void LoadDataAsync()
     {
