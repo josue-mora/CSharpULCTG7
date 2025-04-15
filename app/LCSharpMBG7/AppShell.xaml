@@ -9,7 +9,17 @@
 
     <ShellContent
         Title="TestRoom"
-        ContentTemplate="{DataTemplate local:TestRoom}"
-        Route="TestRoom" />
+        ContentTemplate="{DataTemplate local:Views.TestRoom}"
+        Route="Views.TestRoom" />
+
+    <ShellContent
+        Title="VehicleDetails"
+        ContentTemplate="{DataTemplate local:Views.VehicleDetails}"
+        Route="Views.VehicleDetails" />
+
+    <ShellContent
+        Title="FirebaseDataPage"
+        ContentTemplate="{DataTemplate local:Views.FirebaseDataPage}"
+        Route="Views.FirebaseDataPage" />
 
 </Shell>

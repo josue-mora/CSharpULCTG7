@@ -4,7 +4,7 @@ using LCSharpMBG7.Code.Logical;
 using LCSharpMBG7.Code.DB;
 using LCSharpMBG7.Views;
 
-namespace LCSharpMBG7;
+namespace LCSharpMBG7.Views;
 public partial class TestRoom : ContentPage
 {
 	public TestRoom()
@@ -46,12 +46,17 @@ public partial class TestRoom : ContentPage
         string unixDate = DateFormatter.GetUNIXTimestamp().ToString();
         Debug.WriteLine("Unix Date: " + unixDate);
         Debug.WriteLine("Formatted Date: " + DateFormatter.FormatUNIXToDate(unixDate));
-        Navigation.PushAsync(new VehicleDetails());
+        NavigateToVehicleDetails();
     }
     private async void LoadDataAsync()
     {
         // Load data from data source.
         await InitializeDataLoad.LoadAllData();
+    }
+
+    private async void NavigateToVehicleDetails()
+    {
+        await Shell.Current.GoToAsync("VehicleDetails");
     }
 
     // Handle the Firebase test button click.

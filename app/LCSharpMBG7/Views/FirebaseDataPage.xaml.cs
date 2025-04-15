@@ -1,6 +1,6 @@
 using LCSharpMBG7.Code.Logical;
 
-namespace LCSharpMBG7
+namespace LCSharpMBG7.Views
 {
     public partial class FirebaseDataPage : ContentPage
     {
