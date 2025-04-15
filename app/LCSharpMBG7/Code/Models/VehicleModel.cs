@@ -193,6 +193,17 @@ namespace LCSharpMBG7.Code.Models
         }
 
         // ------------------------------------------------
+        // Propiedades públicas para XAML Binding (solo lectura)
+        // ------------------------------------------------
+        public string Name => GetName();
+        public string Model => GetModel();
+        public int Year => GetYear();
+        public int Price => GetPrice();
+        public string State => GetState();
+        public string ImageCarousel => GetImageCarousel();
+
+
+        // ------------------------------------------------
         // Utils.
         // ------------------------------------------------
         public override string ToString()

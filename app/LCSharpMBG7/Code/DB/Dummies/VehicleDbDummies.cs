@@ -7,18 +7,18 @@ namespace LCSharpMBG7.Code.DB.Dummies
         public static List<VehicleModel> CreateVehicles()
         {
             List<VehicleModel> vehicleModels = new List<VehicleModel>();
-            vehicleModels.Add(new VehicleModel("SUV", "GLA", 2025, 0, "NEW", "Auto blanco", null));
-            vehicleModels.Add(new VehicleModel("SUV", "EQA", 2025, 0, "NEW", "Lorem Ipsum", null));
-            vehicleModels.Add(new VehicleModel("SUV", "EQB", 2025, 0, "NEW", "Lorem Ipsum", null));
-            vehicleModels.Add(new VehicleModel("SUV", "EQE", 2025, 0, "NEW", "Lorem Ipsum", null));
-            vehicleModels.Add(new VehicleModel("SUV", "GLC Coupé", 2025, 0, "NEW", "Lorem Ipsum", null));
-            vehicleModels.Add(new VehicleModel("SUV", "EQS", 2025, 0, "NEW", "Lorem Ipsum", null));
-            vehicleModels.Add(new VehicleModel("SUV", "Clase G", 2025, 0, "NEW", "Lorem Ipsum", null));
-            vehicleModels.Add(new VehicleModel("SUV", "GLE Coupé", 2025, 0, "NEW", "Lorem Ipsum", null));
-            vehicleModels.Add(new VehicleModel("SUV", "GLC", 2025, 0, "NEW", "Lorem Ipsum", null));
-            vehicleModels.Add(new VehicleModel("SUV", "GLE", 2025, 0, "NEW", "Lorem Ipsum", null));
-            vehicleModels.Add(new VehicleModel("SUV", "GLS", 2025, 0, "NEW", "Lorem Ipsum", null));
-            vehicleModels.Add(new VehicleModel("SUV", "Clase G - 2", 2025, 0, "NEW", "Lorem Ipsum", null));
+            vehicleModels.Add(new VehicleModel("Hatchback", "claseA", 2025, 500000, "NEW", "Auto blanco", null).SetImageCarousel("hatchback.jpg"));
+            vehicleModels.Add(new VehicleModel("Sedán", "EQS", 2025, 500000, "NEW", "Lorem Ipsum", null).SetImageCarousel("eqs.jpg"));
+            vehicleModels.Add(new VehicleModel("Sedán", "ClaseC", 2025, 500000, "NEW", "Lorem Ipsum", null).SetImageCarousel("clasec.jpg"));
+            vehicleModels.Add(new VehicleModel("Sedán", "ClaseA", 2025, 500000, "NEW", "Lorem Ipsum", null).SetImageCarousel("clasea.jpg"));
+            vehicleModels.Add(new VehicleModel("SUV", "GLA SUV", 2025, 500000, "NEW", "Lorem Ipsum", null).SetImageCarousel("gla.jpg") );
+            vehicleModels.Add(new VehicleModel("SUV", "GLC", 2025, 500000, "NEW", "Lorem Ipsum", null).SetImageCarousel("gla.jpg"));
+            vehicleModels.Add(new VehicleModel("SUV", "EQE", 2025, 500000, "NEW", "Lorem Ipsum", null).SetImageCarousel("gla.jpg"));
+            vehicleModels.Add(new VehicleModel("SUV", "GLE", 2025, 500000, "NEW", "Lorem Ipsum", null).SetImageCarousel("gla.jpg"));
+            vehicleModels.Add(new VehicleModel("SUV", "GLC Coupé", 2025, 500000, "NEW", "Lorem Ipsum", null).SetImageCarousel("gla.jpg"));
+            vehicleModels.Add(new VehicleModel("SUV", "Clase G", 2025, 500000, "NEW", "Lorem Ipsum", null).SetImageCarousel("gla.jpg")   );
+            vehicleModels.Add(new VehicleModel("SUV", "Clase G63", 2025, 500000, "NEW", "Lorem Ipsum", null).SetImageCarousel("gla.jpg"));
+            vehicleModels.Add(new VehicleModel("Coupé", "Clase G - 2", 2025, 500000, "NEW", "Lorem Ipsum", null).SetImageCarousel("gla.jpg"));
             return vehicleModels;
         }
     }
