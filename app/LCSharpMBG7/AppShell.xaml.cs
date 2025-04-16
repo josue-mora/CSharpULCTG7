@@ -19,6 +19,8 @@ namespace LCSharpMBG7
             Routing.RegisterRoute("Vehiculos", typeof(Views.Vehiculos));
             Routing.RegisterRoute("Cotizador", typeof(Views.Cotizador));
             Routing.RegisterRoute("Sucursales", typeof(Views.Sucursales));
+            Routing.RegisterRoute("AdminDashboard", typeof(Views.AdminDashboard));
+            Routing.RegisterRoute("MainPage", typeof(MainPage));
         }
     }
 }

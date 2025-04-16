@@ -9,15 +9,15 @@
     Title="LCSharpMBG7">
 
     <ShellContent
-      Title="Catálogo de AMG"
-      ContentTemplate="{DataTemplate views:CarruselAutosPage}"
-      Route="CarruselAutosPage" />
-    
-    <ShellContent
         Title="Home"
         ContentTemplate="{DataTemplate local:MainPage}"
         Route="MainPage" />
-    
+
+    <ShellContent
+        Title="Catálogo de AMG"
+        ContentTemplate="{DataTemplate views:CarruselAutosPage}"
+        Route="CarruselAutosPage" />
+
     <ShellContent
         Title="TestRoom"
         ContentTemplate="{DataTemplate local:Views.TestRoom}"

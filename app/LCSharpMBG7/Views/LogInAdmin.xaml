@@ -8,27 +8,30 @@
         <Image Source="loginwall.png"
          Aspect="AspectFill" />
         <StackLayout Padding="30"
-             Spacing="15"
-             VerticalOptions="CenterAndExpand">
+            Spacing="15"
+            VerticalOptions="CenterAndExpand">
 
             <Label Text="Inicio de sesión - Admin"
-           FontAttributes="Bold"
-           FontSize="24"
-           HorizontalOptions="Center" />
+                FontAttributes="Bold"
+                FontSize="24"
+                HorizontalOptions="Center" />
 
-            <Entry x:Name="usernameEntry"
-           Placeholder="Usuario" />
+            <Entry x:Name="usernameEntry" 
+                Placeholder="Usuario" 
+                TextColor="Black"  />
 
             <Entry x:Name="passwordEntry"
-           Placeholder="Contraseña"
-           IsPassword="True" />
+                Placeholder="Contraseña"
+                IsPassword="True" 
+                TextColor="Black"/>
 
             <Button Text="Iniciar sesión"
-            BackgroundColor="Black"
-            TextColor="White"
-            Clicked="OnLoginClicked"
-            CornerRadius="10"
-            FontAttributes="Bold"/>
+                BackgroundColor="Black"
+                TextColor="White"
+                Clicked="OnLoginClicked"
+                CornerRadius="10"
+                FontAttributes="Bold"/>
+
         </StackLayout>
     </Grid>
 
