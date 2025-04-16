@@ -14,11 +14,6 @@
         Route="MainPage" />
 
     <ShellContent
-        Title="Catálogo de AMG"
-        ContentTemplate="{DataTemplate views:CarruselAutosPage}"
-        Route="CarruselAutosPage" />
-
-    <ShellContent
         Title="TestRoom"
         ContentTemplate="{DataTemplate local:Views.TestRoom}"
         Route="Views.TestRoom" />
@@ -62,5 +57,10 @@
         Title="Sucursales"
         ContentTemplate="{DataTemplate views:Sucursales}"
         Route="AmgClaseC" />
+
+    <ShellContent
+        Title="Catálogo de AMG"
+        ContentTemplate="{DataTemplate views:CarruselAutosPage}"
+        Route="CarruselAutosPage" />
 
 </Shell>

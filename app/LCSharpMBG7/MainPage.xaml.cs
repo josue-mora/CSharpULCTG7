@@ -1,8 +1,5 @@
-﻿using System.Diagnostics;
-using LCSharpMBG7.Code.Controllers;
-using LCSharpMBG7.Code.Logical;
-using LCSharpMBG7.Code.DB;
-using LCSharpMBG7.Views;
+﻿using LCSharpMBG7.Code.DB;
+using LCSharpMBG7.Code.Helpers;
 
 namespace LCSharpMBG7
 {
@@ -12,6 +9,7 @@ namespace LCSharpMBG7
         {
             InitializeComponent();
             LoadDataAsync();
+            DebugMemory.Data();
         }
 
         private async void LoadDataAsync()

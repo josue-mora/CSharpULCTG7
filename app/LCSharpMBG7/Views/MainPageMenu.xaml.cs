@@ -24,7 +24,7 @@ public partial class MainPageMenu : ContentPage
 
     private async void GoToVehiculos(object sender, EventArgs e)
     {
-        await Shell.Current.GoToAsync("Vehiculos");
+        await Shell.Current.GoToAsync("CarruselAutosPage");
     }
 
     private async void GoToCotizador(object sender, EventArgs e)

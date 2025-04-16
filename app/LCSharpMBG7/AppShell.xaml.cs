@@ -21,6 +21,7 @@ namespace LCSharpMBG7
             Routing.RegisterRoute("Sucursales", typeof(Views.Sucursales));
             Routing.RegisterRoute("AdminDashboard", typeof(Views.AdminDashboard));
             Routing.RegisterRoute("MainPage", typeof(MainPage));
+            Routing.RegisterRoute("CarruselAutosPage", typeof(CarruselAutosPage));
         }
     }
 }
