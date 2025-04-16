@@ -46,7 +46,6 @@
 		<MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#512BD4" BaseSize="128,128" />
 
 		<!-- Images -->
-		<MauiImage Include="Resources\Images\*" />
 
 		<!-- Custom Fonts -->
 		<MauiFont Include="Resources\Fonts\*" />
@@ -56,7 +55,35 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Firebase.Auth" Version="1.0.0" />
+	  <PackageReference Include="Firebase.Auth" Version="1.0.0" />
+	  <None Remove="Resources\Images\amglogo.png" />
+	  <None Remove="Resources\Images\calendar_icon.png" />
+	  <None Remove="Resources\Images\caricon.png" />
+	  <None Remove="Resources\Images\clase_a_hatchback.png" />
+	  <None Remove="Resources\Images\clase_a_sedan.png" />
+	  <None Remove="Resources\Images\clase_c_sedan.png" />
+	  <None Remove="Resources\Images\clase_e_sedan.png" />
+	  <None Remove="Resources\Images\clase_g63_suv.png" />
+	  <None Remove="Resources\Images\clase_g_suv.png" />
+	  <None Remove="Resources\Images\cla_amg.png" />
+	  <None Remove="Resources\Images\eqe_suv.png" />
+	  <None Remove="Resources\Images\eqs_sedan.png" />
+	  <None Remove="Resources\Images\finalmain.png" />
+	  <None Remove="Resources\Images\gla_suv.png" />
+	  <None Remove="Resources\Images\glc_suv.png" />
+	  <None Remove="Resources\Images\gle.png" />
+	  <None Remove="Resources\Images\gle_coupe_amg.png" />
+	  <None Remove="Resources\Images\gle_suv.png" />
+	  <None Remove="Resources\Images\location_icon.png" />
+	  <None Remove="Resources\Images\loginwall.png" />
+	  <None Remove="Resources\Images\menuglesuv.png" />
+	  <None Remove="Resources\Images\mercedeslogo.png" />
+	  <None Remove="Resources\Images\quote_icon.png" />
+	  <None Remove="Resources\Images\roadster_amg_sl.png" />
+	  <None Remove="Resources\Images\testdrive_icon.png" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<PackageReference Include="Firebase.Database" Version="1.0.0" />
 		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
@@ -69,8 +96,61 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\VehicleDetails.xaml">
+	  	<Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\AmgClaseC.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Views\AmgGlc.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\AmgGle.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Cotizador.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\LogInAdmin.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\MainPageMenu.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Sucursales.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Vehiculos.xaml">
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiImage Include="Resources\Images\amglogo.png" />
+	  <MauiImage Include="Resources\Images\calendar_icon.png" />
+	  <MauiImage Include="Resources\Images\caricon.png" />
+	  <MauiImage Include="Resources\Images\clase_a_hatchback.png" />
+	  <MauiImage Include="Resources\Images\clase_a_sedan.png" />
+	  <MauiImage Include="Resources\Images\clase_c_sedan.png" />
+	  <MauiImage Include="Resources\Images\clase_e_sedan.png" />
+	  <MauiImage Include="Resources\Images\clase_g63_suv.png" />
+	  <MauiImage Include="Resources\Images\clase_g_suv.png" />
+	  <MauiImage Include="Resources\Images\cla_amg.png" />
+	  <MauiImage Include="Resources\Images\eqe_suv.png" />
+	  <MauiImage Include="Resources\Images\eqs_sedan.png" />
+	  <MauiImage Include="Resources\Images\finalmain.png" />
+	  <MauiImage Include="Resources\Images\gla_suv.png" />
+	  <MauiImage Include="Resources\Images\glc_suv.png" />
+	  <MauiImage Include="Resources\Images\gle.png" />
+	  <MauiImage Include="Resources\Images\gle_coupe_amg.png" />
+	  <MauiImage Include="Resources\Images\gle_suv.png" />
+	  <MauiImage Include="Resources\Images\location_icon.png" />
+	  <MauiImage Include="Resources\Images\loginwall.png" />
+	  <MauiImage Include="Resources\Images\menuglesuv.png" />
+	  <MauiImage Include="Resources\Images\quote_icon.png" />
+	  <MauiImage Include="Resources\Images\roadster_amg_sl.png" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiImage Include="Resources\Images\mercedeslogo.png" />
+	  <MauiImage Include="Resources\Images\testdrive_icon.png" />
 	</ItemGroup>
 
 </Project>

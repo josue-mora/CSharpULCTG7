@@ -4,9 +4,11 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:LCSharpMBG7"
+    xmlns:views="clr-namespace:LCSharpMBG7.Views"
     Shell.FlyoutBehavior="Disabled"
     Title="LCSharpMBG7">
 
+    <!-- Página de inicio (MainPage en raíz) -->
     <ShellContent
         Title="TestRoom"
         ContentTemplate="{DataTemplate local:Views.TestRoom}"
@@ -21,5 +23,35 @@
         Title="FirebaseDataPage"
         ContentTemplate="{DataTemplate local:Views.FirebaseDataPage}"
         Route="Views.FirebaseDataPage" />
+
+    <ShellContent
+        Title="AMG GLE"
+        ContentTemplate="{DataTemplate views:AmgGle}"
+        Route="AmgGle" />
+
+    <ShellContent
+        Title="AMG GLC"
+        ContentTemplate="{DataTemplate views:AmgGlc}"
+        Route="AmgGlc" />   
+
+    <ShellContent
+        Title="AMG Clase C"
+        ContentTemplate="{DataTemplate views:AmgClaseC}"
+        Route="AmgClaseC" />
+
+    <ShellContent
+        Title="Vehiculos"
+        ContentTemplate="{DataTemplate views:Vehiculos}"
+        Route="AmgClaseC" />
+
+    <ShellContent
+        Title="Cotizador"
+        ContentTemplate="{DataTemplate views:Cotizador}"
+        Route="AmgClaseC" />
+
+    <ShellContent
+        Title="Sucursales"
+        ContentTemplate="{DataTemplate views:Sucursales}"
+        Route="AmgClaseC" />
 
 </Shell>
