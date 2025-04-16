@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodel="clr-namespace:LCSharpMBG7.Views"
+             x:Class="LCSharpMBG7.Views.CarruselAutosPage"
+             Title="Catálogo AMG">
+
+    <ContentPage.BindingContext>
+        <viewmodel:CarruselAutosViewModel />
+    </ContentPage.BindingContext>
+
+    <VerticalStackLayout Padding="20" Spacing="20">
+
+        <!-- Botones de filtro por modelo -->
+        <ScrollView Orientation="Horizontal">
+            <HorizontalStackLayout Spacing="10">
+                <Button Text="Todos" Command="{Binding FiltrarCommand}" CommandParameter="Todos"/>
+                <Button Text="Hatchback" Command="{Binding FiltrarCommand}" CommandParameter="Hatchback"/>
+                <Button Text="Sedán" Command="{Binding FiltrarCommand}" CommandParameter="Sedán"/>
+                <Button Text="SUV" Command="{Binding FiltrarCommand}" CommandParameter="SUV"/>
+                <Button Text="Coupé" Command="{Binding FiltrarCommand}" CommandParameter="Coupé"/>
+            </HorizontalStackLayout>
+        </ScrollView>
+
+        <!-- Carrusel de autos -->
+        <CarouselView ItemsSource="{Binding VehiculosFiltrados}" HeightRequest="400">
+            <CarouselView.ItemTemplate>
+                <DataTemplate>
+                    <Frame CornerRadius="12" BorderColor="Gray" Padding="10" Margin="10">
+                        <VerticalStackLayout Spacing="10" HorizontalOptions="Center" VerticalOptions="Center">
+                            <Image Source="{Binding ImageCarousel}" 
+                           HeightRequest="200" 
+                           WidthRequest="300"
+                           Aspect="AspectFill"
+                           HorizontalOptions="Center" />
+
+                            <Label Text="{Binding Name}" FontSize="20" FontAttributes="Bold" HorizontalOptions="Center" />
+                            <Label Text="{Binding Model}" FontSize="16" HorizontalOptions="Center"/>
+                            <Label Text="{Binding Year, StringFormat='Año: {0}'}" FontSize="14" HorizontalOptions="Center"/>
+                        </VerticalStackLayout>
+                    </Frame>
+                </DataTemplate>
+            </CarouselView.ItemTemplate>
+        </CarouselView>
+
+
+    </VerticalStackLayout>
+</ContentPage>

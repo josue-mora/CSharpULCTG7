@@ -155,4 +155,10 @@
 	  <MauiImage Include="Resources\Images\testdrive_icon.png" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <MauiXaml Update="Views\CarruselAutosPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	</ItemGroup>
+
 </Project>
