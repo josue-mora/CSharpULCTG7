@@ -8,7 +8,11 @@
     Shell.FlyoutBehavior="Disabled"
     Title="LCSharpMBG7">
 
-    <!-- Página de inicio (MainPage en raíz) -->
+    <ShellContent
+        Title="Home"
+        ContentTemplate="{DataTemplate local:MainPage}"
+        Route="MainPage" />
+    
     <ShellContent
         Title="TestRoom"
         ContentTemplate="{DataTemplate local:Views.TestRoom}"

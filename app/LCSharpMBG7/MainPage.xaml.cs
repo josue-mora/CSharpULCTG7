@@ -11,6 +11,12 @@ namespace LCSharpMBG7
         public MainPage()
         {
             InitializeComponent();
+            LoadDataAsync();
+        }
+
+        private async void LoadDataAsync()
+        {
+            await InitializeDataLoad.LoadAllData();
         }
 
         private async void BtnContinuar_Clicked(object sender, EventArgs e)
