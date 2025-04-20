@@ -35,6 +35,13 @@ namespace LCSharpMBG7.Code.Helpers
                     Debug.WriteLine(res.ToString());
             }
 
+            Debug.WriteLine("Dummy Invoices:");
+            if (State.invoices != null)
+            {
+                foreach (var res in State.invoices)
+                    Debug.WriteLine(res.ToString());
+            }
+
             // Testing date formatter.
             string unixDate = DateFormatter.GetUNIXTimestamp().ToString();
             Debug.WriteLine("Unix Date: " + unixDate);

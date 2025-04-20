@@ -7,23 +7,31 @@ namespace LCSharpMBG7.Code.DB.Dummies
     {
         public static List<SellModel> CreateSells()
         {
-            //return new List<SellModel>();
-            List<SellModel> sellModels = new List<SellModel>();
+            var sellModels = new List<SellModel>();
+            Random random = new Random();
 
-            // If there is no vehicles, a placeholder ID is generated.
-            // If there are cars, it is related to the first.
-            string sold_car_id = DateFormatter.GetUNIXTimestamp().ToString();
-            if (State.vehicles != null && State.vehicles.Count > 0)
+            string[] fakeNames = new string[]
             {
-                sold_car_id = State.vehicles.First().Id;
+                "John Doe", "Jane Smith", "Alice Johnson", "Bob Brown",
+                "Charlie Davis", "Diana Evans", "Frank Green", "Grace Harris",
+                "Henry Jackson", "Ivy King"
+            };
+
+            for (int i = 0; i < 60; i++)
+            {
+                string sold_car_id = State.vehicles[i % State.vehicles.Count].Id;
+                string sellDate = DateFormatter.GetUNIXTimestamp().ToString();
+
+                // Generate a fake user ID card number with some variation
+                // Example: "122223333" + i padded to 3 digits
+                string userIdCard = "12222" + (300 + i).ToString("D4"); // 122223003, 122223004, D4 = Decimal 4 digits.
+
+                string userName = fakeNames[i % fakeNames.Length];
+
+                SellModel sell = new SellModel(sold_car_id, sellDate, userIdCard, userName);
+                sellModels.Add(sell);
             }
 
-            sellModels.Add(new SellModel(
-                sold_car_id,
-                DateFormatter.GetUNIXTimestamp().ToString(),
-                "122223333",
-                "John Doe"
-            ));
             return sellModels;
         }
     }

@@ -19,6 +19,8 @@ namespace LCSharpMBG7.Code.DB
             await SellController.LoadSellsAsync();
             // Users
             await UserController.LoadUsersAsync();
+            // Invoices.
+            await InvoiceController.LoadInvoicesAsync();
         }
     }
 }

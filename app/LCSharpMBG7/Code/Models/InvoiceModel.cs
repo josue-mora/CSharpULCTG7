@@ -35,7 +35,7 @@ namespace LCSharpMBG7.Code.Models
                 this.IdSell = State.sells.First().Id;
             }
             // SellPrice.
-            if (sellPrice > 0)
+            if (sellPrice <= 0)
             {
                 this.SellPrice = 5000000;
             }
@@ -48,6 +48,11 @@ namespace LCSharpMBG7.Code.Models
                 this.DateInvoice = dateInvoice;
             else
                 this.DateInvoice = "" + DateFormatter.GetUNIXTimestamp();
+        }
+
+        public override string ToString()
+        {
+            return $"Invoice. ID: {this.Id}. ID venta: {this.IdSell}. Fecha invoice cruda: {this.DateInvoice}. Fecha invoice con formato: {DateFormatter.FormatUNIXToDate(this.DateInvoice)}. Precio de venta: {this.SellPrice}";
         }
     }
 }

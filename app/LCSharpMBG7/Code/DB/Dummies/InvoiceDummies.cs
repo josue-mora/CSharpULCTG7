@@ -33,6 +33,7 @@ namespace LCSharpMBG7.Code.DB.Dummies
 
                 // Create and add InvoiceModel
                 InvoiceModel invoice = new InvoiceModel(idSell, sellPrice, dateInvoice);
+                invoice.Id = invoice.Id + i; // Objects are created too fast. This adds an unique ID.
                 invoices.Add(invoice);
             }
 
