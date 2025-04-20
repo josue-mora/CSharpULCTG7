@@ -13,6 +13,7 @@ namespace LCSharpMBG7.Code.Logical
         public static List<UserModel> users;
         public static List<SellModel> sells;
         public static List<ReservationModel> reservations;
+        public static List<InvoiceModel> invoices;
         // Admin sesion user id. Null means no session active.
         public static UserModel AdminUserSession = null;
     }
