@@ -21,7 +21,8 @@ namespace LCSharpMBG7.Code.Controllers
                     1000000, 
                     "NEW", 
                     "Test vehicle for Firebase connection.", 
-                    null);
+                    null,
+                    false);
                 // Insertar vehículo en Firebase y capturar la clave generada
                 string vehicleKey = await VehicleController.AddVehicleAsync(testVehicle);
                 System.Diagnostics.Debug.WriteLine("Vehicle inserted with Firebase key: " + vehicleKey);

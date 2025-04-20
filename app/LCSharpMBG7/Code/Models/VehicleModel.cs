@@ -34,6 +34,9 @@ namespace LCSharpMBG7.Code.Models
         [JsonProperty("image_carousel")]
         public string ImageCarousel { get; set; }
 
+        [JsonProperty("promoted")]
+        public bool Promoted { get; set; }
+
         // Constructor por defecto con valores predeterminados
         public VehicleModel()
         {
@@ -49,10 +52,11 @@ namespace LCSharpMBG7.Code.Models
             this.PageContent = "";
             this.Active = true;
             this.ImageCarousel = "missing_asset.png";
+            this.Promoted = false;
         }
 
         // Constructor parametrizado que aplica lógica de validación
-        public VehicleModel(string model, string name, int year, int price, string state, string page_content, string image_carousel)
+        public VehicleModel(string model, string name, int year, int price, string state, string page_content, string image_carousel, bool promoted)
         {
             // Genera un ID único
             this.Id = DateFormatter.GetUNIXTimestamp().ToString();
@@ -121,6 +125,8 @@ namespace LCSharpMBG7.Code.Models
             {
                 this.ImageCarousel = image_carousel;
             }
+
+            this.Promoted = promoted;
         }
 
         // ------------------------------------------------
@@ -130,7 +136,7 @@ namespace LCSharpMBG7.Code.Models
         // Sobreescribe el método ToString para mostrar información del vehículo
         public override string ToString()
         {
-            return $"Vehículo. Modelo: {this.Model}. Nombre: {this.Name}. Imagen: {this.ImageCarousel}";
+            return $"Vehículo. Modelo: {this.Model}. Nombre: {this.Name}. Imagen: {this.ImageCarousel}. Promocionado: {this.Promoted}";
         }
     }
 }
