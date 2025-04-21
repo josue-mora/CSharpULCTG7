@@ -15,12 +15,12 @@ namespace LCSharpMBG7.Code.Controllers
                 // ========= Prueba de Vehículo =========
                 // Crear un registro de vehículo de prueba
                 VehicleModel testVehicle = new VehicleModel(
-                    "SUV", 
-                    "Test Vehicle", 
-                    2025, 
-                    1000000, 
-                    "NEW", 
-                    "Test vehicle for Firebase connection.", 
+                    "SUV",
+                    "Test Vehicle",
+                    2025,
+                    1000000,
+                    "NEW",
+                    "Test vehicle for Firebase connection.",
                     null,
                     false);
                 // Insertar vehículo en Firebase y capturar la clave generada
@@ -31,11 +31,11 @@ namespace LCSharpMBG7.Code.Controllers
                 // Usar el ID del vehículo de prueba para asociar la reservación
                 string testVehicleId = testVehicle.Id;
                 ReservationModel testReservation = new ReservationModel(
-                    testVehicleId, 
-                    DateFormatter.GetUNIXTimestamp().ToString(), 
-                    DateFormatter.GetUNIXTimestamp().ToString(), 
-                    "12223333", 
-                    "John Doe", 
+                    testVehicleId,
+                    DateFormatter.GetUNIXTimestamp().ToString(),
+                    DateFormatter.GetUNIXTimestamp().ToString(),
+                    "12223333",
+                    "John Doe",
                     "Reservation test record.");
                 string reservationKey = await ReservationController.AddReservationAsync(testReservation);
                 System.Diagnostics.Debug.WriteLine("Reservation inserted with Firebase key: " + reservationKey);
@@ -43,9 +43,9 @@ namespace LCSharpMBG7.Code.Controllers
                 // ========= Prueba de Venta =========
                 // Crear un registro de venta usando el mismo vehículo
                 SellModel testSell = new SellModel(
-                    testVehicleId, 
-                    DateFormatter.GetUNIXTimestamp().ToString(), 
-                    "122223333", 
+                    testVehicleId,
+                    DateFormatter.GetUNIXTimestamp().ToString(),
+                    "122223333",
                     "John Doe");
                 string sellKey = await SellController.AddSellAsync(testSell);
                 System.Diagnostics.Debug.WriteLine("Sell inserted with Firebase key: " + sellKey);
@@ -53,13 +53,22 @@ namespace LCSharpMBG7.Code.Controllers
                 // ========= Prueba de Usuario =========
                 // Crear un usuario de prueba. Aquí puedes usar tu lógica personalizada de creación de usuario o simplemente crear uno nuevo
                 UserModel testUser = new UserModel(
-                    "TestID", 
-                    "Test User", 
-                    "test@mail.com", 
-                    "test123", 
+                    "TestID",
+                    "Test User",
+                    "test@mail.com",
+                    "test123",
                     0);
                 string userKey = await UserController.AddUserAsync(testUser);
                 System.Diagnostics.Debug.WriteLine("User inserted with Firebase key: " + userKey);
+
+                // ========= Prueba de Invoice =========
+                // Crear un usuario de prueba. Aquí puedes usar tu lógica personalizada de creación de usuario o simplemente crear uno nuevo
+                InvoiceModel testInvoice = new InvoiceModel(
+                    "idSellTest",
+                    5000000,
+                    DateFormatter.GetUNIXTimestamp() + "");
+                string invoiceKey = await InvoiceController.AddInvoiceAsync(testInvoice);
+                System.Diagnostics.Debug.WriteLine("Invoice inserted with Firebase key: " + invoiceKey);
 
                 // Opcionalmente, agregar un pequeño retraso o llamar operaciones de lectura para verificar los datos insertados
                 await Task.Delay(1000);

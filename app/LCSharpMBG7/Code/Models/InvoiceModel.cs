@@ -6,10 +6,10 @@ namespace LCSharpMBG7.Code.Models
 {
     public class InvoiceModel
     {
-        public string Id;
-        public string IdSell;
-        public int SellPrice;
-        public string DateInvoice;
+        public string Id { get; set; }
+        public string IdSell { get; set; }
+        public int SellPrice { get; set; }
+        public string DateInvoice { get; set; }
 
         public InvoiceModel(string idSell, int sellPrice, string dateInvoice)
         {
