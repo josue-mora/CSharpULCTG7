@@ -17,7 +17,6 @@ namespace LCSharpMBG7.Views
             ReservationsCollectionView.ItemsSource = State.reservations;
             SellsCollectionView.ItemsSource = State.sells;
             UsersCollectionView.ItemsSource = State.users;
-            InvoicesCollectionView.ItemsSource = State.invoices;
         }
     }
 }

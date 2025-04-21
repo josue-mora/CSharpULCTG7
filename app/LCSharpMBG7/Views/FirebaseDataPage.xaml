@@ -85,50 +85,25 @@
 
       <!-- Users Section -->
       <Label Text="Users" FontSize="20" FontAttributes="Bold"/>
-      <CollectionView x:Name="UsersCollectionView">
-        <CollectionView.ItemTemplate>
-          <DataTemplate>
-            <Frame BorderColor="Gray" CornerRadius="5" Padding="10" Margin="5">
-              <StackLayout>
-                <Label Text="{Binding Name}" FontSize="18" FontAttributes="Bold"/>
-                <StackLayout Orientation="Horizontal" Spacing="10">
-                  <Label Text="Email:" FontAttributes="Bold"/>
-                  <Label Text="{Binding Email}"/>
-                </StackLayout>
-                <StackLayout Orientation="Horizontal" Spacing="10">
-                  <Label Text="Role:" FontAttributes="Bold"/>
-                  <Label Text="{Binding Role}"/>
-                </StackLayout>
-              </StackLayout>
-            </Frame>
-          </DataTemplate>
-        </CollectionView.ItemTemplate>
-      </CollectionView>
-      <!-- Invoices Section -->
-      <Label Text="Invoices" FontSize="20" FontAttributes="Bold"/>
-      <CollectionView x:Name="InvoicesCollectionView">
-          <CollectionView.ItemTemplate>
-              <DataTemplate>
-                  <Frame BorderColor="Gray" CornerRadius="5" Padding="10" Margin="5">
-                      <StackLayout>
-                          <Label Text="{Binding Id}" FontSize="18" FontAttributes="Bold"/>
-                          <StackLayout Orientation="Horizontal" Spacing="10">
-                              <Label Text="Sell ID:" FontAttributes="Bold"/>
-                              <Label Text="{Binding IdSell}"/>
-                          </StackLayout>
-                          <StackLayout Orientation="Horizontal" Spacing="10">
-                              <Label Text="Sell Price:" FontAttributes="Bold"/>
-                              <Label Text="{Binding SellPrice}"/>
-                          </StackLayout>
-                          <StackLayout Orientation="Horizontal" Spacing="10">
-                              <Label Text="Date Invoice:" FontAttributes="Bold"/>
-                              <Label Text="{Binding DateInvoice}"/>
-                          </StackLayout>
-                      </StackLayout>
-                  </Frame>
-              </DataTemplate>
-          </CollectionView.ItemTemplate>
-        </CollectionView>
-      </VerticalStackLayout>
+            <CollectionView x:Name="UsersCollectionView">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame BorderColor="Gray" CornerRadius="5" Padding="10" Margin="5">
+                            <StackLayout>
+                                <Label Text="{Binding Name}" FontSize="18" FontAttributes="Bold"/>
+                                <StackLayout Orientation="Horizontal" Spacing="10">
+                                    <Label Text="Email:" FontAttributes="Bold"/>
+                                    <Label Text="{Binding Email}"/>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal" Spacing="10">
+                                    <Label Text="Role:" FontAttributes="Bold"/>
+                                    <Label Text="{Binding Role}"/>
+                                </StackLayout>
+                            </StackLayout>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </VerticalStackLayout>
   </ScrollView>
 </ContentPage>

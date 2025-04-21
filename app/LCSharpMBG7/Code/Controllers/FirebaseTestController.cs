@@ -61,15 +61,6 @@ namespace LCSharpMBG7.Code.Controllers
                 string userKey = await UserController.AddUserAsync(testUser);
                 System.Diagnostics.Debug.WriteLine("User inserted with Firebase key: " + userKey);
 
-                // ========= Prueba de Invoice =========
-                // Crear un usuario de prueba. Aquí puedes usar tu lógica personalizada de creación de usuario o simplemente crear uno nuevo
-                InvoiceModel testInvoice = new InvoiceModel(
-                    "idSellTest",
-                    5000000,
-                    DateFormatter.GetUNIXTimestamp() + "");
-                string invoiceKey = await InvoiceController.AddInvoiceAsync(testInvoice);
-                System.Diagnostics.Debug.WriteLine("Invoice inserted with Firebase key: " + invoiceKey);
-
                 // Opcionalmente, agregar un pequeño retraso o llamar operaciones de lectura para verificar los datos insertados
                 await Task.Delay(1000);
             }
