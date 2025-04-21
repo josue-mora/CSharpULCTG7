@@ -28,7 +28,9 @@ namespace LCSharpMBG7.Code.DB.Dummies
 
                 string userName = fakeNames[i % fakeNames.Length];
 
-                SellModel sell = new SellModel(sold_car_id, sellDate, userIdCard, userName);
+                int sellPrice = random.Next(1500000, 20000001);
+
+                SellModel sell = new SellModel(sold_car_id, sellDate, userIdCard, userName, sellPrice);
                 sellModels.Add(sell);
             }
 

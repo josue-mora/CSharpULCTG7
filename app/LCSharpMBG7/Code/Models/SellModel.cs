@@ -26,6 +26,10 @@ namespace LCSharpMBG7.Code.Models
         [JsonProperty("client_name")]
         public string ClientName { get; set; }
 
+        // Precio en que se vendio el vehiculo. El cual puede variar con el precio que tiene el auto.
+        [JsonProperty("sell_price")]
+        public int SellPrice { get; set; }
+
         // Constructor por defecto necesario para la deserialización JSON
         public SellModel() { }
 
@@ -34,7 +38,8 @@ namespace LCSharpMBG7.Code.Models
             string id_vehicle,
             string date_sell, 
             string client_id_card_number,
-            string client_name)
+            string client_name,
+            int sellPrice)
         {
             // Genera un ID único basado en el timestamp UNIX actual
             this.Id = "" + DateFormatter.GetUNIXTimestamp();
@@ -74,12 +79,21 @@ namespace LCSharpMBG7.Code.Models
             {
                 this.ClientName = "John Doe";
             }
+
+            if (sellPrice < 0)
+            {
+                this.SellPrice = 5000000;
+            }
+            else
+            {
+                this.SellPrice = sellPrice;
+            }
         }
 
         // Sobreescribe el método ToString para mostrar un resumen de la venta
         public override string ToString()
         {
-            return $"Venta. ID Vehiculo: {this.IdVehicle}. Comprador: {this.ClientName} - {this.ClientIdCardNumber}";
+            return $"Venta. ID Vehiculo: {this.IdVehicle}. Comprador: {this.ClientName} - {this.ClientIdCardNumber}. Precio de venta: {this.SellPrice}";
         }
     }
 }

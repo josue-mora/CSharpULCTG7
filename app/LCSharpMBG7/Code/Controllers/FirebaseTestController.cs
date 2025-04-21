@@ -46,7 +46,8 @@ namespace LCSharpMBG7.Code.Controllers
                     testVehicleId,
                     DateFormatter.GetUNIXTimestamp().ToString(),
                     "122223333",
-                    "John Doe");
+                    "John Doe",
+                    5000000);
                 string sellKey = await SellController.AddSellAsync(testSell);
                 System.Diagnostics.Debug.WriteLine("Sell inserted with Firebase key: " + sellKey);
 

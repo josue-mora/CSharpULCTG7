@@ -77,7 +77,11 @@
                   <Label Text="Sell Date:" FontAttributes="Bold"/>
                   <Label Text="{Binding DateSell}"/>
                 </StackLayout>
-              </StackLayout>
+                <StackLayout Orientation="Horizontal" Spacing="10">
+                    <Label Text="Sell Price:" FontAttributes="Bold"/>
+                    <Label Text="{Binding SellPrice}"/>
+                </StackLayout>
+            </StackLayout>
             </Frame>
           </DataTemplate>
         </CollectionView.ItemTemplate>
