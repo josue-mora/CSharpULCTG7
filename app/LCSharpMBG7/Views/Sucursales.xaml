@@ -1,11 +1,30 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="LCSharpMBG7.Views.Sucursales"
-             Title="Sucursales">
-    
-    
-    <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
-        <Label Text="Pantalla Sucursales" FontSize="20" TextColor="Black"/>
-    </StackLayout>
+             x:Class="LCSharpMBG7.Views.Sucursales">
+
+
+    <Grid RowDefinitions="*,Auto,*">
+
+        <!-- Imagen de fondo que cubre todo -->
+        <Image Source="sucursales.png"
+               Aspect="AspectFill"
+               Grid.RowSpan="3" />
+
+        <Grid>
+            <Button Text="Sucursales"
+                    BackgroundColor="Black"
+                    TextColor="White"
+                    FontSize="18"
+                    FontAttributes="Bold"
+                    CornerRadius="12"
+                    WidthRequest="220"
+                    HeightRequest="50"
+                    HorizontalOptions="Center"
+                    VerticalOptions="End"
+                    Margin="0,0,0,100"
+                    Clicked="OnObtenerDireccionClicked" />
+        </Grid>
+
+    </Grid>
 </ContentPage>

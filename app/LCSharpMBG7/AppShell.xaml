@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8" ?>
 <Shell
     x:Class="LCSharpMBG7.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
@@ -8,59 +7,29 @@
     Shell.FlyoutBehavior="Disabled"
     Title="LCSharpMBG7">
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+    <ShellContent Title="Home" ContentTemplate="{DataTemplate local:MainPage}" Route="MainPage" />
+    <ShellContent Title="TestRoom" ContentTemplate="{DataTemplate local:Views.TestRoom}" Route="TestRoom" />
+    <ShellContent Title="VehicleDetails" ContentTemplate="{DataTemplate local:Views.VehicleDetails}" Route="VehicleDetails" />
+    <ShellContent Title="FirebaseDataPage" ContentTemplate="{DataTemplate local:Views.FirebaseDataPage}" Route="FirebaseDataPage" />
 
-    <ShellContent
-        Title="TestRoom"
-        ContentTemplate="{DataTemplate local:Views.TestRoom}"
-        Route="Views.TestRoom" />
+    <!-- Detalles de vehículos AMG -->
+    <ShellContent Title="AMG GLE" ContentTemplate="{DataTemplate views:AmgGle}" Route="AmgGle" />
+    <ShellContent Title="AMG GLC" ContentTemplate="{DataTemplate views:AmgGlc}" Route="AmgGlc" />
+    <ShellContent Title="AMG Clase C" ContentTemplate="{DataTemplate views:AmgClaseC}" Route="AmgClaseC" />
 
-    <ShellContent
-        Title="VehicleDetails"
-        ContentTemplate="{DataTemplate local:Views.VehicleDetails}"
-        Route="Views.VehicleDetails" />
+    <!-- Otras páginas con rutas únicas -->
+    <ShellContent Title="Vehiculos"
+              ContentTemplate="{DataTemplate views:Vehiculos}"
+              Route="Vehiculos" />
 
-    <ShellContent
-        Title="FirebaseDataPage"
-        ContentTemplate="{DataTemplate local:Views.FirebaseDataPage}"
-        Route="Views.FirebaseDataPage" />
+    <ShellContent Title="Cotizador"
+              ContentTemplate="{DataTemplate views:Cotizador}"
+              Route="Cotizador" />
 
-    <ShellContent
-        Title="AMG GLE"
-        ContentTemplate="{DataTemplate views:AmgGle}"
-        Route="AmgGle" />
+    <ShellContent Title="Sucursales"
+              ContentTemplate="{DataTemplate views:Sucursales}"
+              Route="Sucursales" />
 
-    <ShellContent
-        Title="AMG GLC"
-        ContentTemplate="{DataTemplate views:AmgGlc}"
-        Route="AmgGlc" />   
-
-    <ShellContent
-        Title="AMG Clase C"
-        ContentTemplate="{DataTemplate views:AmgClaseC}"
-        Route="AmgClaseC" />
-
-    <ShellContent
-        Title="Vehiculos"
-        ContentTemplate="{DataTemplate views:Vehiculos}"
-        Route="AmgClaseC" />
-
-    <ShellContent
-        Title="Cotizador"
-        ContentTemplate="{DataTemplate views:Cotizador}"
-        Route="AmgClaseC" />
-
-    <ShellContent
-        Title="Sucursales"
-        ContentTemplate="{DataTemplate views:Sucursales}"
-        Route="AmgClaseC" />
-
-    <ShellContent
-        Title="Catálogo de AMG"
-        ContentTemplate="{DataTemplate views:CarruselAutosPage}"
-        Route="CarruselAutosPage" />
+    <ShellContent Title="Catálogo de AMG" ContentTemplate="{DataTemplate views:CarruselAutosPage}" Route="CarruselAutosPage" />
 
 </Shell>
