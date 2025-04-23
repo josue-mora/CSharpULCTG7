@@ -1,50 +1,44 @@
 using LCSharpMBG7.Code.Logical;
 
-namespace LCSharpMBG7.Views;
-
-public partial class AdminDashboard : ContentPage
+namespace LCSharpMBG7.Views
 {
-    public AdminDashboard()
+    public partial class AdminDashboard : ContentPage
     {
-        InitializeComponent();
-    }
-
-    private async void Button_Clicked_Logout(object sender, EventArgs e)
-    {
-        State.AdminUserSession = null;
-        await Shell.Current.GoToAsync("LogInAdmin");
-    }
-
-    protected override async void OnAppearing()
-    {
-        if (State.AdminUserSession == null)
+        public AdminDashboard()
         {
-            NavigateTo(0);
+            InitializeComponent();
         }
-    }
 
+        protected override async void OnAppearing()
+        {
+            base.OnAppearing();
+            if (State.AdminUserSession == null)
+            {
+                // Si no está logueado, volver al login
+                await Shell.Current.GoToAsync("LogInAdmin");
+            }
+        }
 
-    protected override bool OnBackButtonPressed()
-    {
-        if (State.AdminUserSession != null)
+        protected override bool OnBackButtonPressed()
         {
-            NavigateTo(0);
+            // Siempre envía al MainPage cuando presionan back
+            Shell.Current.GoToAsync("///MainPage");
+            return true;
         }
-        else
-        {
-            NavigateTo(1);
-        }
-        return true;
-    }
 
-    private async void NavigateTo(int move_index)
-    {
-        if (move_index == 0)
+        private async void OnVehiclesClicked(object sender, EventArgs e)
         {
-            await Shell.Current.GoToAsync("///MainPage");
+            await Shell.Current.GoToAsync("VehiculosAdmin");
         }
-        if (move_index == 1)
+
+        private async void OnReservationsClicked(object sender, EventArgs e)
         {
+            await Shell.Current.GoToAsync("ReservasAdmin");
+        }
+
+        private async void Button_Clicked_Logout(object sender, EventArgs e)
+        {
+            State.AdminUserSession = null;
             await Shell.Current.GoToAsync("LogInAdmin");
         }
     }

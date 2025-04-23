@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="LCSharpMBG7.Views.VehiculoAdminDetail"
+    Title="Detalle Vehículo Admin">
+
+  <ScrollView>
+    <VerticalStackLayout Padding="20" Spacing="15">
+
+      <Entry x:Name="modelEntry"         Placeholder="Modelo (ej. SUV, Sedan…)" />
+      <Entry x:Name="nameEntry"          Placeholder="Nombre" />
+      <Entry x:Name="yearEntry"          Placeholder="Año" Keyboard="Numeric" />
+      <Entry x:Name="priceEntry"         Placeholder="Precio" Keyboard="Numeric" />
+      <Entry x:Name="stateEntry"         Placeholder="Estado (NEW/USED)" />
+      <Editor x:Name="pageContentEditor" Placeholder="Descripción" HeightRequest="100" />
+      <Entry x:Name="imageCarouselEntry" Placeholder="URL Imagen" IsReadOnly="True" />
+
+      <HorizontalStackLayout Spacing="10" VerticalOptions="Center">
+        <Label Text="Promocionado" VerticalOptions="Center" />
+        <Switch x:Name="promotedSwitch" />
+      </HorizontalStackLayout>
+
+      <Button
+        Text="Seleccionar Imagen"
+        BackgroundColor="Gray"
+        TextColor="White"
+        CornerRadius="8"
+        Clicked="OnPickAndUploadImageClicked" />
+
+      <Button
+        x:Name="saveButton"
+        Text="Guardar"
+        BackgroundColor="Black"
+        TextColor="White"
+        CornerRadius="8"
+        Clicked="OnSaveClicked" />
+
+      <Button
+        x:Name="deleteButton"
+        Text="Eliminar"
+        BackgroundColor="Crimson"
+        TextColor="White"
+        CornerRadius="8"
+        IsVisible="False"
+        Clicked="OnDeleteClicked" />
+
+    </VerticalStackLayout>
+  </ScrollView>
+</ContentPage>
