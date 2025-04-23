@@ -3,49 +3,63 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:viewmodel="clr-namespace:LCSharpMBG7.Views"
              x:Class="LCSharpMBG7.Views.CarruselAutosPage"
-             Title="Carrusel"
+             Title=""
              BackgroundColor="White">
-
-    <ContentPage.BindingContext>
-        <viewmodel:CarruselAutosViewModel />
-    </ContentPage.BindingContext>
 
     <VerticalStackLayout Padding="20" Spacing="20">
 
         <!-- Botones de filtro por modelo -->
-        <ScrollView Orientation="Horizontal">
-            <HorizontalStackLayout Spacing="10">
-                <Button Text="Todos" Command="{Binding FiltrarCommand}" CommandParameter="Todos"/>
-                <Button Text="Hatchback" Command="{Binding FiltrarCommand}" CommandParameter="Hatchback"/>
-                <Button Text="Sedán" Command="{Binding FiltrarCommand}" CommandParameter="Sedán"/>
-                <Button Text="SUV" Command="{Binding FiltrarCommand}" CommandParameter="SUV"/>
-                <Button Text="Coupé" Command="{Binding FiltrarCommand}" CommandParameter="Coupé"/>
-            </HorizontalStackLayout>
-        </ScrollView>
+        <HorizontalStackLayout HorizontalOptions="CenterAndExpand">
+            <Button Text="Todos"     Clicked="Button_Clicked_All"       BackgroundColor="White" FontSize="15"    />
+            <Button Text="Hatchback" Clicked="Button_Clicked_Hatchback" BackgroundColor="White" FontSize="15"    />
+            <Button Text="Sedán"     Clicked="Button_Clicked_Sedan"     BackgroundColor="White" FontSize="15"    />
+            <Button Text="SUV"       Clicked="Button_Clicked_SUV"       BackgroundColor="White" FontSize="15"    />
+            <Button Text="Coupé"     Clicked="Button_Clicked_Coupe"     BackgroundColor="White" FontSize="15"    />
+        </HorizontalStackLayout>
 
         <!-- Carrusel de autos -->
-        <CarouselView ItemsSource="{Binding VehiculosFiltrados}" HeightRequest="400">
-            <CarouselView.ItemTemplate>
-                <DataTemplate>
-                    <Frame CornerRadius="12" BorderColor="Gray" Padding="10" Margin="10" BackgroundColor="White">
-                        <VerticalStackLayout Spacing="10" HorizontalOptions="Center" VerticalOptions="Center">
-                            <Image Source="{Binding ImageCarousel}" 
-                           HeightRequest="200" 
-                           WidthRequest="300"
-                           Aspect="AspectFill"
-                           HorizontalOptions="Center" />
+        <StackLayout>
 
-                            <Label Text="{Binding Name}" FontSize="20" FontAttributes="Bold" HorizontalOptions="Center" TextColor="Black" />
-                            <Label Text="{Binding Model}" FontSize="16" HorizontalOptions="Center" TextColor="Black"/>
-                            <Label Text="{Binding Year, StringFormat='Año: {0}'}" FontSize="14" HorizontalOptions="Center" TextColor="Black"/>
-                        </VerticalStackLayout>
-                    </Frame>
-                </DataTemplate>
-            </CarouselView.ItemTemplate>
-        </CarouselView>
+            <Label Text="0" x:Name="lbl"/>
 
-        <Label Text="AVISO" TextColor="Black" HorizontalOptions="Center" FontSize="25" FontAttributes="Bold"/>
-        <Label Text="La vista de carrucel está aún en desarrollo y puede presentar errores de crasheo en la aplicación. Se perfeccionará en posterior entrega." TextColor="Black" HorizontalOptions="Center" FontSize="15"/>
+            <Label x:Name="VehicleName" FontSize="Title" TextColor="Black" Padding="0,15,0,15" HorizontalTextAlignment="Center"/>
+
+            <Grid HorizontalOptions="Fill" ColumnDefinitions="Auto,*,Auto" VerticalOptions="Center" HeightRequest="300">
+                <Button 
+                    Text="&lt;" 
+                    x:Name="btn" 
+                    Clicked="BTN_RIGHT" 
+                    Grid.Column="0" 
+                    HorizontalOptions="Start" 
+                    FontSize="30"
+                    BackgroundColor="Transparent"
+                    TextColor="Black"
+                />
+                
+                <Image HorizontalOptions="Center" 
+                       VerticalOptions="Center"
+                       x:Name="VehicleImage"
+                       Grid.Column="1"
+                />
+                
+                <Button 
+                    Text=">" 
+                    x:Name="btnback" 
+                    Clicked="BTN_LEFT" 
+                    Grid.Column="2" 
+                    HorizontalOptions="End" 
+                    FontSize="30"
+                    BackgroundColor="Transparent"
+                    TextColor="Black"
+                />
+                
+            </Grid>
+
+
+            <Button Text="Ver detalles" Margin="0,20,0,0" Padding="0,18,0,18" BackgroundColor="#007AFF" CornerRadius="0" TextColor="White" FontSize="18" />
+            <Button Clicked="Button_Clicked_Menu_Principal" Text="Menú principal" Margin="0,20,0,0" Padding="0,18,0,18" BackgroundColor="Black" CornerRadius="0" TextColor="White" FontSize="18" />
+
+        </StackLayout>
 
     </VerticalStackLayout>
 </ContentPage>
