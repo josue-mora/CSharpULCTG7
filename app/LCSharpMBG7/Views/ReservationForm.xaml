@@ -68,7 +68,7 @@
                     <Border Stroke="Gray" StrokeThickness="1" Padding="0" Margin="0,0,0,15">
                         <Entry x:Name="EntryComentarios" Placeholder="Comentarios" TextColor="Black"/>
                     </Border>
-                    <Button Clicked="Button_Clicked_Confirmar" Text="Confirmar" Margin="0,5,0,0" Padding="0,18,0,18" BackgroundColor="#007AFF" CornerRadius="0" TextColor="White" FontSize="18" FontAttributes="Bold" />
+                    <Button Clicked="Button_Clicked_Confirmar" Text="Confirmar" Margin="0,5,0,15" Padding="0,18,0,18" BackgroundColor="#007AFF" CornerRadius="0" TextColor="White" FontSize="18" FontAttributes="Bold" />
                 </StackLayout>
             </StackLayout>
         </ScrollView>
