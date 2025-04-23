@@ -66,6 +66,7 @@
 	  <None Remove="Resources\Images\clase_g63_suv.png" />
 	  <None Remove="Resources\Images\clase_g_suv.png" />
 	  <None Remove="Resources\Images\cla_amg.png" />
+	  <None Remove="Resources\Images\cla_a_sedan.png" />
 	  <None Remove="Resources\Images\eqe_suv.png" />
 	  <None Remove="Resources\Images\eqs_sedan.png" />
 	  <None Remove="Resources\Images\finalmain.png" />
@@ -145,6 +146,7 @@
 	  <MauiImage Include="Resources\Images\clase_g63_suv.png" />
 	  <MauiImage Include="Resources\Images\clase_g_suv.png" />
 	  <MauiImage Include="Resources\Images\cla_amg.png" />
+	  <MauiImage Include="Resources\Images\cla_a_sedan.png" />
 	  <MauiImage Include="Resources\Images\eqe_suv.png" />
 	  <MauiImage Include="Resources\Images\eqs_sedan.png" />
 	  <MauiImage Include="Resources\Images\finalmain.png" />

@@ -10,5 +10,10 @@
         public static string T_IMG = "T_IMG"; // Single image.
         public static string T_RESERVA = "T_RESERVA"; // Button to make a reservation of the vehicle.
         public static string T_WEBVIEW = "T_WEBVIEW"; // Displays a button text that follows to a webview
+
+        // Firebase does not store multine strings. Therefore, a hack fix is done with this token.
+        // Encountering this token results on the same logic applied on line jumps in the
+        // interpreted code.
+        public static string T_TS = "___"; 
     }
 }

@@ -26,7 +26,7 @@ public partial class VehicleDetails : ContentPage
 
         foreach (string item in tokens)
         {
-            string _item = "T_" + item.Replace("\r", "").Replace("\n", "");
+            string _item = "T_" + item.Replace("\r", "").Replace("\n", "").Replace(VehicleDetailsTokens.T_TS, "");
             if (_item == "T_") continue;
             Debug.Write(_item);
 
@@ -239,6 +239,7 @@ public partial class VehicleDetails : ContentPage
 
     private void Button_Clicked_Process_Prepared_Payload(object sender, EventArgs e)
     {
+        /*
         string _payload = @"T_TITLE_1Diseño
 T_TITLE_2El primer Clase A en diseño de zaga escalonada.
 
@@ -260,6 +261,8 @@ T_RESERVA
 
 T_BR
 T_BR";
+*/
+        string _payload = @"T_IMGhttps://www.mercedes-benz.cr/documents/17944382/18096827/MBMX-2022-AMG-E-SEDAN-CH-2-1-DR.jpg/1970efa5-ebbf-9439-d652-1330c8dd758b?t=1649275369715___T_BR___T_RESERVA___T_BR___T_TITLE_1Diseño___T_TITLE_2La primera impresión no ofrece una segunda oportunidad.___T_TITLE_3Diseño Exterior___T_PPEs habitual emplear términos como «deportividad» o «dinamismo» en relación con los automóviles deportivos. El modelo 63 S del Clase E de Mercedes-AMG corrobora esa impresión desde el primer momento. Irradia poderío incluso antes de ponerse en marcha. Y su presencia expresiva inspira respeto.___T_IMGhttps://www.mercedes-benz.cr/documents/17944382/18096827/dise%C3%B1o+exterior.jpg___T_IMGhttps://www.mercedes-benz.cr/documents/17944382/18096827/dise%C3%B1o+exterior+2.jpg___T_TITLE_2Parrilla del radiador en diseño específico AMG___T_PPLa llamativa parrilla del radiador específica de AMG, en forma de A, junto con el exclusivo faldón delantero AMG en diseño Jet-Wing con nuevo splitter frontal y entradas de aire modificadas, reflejan a simple vista el carácter audaz y resuelto de este modelo. Todo ello acompañado de los nuevos faros LED, aún más expresivos y sugerentes.___T_RESERVA___T_BR";
         ProcessPayload(_payload);
     }
 }

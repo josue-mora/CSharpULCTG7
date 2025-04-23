@@ -6,6 +6,8 @@
 
     <Grid RowDefinitions="Auto,*,Auto">
 
+        <!--<Button  Text="Upload data" Clicked="Button_Clicked_Upload_Data" />-->
+
         <!-- BARRA SUPERIOR -->
         <Grid Grid.Row="0" BackgroundColor="Black" HeightRequest="60" VerticalOptions="Start">
             <Image Source="mercedeslogo.png" HeightRequest="40" HorizontalOptions="Center" VerticalOptions="Center" />
@@ -58,4 +60,5 @@
         </Grid>
 
     </Grid>
+    
 </ContentPage>

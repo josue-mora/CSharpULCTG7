@@ -12,7 +12,7 @@ namespace LCSharpMBG7.Code.Services
         // requests to the database.
         public static FirebaseClient CreateConnection()
         {
-            FirebaseClient firebase = new FirebaseClient("https://mercedesshowroom-679f7-default-rtdb.firebaseio.com/");
+            FirebaseClient firebase = new FirebaseClient("https://crudfirebaselcsharp-default-rtdb.firebaseio.com/");
             return firebase;
         }
     }
