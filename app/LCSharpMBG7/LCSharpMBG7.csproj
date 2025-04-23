@@ -97,6 +97,9 @@
 	  <MauiXaml Update="Views\AdminDashboard.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Views\ReservationForm.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\TestRoom.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

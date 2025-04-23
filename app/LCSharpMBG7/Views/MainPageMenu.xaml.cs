@@ -91,7 +91,7 @@ public partial class MainPageMenu : ContentPage
 
     private async void GoToCotizador(object sender, EventArgs e)
     {
-        await Shell.Current.GoToAsync("Cotizador");
+        await DisplayAlert("Información", "Para cotizar un vehículo, seleccione uno de nuestros vehículos seleccionados o utilize el navegador de vehículos.", "Ok");
     }
 
     private async void GoToSucursales(object sender, EventArgs e)

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LCSharpMBG7.Views.ReservationForm"
+             Title=""
+             BackgroundColor="White">
+    <Grid RowDefinitions="Auto,*">
+
+        <!-- Imagen superior -->
+        <Grid Grid.Row="0" BackgroundColor="Black" HeightRequest="60" VerticalOptions="Start">
+            <Image Source="mercedeslogo.png" HeightRequest="40" HorizontalOptions="Center" VerticalOptions="Center" />
+        </Grid>
+
+        
+        <ScrollView Grid.Row="1">
+            <!-- Presentacion -->
+            <StackLayout>
+                <Label 
+                    Text="Excelente elección" 
+                    TextColor="Black" 
+                    HorizontalOptions="Center"
+                    Margin="0,20,0,0"
+                    FontSize="30"
+                />
+                <BoxView 
+                    HeightRequest="1" 
+                    HorizontalOptions="Fill" 
+                    Color="Gray" 
+                    Margin="40,20,40,10"
+                />
+                <!-- Informacion del vehiculo -->
+                <StackLayout BackgroundColor="#efefef" Padding="0,10,0,15" Margin="0,0,0,15">
+
+                    <Label x:Name="LabelCarTitle"  TextColor="Black" Margin="0,0,0,30" FontSize="22" HorizontalOptions="Center"/>
+
+                    <Image x:Name="ImgCarImage" WidthRequest="300"/>
+
+                    <Grid HorizontalOptions="Center">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <StackLayout Grid.Column="0">
+                            <Label Text="Módelo:" FontSize="17" TextColor="Black"    Margin="0,0,0,0" FontAttributes="Bold"/>
+                            <Label Text="Nombre:" FontSize="17" TextColor="Black"    Margin="0,0,0,0" FontAttributes="Bold"/>
+                            <Label Text="Año:"    FontSize="17" TextColor="Black"    Margin="0,0,0,0" FontAttributes="Bold"/>
+                        </StackLayout>
+
+                        <StackLayout Grid.Column="1">
+                            <Label x:Name="LabelModel" Text="Coupé" FontSize="17" TextColor="Black"     Margin="40,0,0,0"/>
+                            <Label x:Name="LabelName" Text="GS3"   FontSize="17" TextColor="Black"     Margin="40,0,0,0"/>
+                            <Label x:Name="LabelYear" Text="2025"  FontSize="17" TextColor="Black"     Margin="40,0,0,0"/>
+                        </StackLayout>
+                    </Grid>
+                    
+                </StackLayout>
+
+                <!-- Formulario -->
+                <Label Text="Por favor, complete sus datos" TextColor="Black" Margin="45,0,0,0"/>
+                <StackLayout Margin="60,20,60,0">
+                    <Border Stroke="Gray" StrokeThickness="1" Padding="0" Margin="0,0,0,15">
+                        <Entry x:Name="EntryNombre" Placeholder="Nombre completo" TextColor="Black"/>
+                    </Border>
+                    <Border Stroke="Gray" StrokeThickness="1" Padding="0" Margin="0,0,0,15">
+                        <Entry x:Name="EntryCedula" Placeholder="Cédula" TextColor="Black"/>
+                    </Border>
+                    <Border Stroke="Gray" StrokeThickness="1" Padding="0" Margin="0,0,0,15">
+                        <Entry x:Name="EntryComentarios" Placeholder="Comentarios" TextColor="Black"/>
+                    </Border>
+                    <Button Clicked="Button_Clicked_Confirmar" Text="Confirmar" Margin="0,5,0,0" Padding="0,18,0,18" BackgroundColor="#007AFF" CornerRadius="0" TextColor="White" FontSize="18" FontAttributes="Bold" />
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>

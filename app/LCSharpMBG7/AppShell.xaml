@@ -11,6 +11,7 @@
     <ShellContent Title="TestRoom" ContentTemplate="{DataTemplate local:Views.TestRoom}" Route="TestRoom" />
     <ShellContent Title="VehicleDetails" ContentTemplate="{DataTemplate local:Views.VehicleDetails}" Route="VehicleDetails" />
     <ShellContent Title="FirebaseDataPage" ContentTemplate="{DataTemplate local:Views.FirebaseDataPage}" Route="FirebaseDataPage" />
+    <ShellContent Title="ReservationForm" ContentTemplate="{DataTemplate local:Views.ReservationForm}" Route="ReservationForm" />
 
 
     <ShellContent

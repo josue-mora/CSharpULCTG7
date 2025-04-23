@@ -4,13 +4,11 @@ using System.Diagnostics;
 namespace LCSharpMBG7.Views;
 public partial class VehicleDetails : ContentPage
 {
-    private bool DevMode = false;
-
     public VehicleDetails()
     {
         InitializeComponent();
         
-        if (DevMode == true) return;
+        if (State.DevMode == true) return;
         DevTools.Children.Clear();
         ProcessPayload(State.vehicles[State.SelectedVehicleIndex].PageContent);
     }
@@ -236,7 +234,7 @@ public partial class VehicleDetails : ContentPage
 
     private async void Button_Clicked_Reserva(object sender, EventArgs e)
     {
-        await DisplayAlert("Información", "Reservar el vehiculo", "OK");
+        await Shell.Current.GoToAsync("ReservationForm");
     }
 
     private void Button_Clicked_Process_Prepared_Payload(object sender, EventArgs e)

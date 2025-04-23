@@ -27,7 +27,8 @@ namespace LCSharpMBG7.Code.DB.Dummies
             for (int i = 0; i < vehicleModels.Count; i++) vehicleModels[i].Id = vehicleModels[i].Id + i;
 
             // Dev placeholder.
-            vehicleModels[vehicleModels.Count - 1].PageContent = @"T_TITLE_1Mi vehiculo Clase G63";
+            vehicleModels[vehicleModels.Count - 1].PageContent = @"T_TITLE_1Mi vehiculo Clase G63
+T_RESERVA";
 
             return vehicleModels;
         }
