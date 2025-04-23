@@ -105,4 +105,19 @@ public partial class CarruselAutosPage : ContentPage
         //await Task.Delay(400);
         await Shell.Current.GoToAsync("..");
     }
+
+    private async void Button_Clicked_Ver_Detalles(object sender, EventArgs e)
+    {
+        int _selectedVehicle = -1;
+        for (int i = 0; i < State.vehicles.Count; i++)
+        {
+            if (State.vehicles[i].Id == filteredVehicles[index].Id)
+            {
+                _selectedVehicle = i;
+                break;
+            }
+        }
+        State.SelectedVehicleIndex = _selectedVehicle;
+        await Shell.Current.GoToAsync("VehicleDetails");
+    }
 }

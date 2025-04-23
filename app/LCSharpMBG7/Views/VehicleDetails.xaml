@@ -5,10 +5,14 @@
              BackgroundColor="Black">
     <ScrollView>
         <VerticalStackLayout Margin="33,0,33,0">
-            <Editor x:Name="EditorPayload" Text="T_TITLE_1Diseño" TextColor="White" />
-            <Button Text="Process payload" Clicked="Button_Clicked_Process_Payload" />
-            <Button Text="Process prepared payload" Clicked="Button_Clicked_Process_Prepared_Payload" />
-            <Button Text="Clear canvas" Clicked="Button_Clicked_Clear" />
+            <!--Herramientas de desarrollador-->
+            <StackLayout x:Name="DevTools" Padding="0" Margin="0" Spacing="0">
+                <Editor x:Name="EditorPayload" Text="T_TITLE_1Diseño" TextColor="White" />
+                <Button Text="Process payload" Clicked="Button_Clicked_Process_Payload" />
+                <Button Text="Process prepared payload" Clicked="Button_Clicked_Process_Prepared_Payload" />
+                <Button Text="Clear canvas" Clicked="Button_Clicked_Clear" />
+            </StackLayout>
+            <!--Contenido cargado dinamicamente-->
             <StackLayout x:Name="ContentBlock" Padding="0" Margin="0" Spacing="0" />
             <WebView x:Name="webViewElement" />
         </VerticalStackLayout>

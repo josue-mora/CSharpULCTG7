@@ -12,10 +12,16 @@
     <ShellContent Title="VehicleDetails" ContentTemplate="{DataTemplate local:Views.VehicleDetails}" Route="VehicleDetails" />
     <ShellContent Title="FirebaseDataPage" ContentTemplate="{DataTemplate local:Views.FirebaseDataPage}" Route="FirebaseDataPage" />
 
-    <!-- Detalles de vehículos AMG -->
-    <ShellContent Title="AMG GLE" ContentTemplate="{DataTemplate views:AmgGle}" Route="AmgGle" />
-    <ShellContent Title="AMG GLC" ContentTemplate="{DataTemplate views:AmgGlc}" Route="AmgGlc" />
-    <ShellContent Title="AMG Clase C" ContentTemplate="{DataTemplate views:AmgClaseC}" Route="AmgClaseC" />
+
+    <ShellContent
+        Title="Catálogo de AMG"
+        ContentTemplate="{DataTemplate views:CarruselAutosPage}"
+        Route="CarruselAutosPage" />
+
+    <ShellContent
+        Title="TestRoom"
+        ContentTemplate="{DataTemplate local:Views.TestRoom}"
+        Route="Views.TestRoom" />
 
     <!-- Otras páginas con rutas únicas -->
     <ShellContent Title="Vehiculos"
@@ -30,6 +36,30 @@
               ContentTemplate="{DataTemplate views:Sucursales}"
               Route="Sucursales" />
 
-    <ShellContent Title="Catálogo de AMG" ContentTemplate="{DataTemplate views:CarruselAutosPage}" Route="CarruselAutosPage" />
+
+    <ShellContent
+        Title="AMG GLC"
+        ContentTemplate="{DataTemplate views:AmgGlc}"
+        Route="AmgGlc" />   
+
+    <ShellContent
+        Title="AMG Clase C"
+        ContentTemplate="{DataTemplate views:AmgClaseC}"
+        Route="AmgClaseC" />
+
+    <ShellContent
+        Title="Vehiculos"
+        ContentTemplate="{DataTemplate views:Vehiculos}"
+        Route="AmgClaseC" />
+
+    <ShellContent
+        Title="Cotizador"
+        ContentTemplate="{DataTemplate views:Cotizador}"
+        Route="AmgClaseC" />
+
+    <ShellContent
+        Title="Sucursales"
+        ContentTemplate="{DataTemplate views:Sucursales}"
+        Route="AmgClaseC" />
 
 </Shell>

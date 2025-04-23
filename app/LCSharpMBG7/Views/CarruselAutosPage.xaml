@@ -56,7 +56,7 @@
             </Grid>
 
 
-            <Button Text="Ver detalles" Margin="0,20,0,0" Padding="0,18,0,18" BackgroundColor="#007AFF" CornerRadius="0" TextColor="White" FontSize="18" />
+            <Button Clicked="Button_Clicked_Ver_Detalles"  Text="Ver detalles" Margin="0,20,0,0" Padding="0,18,0,18" BackgroundColor="#007AFF" CornerRadius="0" TextColor="White" FontSize="18" />
             <Button Clicked="Button_Clicked_Menu_Principal" Text="Menú principal" Margin="0,20,0,0" Padding="0,18,0,18" BackgroundColor="Black" CornerRadius="0" TextColor="White" FontSize="18" />
 
         </StackLayout>

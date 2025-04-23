@@ -1,5 +1,4 @@
 using LCSharpMBG7.Code.Logical;
-using LCSharpMBG7.Code.Models;
 
 namespace LCSharpMBG7.Views;
 
@@ -68,19 +67,17 @@ public partial class MainPageMenu : ContentPage
             // Redirigir según el nombre del vehículo
             button.Clicked += async (s, e) =>
             {
-                //se evalúa el nombre del vehículo y se asocia con una página (Route) registrada
-                string route = vehicle.Name switch
+                int _selectedVehicle = -1;
+                for (int i = 0; i < State.vehicles.Count; i++)
                 {
-                    "GLE SUV" => "AmgGle",
-                    "GLC SUV" => "AmgGlc",
-                    "Clase C Sedan" => "AmgClaseC",
-                    _ => null
-                };
-
-                if (route != null)
-                    await Shell.Current.GoToAsync(route);
-                else
-                    await Application.Current.MainPage.DisplayAlert("Ruta no encontrada", $"No hay una página asociada al vehículo '{vehicle.Name}'.", "OK");
+                    if (State.vehicles[i].Id == vehicle.Id)
+                    {
+                        _selectedVehicle = i;
+                        break;
+                    }
+                }
+                State.SelectedVehicleIndex = _selectedVehicle;
+                await Shell.Current.GoToAsync("VehicleDetails");
             };
 
             PromotedVehiclesStack.Children.Add(button);

@@ -4,9 +4,15 @@ using System.Diagnostics;
 namespace LCSharpMBG7.Views;
 public partial class VehicleDetails : ContentPage
 {
+    private bool DevMode = false;
+
     public VehicleDetails()
     {
         InitializeComponent();
+        
+        if (DevMode == true) return;
+        DevTools.Children.Clear();
+        ProcessPayload(State.vehicles[State.SelectedVehicleIndex].PageContent);
     }
 
     private void Button_Clicked_Process_Payload(object sender, EventArgs e)
@@ -74,8 +80,6 @@ public partial class VehicleDetails : ContentPage
             }
             if (_item.Contains(VehicleDetailsTokens.T_WEBVIEW))
             {
-                //var con = Connectivity.NetworkAccess;
-                //Debug.WriteLine(con == NetworkAccess.Internet);
                 CreateWebView(_item);
                 continue;
             }
@@ -84,7 +88,6 @@ public partial class VehicleDetails : ContentPage
 
     private void CreateWebView(string token)
     {
-        // T_WEBVIEWDescargar manual__https://www.mercedes-benz.cr/documents/17944382/45813184/Cat%C3%A1logo+A+Sed%C3%A1n+%281%29.pdf
         try
         {
             string[] _tokens = token
@@ -97,11 +100,11 @@ public partial class VehicleDetails : ContentPage
             {
                 Text = _tokens[0],
                 BorderWidth = 0,
-                BackgroundColor = Colors.Gainsboro,
-                TextColor = Colors.White,
+                BackgroundColor = Colors.White,
+                TextColor = Colors.Black,
                 FontSize = 14,
                 CornerRadius = 0,
-                Padding = new Thickness(0, 17, 0, 17)
+                Padding = new Thickness(0, 17, 0, 17),
             };
             button.Clicked += (sender, e) =>
             {
