@@ -26,7 +26,7 @@
       <Entry
         Grid.Row="2"
         x:Name="usernameEntry"
-        Placeholder="Correo electrónico"
+        Placeholder="Usuario"
         Keyboard="Email"
         TextColor="Black" />
 

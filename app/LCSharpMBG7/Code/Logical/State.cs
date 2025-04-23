@@ -18,5 +18,6 @@ namespace LCSharpMBG7.Code.Logical
         // Selected vehicle for review. Stores index in List.
         public static int SelectedVehicleIndex = 0;
         public static bool DevMode = false;
+        public static string OnAdminAction = "";
     }
 }

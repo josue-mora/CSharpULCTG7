@@ -21,14 +21,19 @@
         <Switch x:Name="promotedSwitch" />
       </HorizontalStackLayout>
 
-      <Button
+        <HorizontalStackLayout Spacing="10" VerticalOptions="Center">
+            <Label Text="Activo" VerticalOptions="Center" />
+            <Switch x:Name="activeSwitch" />
+        </HorizontalStackLayout>
+
+            <Button
         Text="Seleccionar Imagen"
         BackgroundColor="Gray"
         TextColor="White"
         CornerRadius="8"
         Clicked="OnPickAndUploadImageClicked" />
 
-      <Button
+            <Button
         x:Name="saveButton"
         Text="Guardar"
         BackgroundColor="Black"
@@ -36,15 +41,6 @@
         CornerRadius="8"
         Clicked="OnSaveClicked" />
 
-      <Button
-        x:Name="deleteButton"
-        Text="Eliminar"
-        BackgroundColor="Crimson"
-        TextColor="White"
-        CornerRadius="8"
-        IsVisible="False"
-        Clicked="OnDeleteClicked" />
-
-    </VerticalStackLayout>
+        </VerticalStackLayout>
   </ScrollView>
 </ContentPage>

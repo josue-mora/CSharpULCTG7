@@ -1,7 +1,7 @@
-using Firebase.Database.Query;
-using Firebase.Storage;                 
+using Firebase.Storage;
+using LCSharpMBG7.Code.Controllers;
+using LCSharpMBG7.Code.Logical;
 using LCSharpMBG7.Code.Models;
-using LCSharpMBG7.Code.Services;
 using MP = Microsoft.Maui.Media.MediaPicker;
 using MPOptions = Microsoft.Maui.Media.MediaPickerOptions;
 
@@ -22,36 +22,27 @@ namespace LCSharpMBG7.Views
         {
             base.OnAppearing();
 
-            if (!string.IsNullOrEmpty(VehicleId))
+            VehicleModel vehicle = new VehicleModel();
+
+            if (State.OnAdminAction == "edit_vehicle")
             {
-                var items = await FirebaseHelper
-                    .CreateConnection()
-                    .Child("Vehicles")
-                    .OnceAsync<VehicleModel>();
-
-                var entry = items.FirstOrDefault(x => x.Object.Id == VehicleId);
-                if (entry != null)
-                {
-                    _firebaseKey = entry.Key;
-                    var v = entry.Object;
-
-                    modelEntry.Text          = v.Model;
-                    nameEntry.Text           = v.Name;
-                    yearEntry.Text           = v.Year.ToString();
-                    priceEntry.Text          = v.Price.ToString();
-                    stateEntry.Text          = v.State;
-                    pageContentEditor.Text   = v.PageContent;
-                    imageCarouselEntry.Text  = v.ImageCarousel;
-                    promotedSwitch.IsToggled = v.Promoted;
-
-                    deleteButton.IsVisible   = true;
-                }
+                vehicle = State.vehicles[State.SelectedVehicleIndex];
             }
+
+            modelEntry.Text = vehicle.Model;
+            nameEntry.Text = vehicle.Name;
+            yearEntry.Text = vehicle.Year.ToString();
+            priceEntry.Text = vehicle.Price.ToString();
+            stateEntry.Text = vehicle.State;
+            pageContentEditor.Text = vehicle.PageContent;
+            imageCarouselEntry.Text = vehicle.ImageCarousel;
+            promotedSwitch.IsToggled = vehicle.Promoted;
+            activeSwitch.IsToggled = vehicle.Active;
         }
 
         private async void OnSaveClicked(object sender, EventArgs e)
         {
-            int.TryParse(yearEntry.Text,  out var year);
+            int.TryParse(yearEntry.Text, out var year);
             int.TryParse(priceEntry.Text, out var price);
 
             var vehicle = new VehicleModel(
@@ -62,28 +53,23 @@ namespace LCSharpMBG7.Views
                 stateEntry.Text!,
                 pageContentEditor.Text!,
                 imageCarouselEntry.Text!,
-                promotedSwitch.IsToggled);
+                promotedSwitch.IsToggled
+                );
+            vehicle.Active = activeSwitch.IsToggled;
 
-            var fb = FirebaseHelper.CreateConnection();
-            if (string.IsNullOrEmpty(_firebaseKey))
-                await fb.Child("Vehicles").PostAsync(vehicle);
+            if (State.OnAdminAction == "create_vehicle")
+            {
+                await VehicleController.AddVehicleAsync(vehicle);
+                await DisplayAlert("Hecho", "Se ha guardado el vehículo.", "OK");
+            }
             else
-                await fb.Child("Vehicles").Child(_firebaseKey!).PutAsync(vehicle);
+            {
+                // Edit.
+                vehicle.Id = State.vehicles[State.SelectedVehicleIndex].Id;
+                await VehicleController.UpdateVehicleAsync(State.vehicles[State.SelectedVehicleIndex].Id, vehicle);
+                await DisplayAlert("Hecho", "El vehículo ha sido editado.", "OK");
+            }
 
-            await Shell.Current.GoToAsync("..");
-        }
-
-        private async void OnDeleteClicked(object sender, EventArgs e)
-        {
-            if (string.IsNullOrEmpty(_firebaseKey)) return;
-
-            await FirebaseHelper
-                .CreateConnection()
-                .Child("Vehicles")
-                .Child(_firebaseKey)
-                .DeleteAsync();
-
-            await Shell.Current.GoToAsync("..");
         }
 
         private async void OnPickAndUploadImageClicked(object sender, EventArgs e)
@@ -91,9 +77,9 @@ namespace LCSharpMBG7.Views
             try
             {
                 // 1) Pick a photo with the MAUI API
-                var photo = await MP.PickPhotoAsync(new MPOptions 
-                { 
-                    Title = "Selecciona una imagen" 
+                var photo = await MP.PickPhotoAsync(new MPOptions
+                {
+                    Title = "Selecciona una imagen"
                 });
                 if (photo == null)
                     return;
@@ -102,7 +88,7 @@ namespace LCSharpMBG7.Views
                 using var stream = await photo.OpenReadAsync();
 
                 // 3) Unique filename
-                var ext      = Path.GetExtension(photo.FileName);
+                var ext = Path.GetExtension(photo.FileName);
                 var filename = $"{Guid.NewGuid()}{ext}";
 
                 // 4) Instantiate the .NET storage client

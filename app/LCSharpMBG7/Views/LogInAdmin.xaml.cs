@@ -30,53 +30,41 @@ namespace LCSharpMBG7.Views
 
         private async void OnLoginClicked(object sender, EventArgs e)
         {
-            var email = usernameEntry.Text?.Trim();
-            var password = passwordEntry.Text;
-
-            if (string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(password))
+            if (State.users == null || State.users.Count() == 0)
             {
-                await DisplayAlert("Error", "Correo y contraseña son requeridos.", "OK");
+                await DisplayAlert("Aviso", "No hay usuarios en la base de datos.", "OK");
                 return;
             }
-
-            try
+            // Looks for the user in memory.
+            string input_user = usernameEntry.Text;
+            string input_password = passwordEntry.Text;
+            int user_index = -1; // -1 means does not exist.
+            for (int i = 0; i < State.users.Count(); i++)
             {
-                var firebase = FirebaseHelper.CreateConnection();
-
-                // Usa "Users" con mayúscula
-                var allUsers = await firebase
-                    .Child("Users")
-                    .OnceAsync<UserModel>();
-
-                // Depuración: ¿cuántos nodos trajiste?
-                System.Diagnostics.Debug.WriteLine($"Firebase: encontré {allUsers.Count} usuarios.");
-
-                // Filtramos localmente
-                var match = allUsers
-                    .Select(u => u.Object)
-                    .FirstOrDefault(u =>
-                        u.Email?.Trim().Equals(email, StringComparison.OrdinalIgnoreCase) == true
-                        && u.Password == password);
-
-                if (match == null)
+                if (State.users[i].Name.ToLower() == input_user.ToLower())
                 {
-                    await DisplayAlert(
-                        "Credencial incorrecta",
-                        "El correo o la contraseña son incorrectos.",
-                        "OK");
-                    return;
+                    user_index = i;
+                    break;
                 }
-
-                State.AdminUserSession = match;
-                await Shell.Current.GoToAsync("AdminDashboard");
             }
-            catch (Exception ex)
+            string message_wrong_process_title = "Credencial incorrecto";
+            string message_wrong_process = "El usuario no existe o la contraseña es incorrecta.";
+            if (user_index == -1)
             {
-                await DisplayAlert(
-                    "Error de conexión",
-                    $"No se pudo conectar a Firebase:\n{ex.Message}",
-                    "OK");
+                await DisplayAlert(message_wrong_process_title, message_wrong_process, "OK");
+                return;
             }
+            // User exists. Checks for credentials.
+            if (State.users[user_index].Password != input_password)
+            {
+                await DisplayAlert(message_wrong_process_title, message_wrong_process, "OK");
+                return;
+            }
+            // Reached this point, credentials are correct.
+            // Sets admin session in state.
+            // Would move to admin panel now.
+            State.AdminUserSession = State.users[user_index];
+            await Shell.Current.GoToAsync("AdminDashboard");
         }
     }
 }
