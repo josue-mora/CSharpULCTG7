@@ -1,73 +1,63 @@
-using Firebase.Database.Query;
+using LCSharpMBG7.Code.Controllers;
 using LCSharpMBG7.Code.Models;
-using LCSharpMBG7.Code.Services;
 
 namespace LCSharpMBG7.Views
 {
     [QueryProperty(nameof(ReservationId), "reservationId")]
     public partial class ReservaAdminDetail : ContentPage
     {
-        private string? _firebaseKey;
+        private string? _reservationKey;
         public string? ReservationId { get; set; }
 
-        public ReservaAdminDetail()
-        {
-            InitializeComponent();
-        }
+        public ReservaAdminDetail() => InitializeComponent();
 
         protected override async void OnAppearing()
         {
             base.OnAppearing();
+            if (string.IsNullOrEmpty(ReservationId)) return;
 
-            // Solo se corre si hay un ID
-            if (!string.IsNullOrEmpty(ReservationId))
-            {
-                var fb = FirebaseHelper.CreateConnection();
-                var all = await fb.Child("Reservations").OnceAsync<ReservationModel>();
-                var item = all.FirstOrDefault(x => x.Object.Id == ReservationId);
-                if (item != null)
-                {
-                    _firebaseKey = item.Key;
-                    var r = item.Object;
+            var r = await ReservationController.GetReservationAsync(ReservationId);
+            if (r == null) return;
 
-                    vehicleIdEntry.Text       = r.IdVehicle;
-                    dateReservationEntry.Text = r.DateReservation;
-                    dateAppointmentEntry.Text = r.DateAppointment;
-                    clientIdEntry.Text        = r.ClientIdCardNumber;
-                    clientNameEntry.Text      = r.ClientName;
-                    commentEntry.Text         = r.ClientComment;
-
-                    deleteButton.IsVisible    = true;
-                }
-            }
+            _reservationKey            = r.Id;
+            vehicleIdEntry.Text        = r.IdVehicle;
+            dateReservationEntry.Text  = r.DateReservation;
+            dateAppointmentEntry.Text  = r.DateAppointment;
+            clientIdEntry.Text         = r.ClientIdCardNumber;
+            clientNameEntry.Text       = r.ClientName;
+            commentEntry.Text          = r.ClientComment;
+            deleteButton.IsVisible     = true;
         }
 
         private async void OnSaveClicked(object sender, EventArgs e)
         {
             var r = new ReservationModel(
-                vehicleIdEntry.Text,
-                dateReservationEntry.Text,
-                dateAppointmentEntry.Text,
-                clientIdEntry.Text,
-                clientNameEntry.Text,
-                commentEntry.Text);
+                vehicleIdEntry.Text!,
+                dateReservationEntry.Text!,
+                dateAppointmentEntry.Text!,
+                clientIdEntry.Text!,
+                clientNameEntry.Text!,
+                commentEntry.Text!);
 
-            var fb = FirebaseHelper.CreateConnection();
-            if (string.IsNullOrEmpty(_firebaseKey))
-                await fb.Child("Reservations").PostAsync(r);
+            if (string.IsNullOrEmpty(_reservationKey))
+                _reservationKey = await ReservationController.AddReservationAsync(r);
             else
-                await fb.Child("Reservations").Child(_firebaseKey!).PutAsync(r);
+            {
+                r.Id = _reservationKey;
+                await ReservationController.UpdateReservationAsync(_reservationKey, r);
+            }
 
+            await DisplayAlert("Éxito", "Guardado correctamente.", "OK");
             await Shell.Current.GoToAsync("..");
         }
 
         private async void OnDeleteClicked(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(_firebaseKey))
-                return;
+            if (_reservationKey == null) return;
+            if (!await DisplayAlert("Confirmar", "¿Eliminar reserva?", "Sí", "No")) return;
 
-            var fb = FirebaseHelper.CreateConnection();
-            await fb.Child("Reservations").Child(_firebaseKey).DeleteAsync();
+            await ReservationController.DeleteReservationAsync(_reservationKey);
+            await DisplayAlert("Eliminado", "Reserva borrada.", "OK");
             await Shell.Current.GoToAsync("..");
         }
     }

@@ -3,30 +3,56 @@
   xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
   xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
   x:Class="LCSharpMBG7.Views.VehiculosAdmin"
-  Title="Vehículos">
+  Title="Vehículos Admin">
 
   <Grid Padding="10">
-    <VerticalStackLayout Spacing="10">
+    <VerticalStackLayout Spacing="15">
+
       <Button
-        Text="＋ Nuevo vehículo"
-        CornerRadius="8"
+        Text="＋ Nuevo Vehículo"
         BackgroundColor="Black"
         TextColor="White"
-        Clicked="OnCreateClicked"/>
+        CornerRadius="8"
+        Clicked="OnCreateClicked" />
 
-      <ListView
+      <CollectionView
         x:Name="VehiclesList"
-        SelectionMode="Single"
-        HasUnevenRows="True"
-        ItemSelected="OnItemSelected">
-        <ListView.ItemTemplate>
+        ItemsUpdatingScrollMode="KeepScrollOffset">
+        <CollectionView.ItemTemplate>
           <DataTemplate>
-            <TextCell
-              Text="{Binding Name}"
-              Detail="{Binding Model}" />
+            <Frame
+              CornerRadius="8"
+              Margin="0,5"
+              Padding="10"
+              BorderColor="LightGray">
+              
+              <Frame.GestureRecognizers>
+                <TapGestureRecognizer
+                  Tapped="OnVehicleTapped" />
+              </Frame.GestureRecognizers>
+
+              <HorizontalStackLayout Spacing="10">
+                <Image
+                  Source="{Binding ImageCarousel}"
+                  WidthRequest="60"
+                  HeightRequest="40"
+                  Aspect="AspectFill" />
+                <VerticalStackLayout>
+                  <Label
+                    Text="{Binding Name}"
+                    FontAttributes="Bold"
+                    FontSize="18" />
+                  <Label
+                    Text="{Binding Model}"
+                    FontSize="14"
+                    TextColor="Gray" />
+                </VerticalStackLayout>
+              </HorizontalStackLayout>
+            </Frame>
           </DataTemplate>
-        </ListView.ItemTemplate>
-      </ListView>
+        </CollectionView.ItemTemplate>
+      </CollectionView>
+
     </VerticalStackLayout>
   </Grid>
 </ContentPage>

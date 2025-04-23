@@ -6,27 +6,48 @@
   Title="Reservas Admin">
 
   <Grid Padding="10">
-    <VerticalStackLayout Spacing="10">
+    <VerticalStackLayout Spacing="15">
+
       <Button
         Text="＋ Nueva Reserva"
         BackgroundColor="Black"
         TextColor="White"
         CornerRadius="8"
-        Clicked="OnCreateClicked"/>
+        Clicked="OnCreateClicked" />
 
-      <ListView
+      <CollectionView
         x:Name="ReservationsList"
-        SelectionMode="Single"
-        HasUnevenRows="True"
-        ItemSelected="OnItemSelected">
-        <ListView.ItemTemplate>
+        ItemsUpdatingScrollMode="KeepScrollOffset"
+        ItemsSource="{Binding}">
+        <CollectionView.ItemTemplate>
           <DataTemplate>
-            <TextCell
-              Text="{Binding ClientName}"
-              Detail="{Binding DateAppointment}" />
+            <Frame
+              CornerRadius="8"
+              Margin="0,5"
+              Padding="10"
+              BorderColor="LightGray">
+              
+              <Frame.GestureRecognizers>
+                <TapGestureRecognizer
+                  Tapped="OnReservationTapped"
+                  NumberOfTapsRequired="1" />
+              </Frame.GestureRecognizers>
+
+              <VerticalStackLayout>
+                <Label
+                  Text="{Binding ClientName}"
+                  FontAttributes="Bold"
+                  FontSize="18" />
+                <Label
+                  Text="{Binding DateAppointment}"
+                  FontSize="14"
+                  TextColor="Gray" />
+              </VerticalStackLayout>
+            </Frame>
           </DataTemplate>
-        </ListView.ItemTemplate>
-      </ListView>
+        </CollectionView.ItemTemplate>
+      </CollectionView>
+
     </VerticalStackLayout>
   </Grid>
 </ContentPage>

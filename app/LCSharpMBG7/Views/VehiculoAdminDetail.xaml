@@ -1,46 +1,53 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage
-    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    x:Class="LCSharpMBG7.Views.VehiculoAdminDetail"
-    Title="Detalle Vehículo Admin">
+  xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+  x:Class="LCSharpMBG7.Views.VehiculoAdminDetail"
+  Title="Detalle Vehículo">
 
   <ScrollView>
     <VerticalStackLayout Padding="20" Spacing="15">
 
-      <Entry x:Name="modelEntry"         Placeholder="Modelo (ej. SUV, Sedan…)" />
+      <Entry x:Name="modelEntry"         Placeholder="Modelo" />
       <Entry x:Name="nameEntry"          Placeholder="Nombre" />
       <Entry x:Name="yearEntry"          Placeholder="Año" Keyboard="Numeric" />
       <Entry x:Name="priceEntry"         Placeholder="Precio" Keyboard="Numeric" />
-      <Entry x:Name="stateEntry"         Placeholder="Estado (NEW/USED)" />
+      <Entry x:Name="stateEntry"         Placeholder="Estado" />
       <Editor x:Name="pageContentEditor" Placeholder="Descripción" HeightRequest="100" />
       <Entry x:Name="imageCarouselEntry" Placeholder="URL Imagen" IsReadOnly="True" />
 
-      <HorizontalStackLayout Spacing="10" VerticalOptions="Center">
-        <Label Text="Promocionado" VerticalOptions="Center" />
-        <Switch x:Name="promotedSwitch" />
+      <HorizontalStackLayout Spacing="20">
+        <VerticalStackLayout>
+          <Label Text="Promocionado" />
+          <Switch x:Name="promotedSwitch" />
+        </VerticalStackLayout>
+        <VerticalStackLayout>
+          <Label Text="Activo" />
+          <Switch x:Name="activeSwitch" />
+        </VerticalStackLayout>
       </HorizontalStackLayout>
 
-        <HorizontalStackLayout Spacing="10" VerticalOptions="Center">
-            <Label Text="Activo" VerticalOptions="Center" />
-            <Switch x:Name="activeSwitch" />
-        </HorizontalStackLayout>
-
-            <Button
+      <Button
         Text="Seleccionar Imagen"
         BackgroundColor="Gray"
         TextColor="White"
-        CornerRadius="8"
         Clicked="OnPickAndUploadImageClicked" />
 
-            <Button
+      <Button
         x:Name="saveButton"
         Text="Guardar"
         BackgroundColor="Black"
         TextColor="White"
-        CornerRadius="8"
         Clicked="OnSaveClicked" />
 
-        </VerticalStackLayout>
+      <Button
+        x:Name="deleteButton"
+        Text="Eliminar"
+        BackgroundColor="Crimson"
+        TextColor="White"
+        IsVisible="False"
+        Clicked="OnDeleteClicked" />
+
+    </VerticalStackLayout>
   </ScrollView>
 </ContentPage>

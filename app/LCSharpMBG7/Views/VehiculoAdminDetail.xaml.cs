@@ -18,31 +18,34 @@ namespace LCSharpMBG7.Views
             InitializeComponent();
         }
 
-        protected override async void OnAppearing()
+        protected override void OnAppearing()
         {
             base.OnAppearing();
 
-            VehicleModel vehicle = new VehicleModel();
+            var vehicle = new VehicleModel();
+            deleteButton.IsVisible = false;
 
-            if (State.OnAdminAction == "edit_vehicle")
+            if (State.OnAdminAction == "edit_vehicle" && VehicleId != null)
             {
-                vehicle = State.vehicles[State.SelectedVehicleIndex];
+                vehicle      = State.vehicles[State.SelectedVehicleIndex];
+                _firebaseKey = vehicle.Id;
+                deleteButton.IsVisible = true;
             }
 
-            modelEntry.Text = vehicle.Model;
-            nameEntry.Text = vehicle.Name;
-            yearEntry.Text = vehicle.Year.ToString();
-            priceEntry.Text = vehicle.Price.ToString();
-            stateEntry.Text = vehicle.State;
-            pageContentEditor.Text = vehicle.PageContent;
-            imageCarouselEntry.Text = vehicle.ImageCarousel;
+            modelEntry.Text          = vehicle.Model;
+            nameEntry.Text           = vehicle.Name;
+            yearEntry.Text           = vehicle.Year.ToString();
+            priceEntry.Text          = vehicle.Price.ToString();
+            stateEntry.Text          = vehicle.State;
+            pageContentEditor.Text   = vehicle.PageContent;
+            imageCarouselEntry.Text  = vehicle.ImageCarousel;
             promotedSwitch.IsToggled = vehicle.Promoted;
-            activeSwitch.IsToggled = vehicle.Active;
+            activeSwitch.IsToggled   = vehicle.Active;
         }
 
         private async void OnSaveClicked(object sender, EventArgs e)
         {
-            int.TryParse(yearEntry.Text, out var year);
+            int.TryParse(yearEntry.Text,  out var year);
             int.TryParse(priceEntry.Text, out var price);
 
             var vehicle = new VehicleModel(
@@ -53,56 +56,55 @@ namespace LCSharpMBG7.Views
                 stateEntry.Text!,
                 pageContentEditor.Text!,
                 imageCarouselEntry.Text!,
-                promotedSwitch.IsToggled
-                );
-            vehicle.Active = activeSwitch.IsToggled;
+                promotedSwitch.IsToggled)
+            {
+                Active = activeSwitch.IsToggled
+            };
 
             if (State.OnAdminAction == "create_vehicle")
             {
                 await VehicleController.AddVehicleAsync(vehicle);
-                await DisplayAlert("Hecho", "Se ha guardado el vehículo.", "OK");
+                await DisplayAlert("Hecho", "Vehículo creado correctamente.", "OK");
             }
             else
             {
-                // Edit.
-                vehicle.Id = State.vehicles[State.SelectedVehicleIndex].Id;
-                await VehicleController.UpdateVehicleAsync(State.vehicles[State.SelectedVehicleIndex].Id, vehicle);
-                await DisplayAlert("Hecho", "El vehículo ha sido editado.", "OK");
+                vehicle.Id = _firebaseKey!;
+                await VehicleController.UpdateVehicleAsync(_firebaseKey!, vehicle);
+                await DisplayAlert("Hecho", "Vehículo actualizado correctamente.", "OK");
             }
 
+            await Shell.Current.GoToAsync("..");
+        }
+
+        private async void OnDeleteClicked(object sender, EventArgs e)
+        {
+            if (_firebaseKey == null) return;
+            if (!await DisplayAlert("Confirmar", "¿Eliminar vehículo?", "Sí", "No")) return;
+
+            await VehicleController.DeleteVehicleAsync(_firebaseKey);
+            await DisplayAlert("Hecho", "Vehículo eliminado correctamente.", "OK");
+            await Shell.Current.GoToAsync("..");
         }
 
         private async void OnPickAndUploadImageClicked(object sender, EventArgs e)
         {
             try
             {
-                // 1) Pick a photo with the MAUI API
-                var photo = await MP.PickPhotoAsync(new MPOptions
-                {
-                    Title = "Selecciona una imagen"
-                });
-                if (photo == null)
-                    return;
+                var photo = await MP.PickPhotoAsync(new MPOptions { Title = "Selecciona una imagen" });
+                if (photo == null) return;
 
-                // 2) Open read stream
                 using var stream = await photo.OpenReadAsync();
-
-                // 3) Unique filename
-                var ext = Path.GetExtension(photo.FileName);
+                var ext      = System.IO.Path.GetExtension(photo.FileName);
                 var filename = $"{Guid.NewGuid()}{ext}";
 
-                // 4) Instantiate the .NET storage client
                 var storage = new FirebaseStorage("mercedesshowroom-679f7.firebasestorage.app");
-
-                // 5) Upload and get download URL
                 string downloadUrl = await storage
                     .Child("vehicleImages")
                     .Child(filename)
                     .PutAsync(stream);
 
-                // 6) Save their URL
                 imageCarouselEntry.Text = downloadUrl;
-                await DisplayAlert("Éxito", "Imagen subida correctamente", "OK");
+                await DisplayAlert("Éxito", "Imagen subida correctamente.", "OK");
             }
             catch (Exception ex)
             {
