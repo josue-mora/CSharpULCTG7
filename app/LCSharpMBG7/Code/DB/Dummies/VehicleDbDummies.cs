@@ -19,7 +19,7 @@ namespace LCSharpMBG7.Code.DB.Dummies
             vehicleModels.Add(new VehicleModel("SUV", "GLC SUV", 2025, 0, "NEW", "Auto blanco", "glc_suv.png", false));
             vehicleModels.Add(new VehicleModel("SUV", "EQE SUV", 2025, 0, "NEW", "Auto blanco", "eqe.png", false));
             vehicleModels.Add(new VehicleModel("SUV", "GLA SUV", 2025, 0, "NEW", "Auto blanco", "gla_suv.png", false));
-            vehicleModels.Add(new VehicleModel("SUV", "GLE SUV", 2025, 0, "NEW", "Auto blanco", "gle_suv.png", false));
+            vehicleModels.Add(new VehicleModel("SUV", "GLE SUV", 2025, 0, "NEW", "Auto blanco", "gle_suv.png", true));
             vehicleModels.Add(new VehicleModel("SUV", "Clase G", 2025, 0, "NEW", "Auto blanco", "clase_g_suv.png", false));
             vehicleModels.Add(new VehicleModel("SUV", "Clase G63", 2025, 0, "NEW", "Auto blanco", "clase_g63_suv.png", false));
             return vehicleModels;
