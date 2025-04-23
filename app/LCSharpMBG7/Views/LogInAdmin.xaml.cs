@@ -1,74 +1,82 @@
-using LCSharpMBG7.Code.DB;
 using LCSharpMBG7.Code.Logical;
 using LCSharpMBG7.Code.Models;
+using LCSharpMBG7.Code.Services;
 
-namespace LCSharpMBG7.Views;
 
-public partial class LogInAdmin : ContentPage
+namespace LCSharpMBG7.Views
 {
-    public LogInAdmin()
+    public partial class LogInAdmin : ContentPage
     {
-        InitializeComponent();
-    }
-
-    protected override async void OnAppearing()
-    {
-        base.OnAppearing();
-        if (State.AdminUserSession != null)
+        public LogInAdmin()
         {
-            await Task.Delay(400);
-            await Shell.Current.GoToAsync("AdminDashboard");
+            InitializeComponent();
         }
-    }
 
-    private async void GoToMainPage()
-    {
-        await Shell.Current.GoToAsync("///MainPage");
-    }
-
-    protected override bool OnBackButtonPressed()
-    {
-        GoToMainPage();
-        return true;
-    }
-
-    private async void OnLoginClicked(object sender, EventArgs e)
-    {
-        if (State.users == null || State.users.Count() == 0)
+        protected override async void OnAppearing()
         {
-            await DisplayAlert("Aviso", "No hay usuarios en la base de datos.", "OK");
-            return;
-        }
-        // Looks for the user in memory.
-        string input_user = usernameEntry.Text;
-        string input_password = passwordEntry.Text;
-        int user_index = -1; // -1 means does not exist.
-        for (int i = 0; i < State.users.Count(); i++)
-        {
-            if (State.users[i].Name.ToLower() == input_user.ToLower())
+            base.OnAppearing();
+            if (State.AdminUserSession != null)
             {
-                user_index = i;
-                break;
+                await Task.Delay(400);
+                await Shell.Current.GoToAsync("AdminDashboard");
             }
         }
-        string message_wrong_process_title = "Credencial incorrecto";
-        string message_wrong_process = "El usuario no existe o la contrase�a es incorrecta.";
-        if (user_index == -1)
-        {
-            await DisplayAlert(message_wrong_process_title, message_wrong_process, "OK");
-            return;
-        }
-        // User exists. Checks for credentials.
-        if (State.users[user_index].Password != input_password)
-        {
-            await DisplayAlert(message_wrong_process_title, message_wrong_process, "OK");
-            return;
-        }
-        // Reached this point, credentials are correct.
-        // Sets admin session in state.
-        // Would move to admin panel now.
-        State.AdminUserSession = State.users[user_index];
-        await Shell.Current.GoToAsync("AdminDashboard");
-    }
 
+        protected override bool OnBackButtonPressed()
+        {
+            Shell.Current.GoToAsync("///MainPage");
+            return true;
+        }
+
+        private async void OnLoginClicked(object sender, EventArgs e)
+        {
+            var email = usernameEntry.Text?.Trim();
+            var password = passwordEntry.Text;
+
+            if (string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(password))
+            {
+                await DisplayAlert("Error", "Correo y contraseña son requeridos.", "OK");
+                return;
+            }
+
+            try
+            {
+                var firebase = FirebaseHelper.CreateConnection();
+
+                // Usa "Users" con mayúscula
+                var allUsers = await firebase
+                    .Child("Users")
+                    .OnceAsync<UserModel>();
+
+                // Depuración: ¿cuántos nodos trajiste?
+                System.Diagnostics.Debug.WriteLine($"Firebase: encontré {allUsers.Count} usuarios.");
+
+                // Filtramos localmente
+                var match = allUsers
+                    .Select(u => u.Object)
+                    .FirstOrDefault(u =>
+                        u.Email?.Trim().Equals(email, StringComparison.OrdinalIgnoreCase) == true
+                        && u.Password == password);
+
+                if (match == null)
+                {
+                    await DisplayAlert(
+                        "Credencial incorrecta",
+                        "El correo o la contraseña son incorrectos.",
+                        "OK");
+                    return;
+                }
+
+                State.AdminUserSession = match;
+                await Shell.Current.GoToAsync("AdminDashboard");
+            }
+            catch (Exception ex)
+            {
+                await DisplayAlert(
+                    "Error de conexión",
+                    $"No se pudo conectar a Firebase:\n{ex.Message}",
+                    "OK");
+            }
+        }
+    }
 }

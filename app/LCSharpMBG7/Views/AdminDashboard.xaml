@@ -1,10 +1,104 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="LCSharpMBG7.Views.AdminDashboard"
-             Title="AdminDashboard">
-    <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
-        <Label Text="Menú administrativo" FontSize="20" TextColor="Gray"/>
-        <Button Text="Logout" Clicked="Button_Clicked_Logout" />
-    </StackLayout>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="LCSharpMBG7.Views.AdminDashboard"
+    Shell.NavBarIsVisible="False"
+    BackgroundColor="White">
+
+  <Grid RowDefinitions="Auto,*,Auto">
+
+    <!-- BARRA SUPERIOR -->
+    <Grid
+      Grid.Row="0"
+      BackgroundColor="Black"
+      HeightRequest="60">
+      <Image
+        Source="mercedeslogo.png"
+        HeightRequest="40"
+        HorizontalOptions="Center"
+        VerticalOptions="Center" />
+    </Grid>
+
+    <!-- CONTENIDO SCROLLABLE -->
+    <ScrollView Grid.Row="1">
+      <VerticalStackLayout
+        Padding="20"
+        Spacing="40">
+
+        <!-- Administración de Vehículos -->
+        <Frame
+          HasShadow="False"
+          BorderColor="LightGray"
+          CornerRadius="12"
+          Padding="20">
+          <VerticalStackLayout Spacing="10" HorizontalOptions="Center">
+            <Image
+              Source="vehiculos_icon.png"
+              Aspect="AspectFit"
+              HeightRequest="80" />
+            <Label
+              Text="Administrar Vehículos"
+              FontSize="20"
+              FontAttributes="Bold"
+              TextColor="Black"
+              HorizontalOptions="Center" />
+            <Button
+              Text="Ir"
+              BackgroundColor="Black"
+              TextColor="White"
+              CornerRadius="8"
+              WidthRequest="100"
+              Clicked="OnVehiclesClicked" />
+          </VerticalStackLayout>
+        </Frame>
+
+        <!-- Administración de Reservas -->
+        <Frame
+          HasShadow="False"
+          BorderColor="LightGray"
+          CornerRadius="12"
+          Padding="20">
+          <VerticalStackLayout Spacing="10" HorizontalOptions="Center">
+            <Image
+              Source="reservas_icon.png"
+              Aspect="AspectFit"
+              HeightRequest="80" />
+            <Label
+              Text="Administrar Reservas"
+              FontSize="20"
+              FontAttributes="Bold"
+              TextColor="Black"
+              HorizontalOptions="Center" />
+            <Button
+              Text="Ir"
+              BackgroundColor="Black"
+              TextColor="White"
+              CornerRadius="8"
+              WidthRequest="100"
+              Clicked="OnReservationsClicked" />
+          </VerticalStackLayout>
+        </Frame>
+
+      </VerticalStackLayout>
+    </ScrollView>
+
+    <!-- BARRA INFERIOR -->
+    <Grid
+      Grid.Row="2"
+      BackgroundColor="Black"
+      HeightRequest="60"
+      Padding="10">
+      <Button
+        Text="Logout"
+        BackgroundColor="Crimson"
+        TextColor="White"
+        FontAttributes="Bold"
+        CornerRadius="12"
+        HorizontalOptions="Center"
+        VerticalOptions="Center"
+        Clicked="Button_Clicked_Logout" />
+    </Grid>
+
+  </Grid>
 </ContentPage>

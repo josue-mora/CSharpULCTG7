@@ -1,6 +1,4 @@
 using LCSharpMBG7.Views;
-using Microsoft.Maui.Controls;
-using LCSharpMBG7.Views;
 
 namespace LCSharpMBG7
 {
@@ -22,6 +20,11 @@ namespace LCSharpMBG7
             Routing.RegisterRoute("AdminDashboard", typeof(Views.AdminDashboard));
             Routing.RegisterRoute("MainPage", typeof(MainPage));
             Routing.RegisterRoute("CarruselAutosPage", typeof(CarruselAutosPage));
+            Routing.RegisterRoute(nameof(AdminDashboard), typeof(AdminDashboard));
+            Routing.RegisterRoute(nameof(VehiculosAdmin), typeof(VehiculosAdmin));
+            Routing.RegisterRoute(nameof(VehiculoAdminDetail), typeof(VehiculoAdminDetail));
+            Routing.RegisterRoute(nameof(ReservasAdmin), typeof(ReservasAdmin));
+            Routing.RegisterRoute(nameof(ReservaAdminDetail), typeof(ReservaAdminDetail));
         }
     }
 }

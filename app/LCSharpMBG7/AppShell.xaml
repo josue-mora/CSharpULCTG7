@@ -11,56 +11,77 @@
     <ShellContent
         Title="Home"
         ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+        Route="MainPage"/>
 
     <ShellContent
         Title="TestRoom"
         ContentTemplate="{DataTemplate local:Views.TestRoom}"
-        Route="Views.TestRoom" />
+        Route="Views.TestRoom"/>
 
     <ShellContent
         Title="VehicleDetails"
         ContentTemplate="{DataTemplate local:Views.VehicleDetails}"
-        Route="Views.VehicleDetails" />
+        Route="Views.VehicleDetails"/>
+
+    <ShellContent Title="Login Admin"
+            ContentTemplate="{DataTemplate views:LogInAdmin}"
+            Route="LogInAdmin"/>
+    <ShellContent Title="Admin Dashboard"
+            ContentTemplate="{DataTemplate views:AdminDashboard}"
+            Route="AdminDashboard"/>
+
+    <ShellContent Title="Vehículos Admin"
+            ContentTemplate="{DataTemplate views:VehiculosAdmin}"
+            Route="VehiculosAdmin"/>
+    <ShellContent Title="Detalle Vehículo"
+            ContentTemplate="{DataTemplate views:VehiculoAdminDetail}"
+            Route="VehiculoAdminDetail"/>
+
+    <ShellContent Title="Reservas Admin"
+            ContentTemplate="{DataTemplate views:ReservasAdmin}"
+            Route="ReservasAdmin"/>
+    <ShellContent Title="Detalle Reserva"
+            ContentTemplate="{DataTemplate views:ReservaAdminDetail}"
+            Route="ReservaAdminDetail"/>
 
     <ShellContent
         Title="FirebaseDataPage"
         ContentTemplate="{DataTemplate local:Views.FirebaseDataPage}"
-        Route="Views.FirebaseDataPage" />
+        Route="Views.FirebaseDataPage"/>
 
     <ShellContent
         Title="AMG GLE"
         ContentTemplate="{DataTemplate views:AmgGle}"
-        Route="AmgGle" />
+        Route="AmgGle"/>
 
     <ShellContent
         Title="AMG GLC"
         ContentTemplate="{DataTemplate views:AmgGlc}"
-        Route="AmgGlc" />   
+        Route="AmgGlc"/>
 
     <ShellContent
         Title="AMG Clase C"
         ContentTemplate="{DataTemplate views:AmgClaseC}"
-        Route="AmgClaseC" />
+        Route="AmgClaseC"/>
 
     <ShellContent
         Title="Vehiculos"
         ContentTemplate="{DataTemplate views:Vehiculos}"
-        Route="AmgClaseC" />
+        Route="AmgClaseC"/>
 
     <ShellContent
         Title="Cotizador"
         ContentTemplate="{DataTemplate views:Cotizador}"
-        Route="AmgClaseC" />
+        Route="AmgClaseC"/>
 
     <ShellContent
         Title="Sucursales"
         ContentTemplate="{DataTemplate views:Sucursales}"
-        Route="AmgClaseC" />
+        Route="AmgClaseC"/>
 
     <ShellContent
         Title="Catálogo de AMG"
         ContentTemplate="{DataTemplate views:CarruselAutosPage}"
-        Route="CarruselAutosPage" />
+        Route="CarruselAutosPage"/>
 
 </Shell>

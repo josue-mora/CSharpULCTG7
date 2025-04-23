@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+  xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+  x:Class="LCSharpMBG7.Views.VehiculosAdmin"
+  Title="Vehículos">
+
+  <Grid Padding="10">
+    <VerticalStackLayout Spacing="10">
+      <Button
+        Text="＋ Nuevo vehículo"
+        CornerRadius="8"
+        BackgroundColor="Black"
+        TextColor="White"
+        Clicked="OnCreateClicked"/>
+
+      <ListView
+        x:Name="VehiclesList"
+        SelectionMode="Single"
+        HasUnevenRows="True"
+        ItemSelected="OnItemSelected">
+        <ListView.ItemTemplate>
+          <DataTemplate>
+            <TextCell
+              Text="{Binding Name}"
+              Detail="{Binding Model}" />
+          </DataTemplate>
+        </ListView.ItemTemplate>
+      </ListView>
+    </VerticalStackLayout>
+  </Grid>
+</ContentPage>

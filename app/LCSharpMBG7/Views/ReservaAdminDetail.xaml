@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+  xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+  x:Class="LCSharpMBG7.Views.ReservaAdminDetail"
+  Title="Detalle Reserva Admin">
+
+  <ScrollView>
+    <VerticalStackLayout Padding="20" Spacing="15">
+      <Entry x:Name="vehicleIdEntry"          Placeholder="ID Vehículo" />
+      <Entry x:Name="dateReservationEntry"    Placeholder="Fecha Reserva" />
+      <Entry x:Name="dateAppointmentEntry"    Placeholder="Fecha Cita" />
+      <Entry x:Name="clientIdEntry"           Placeholder="Cédula Cliente" />
+      <Entry x:Name="clientNameEntry"         Placeholder="Nombre Cliente" />
+      <Entry x:Name="commentEntry"            Placeholder="Comentario" />
+
+      <Button
+        x:Name="saveButton"
+        Text="Guardar"
+        BackgroundColor="Black"
+        TextColor="White"
+        CornerRadius="8"
+        Clicked="OnSaveClicked"/>
+
+      <Button
+        x:Name="deleteButton"
+        Text="Eliminar"
+        BackgroundColor="Crimson"
+        TextColor="White"
+        CornerRadius="8"
+        IsVisible="False"
+        Clicked="OnDeleteClicked"/>
+    </VerticalStackLayout>
+  </ScrollView>
+</ContentPage>
