@@ -38,8 +38,8 @@ public partial class ReservationForm : ContentPage
             State.vehicles[State.SelectedVehicleIndex].Id,
             DateFormatter.GetUNIXTimestamp() + "",
             DateFormatter.GetUNIXTimestamp() + "",
-            data[0],
             data[1],
+            data[0],
             data[2]
         );
         await ReservationController.AddReservationAsync(reservation);
