@@ -1,0 +1,686 @@
+{
+  "Reservations": {
+    "-OOZ7J2NEdbfy6JMZV97": {
+      "client_comment": "Color blanco.",
+      "client_id_card_number": "12223333",
+      "client_name": "John Doe",
+      "date_appointment": "1745436612894",
+      "date_reservation": "1745436612894",
+      "id": "-OOZ7J2NEdbfy6JMZV97",
+      "id_vehicle": "17454366128900"
+    }
+  },
+  "Sells": {
+    "-OOZ7IqybJ9jD1ukKeD7": {
+      "client_id_card_number": "122220300",
+      "client_name": "John Doe",
+      "date_sell": "1745436612898",
+      "id": "-OOZ7IqybJ9jD1ukKeD7",
+      "id_vehicle": "17454366128900",
+      "sell_price": 18237404
+    },
+    "-OOZ7Ir4kL2-wDjZO3rU": {
+      "client_id_card_number": "122220301",
+      "client_name": "Jane Smith",
+      "date_sell": "1745436612899",
+      "id": "-OOZ7Ir4kL2-wDjZO3rU",
+      "id_vehicle": "17454366128921",
+      "sell_price": 11282200
+    },
+    "-OOZ7Ir5lRbHzO20DSH-": {
+      "client_id_card_number": "122220302",
+      "client_name": "Alice Johnson",
+      "date_sell": "1745436612899",
+      "id": "-OOZ7Ir5lRbHzO20DSH-",
+      "id_vehicle": "17454366128922",
+      "sell_price": 3065717
+    },
+    "-OOZ7Ir6X8v6tX2wLSeo": {
+      "client_id_card_number": "122220303",
+      "client_name": "Bob Brown",
+      "date_sell": "1745436612899",
+      "id": "-OOZ7Ir6X8v6tX2wLSeo",
+      "id_vehicle": "17454366128923",
+      "sell_price": 12526573
+    },
+    "-OOZ7Ir8L3gJjt1InRTu": {
+      "client_id_card_number": "122220304",
+      "client_name": "Charlie Davis",
+      "date_sell": "1745436612899",
+      "id": "-OOZ7Ir8L3gJjt1InRTu",
+      "id_vehicle": "17454366128924",
+      "sell_price": 3653134
+    },
+    "-OOZ7Ir9ADkq4QPXAuxo": {
+      "client_id_card_number": "122220305",
+      "client_name": "Diana Evans",
+      "date_sell": "1745436612899",
+      "id": "-OOZ7Ir9ADkq4QPXAuxo",
+      "id_vehicle": "17454366128925",
+      "sell_price": 1997547
+    },
+    "-OOZ7IrAAABFJdaujQaJ": {
+      "client_id_card_number": "122220306",
+      "client_name": "Frank Green",
+      "date_sell": "1745436612899",
+      "id": "-OOZ7IrAAABFJdaujQaJ",
+      "id_vehicle": "17454366128926",
+      "sell_price": 13074718
+    },
+    "-OOZ7IrBggO8VpvBME9w": {
+      "client_id_card_number": "122220307",
+      "client_name": "Grace Harris",
+      "date_sell": "1745436612899",
+      "id": "-OOZ7IrBggO8VpvBME9w",
+      "id_vehicle": "17454366128927",
+      "sell_price": 1511935
+    },
+    "-OOZ7IrChPhRHVS6Y5kv": {
+      "client_id_card_number": "122220308",
+      "client_name": "Henry Jackson",
+      "date_sell": "1745436612899",
+      "id": "-OOZ7IrChPhRHVS6Y5kv",
+      "id_vehicle": "17454366128928",
+      "sell_price": 16435175
+    },
+    "-OOZ7IrEtoOjlXi6K6d0": {
+      "client_id_card_number": "122220309",
+      "client_name": "Ivy King",
+      "date_sell": "1745436612899",
+      "id": "-OOZ7IrEtoOjlXi6K6d0",
+      "id_vehicle": "17454366128929",
+      "sell_price": 19083825
+    },
+    "-OOZ7IrFzRBvitMIjKoA": {
+      "client_id_card_number": "122220310",
+      "client_name": "John Doe",
+      "date_sell": "1745436612899",
+      "id": "-OOZ7IrFzRBvitMIjKoA",
+      "id_vehicle": "174543661289210",
+      "sell_price": 4008596
+    },
+    "-OOZ7IrH6ChoBNDfigTI": {
+      "client_id_card_number": "122220311",
+      "client_name": "Jane Smith",
+      "date_sell": "1745436612899",
+      "id": "-OOZ7IrH6ChoBNDfigTI",
+      "id_vehicle": "174543661289211",
+      "sell_price": 6277365
+    },
+    "-OOZ7IrJdUyqRqywD1sG": {
+      "client_id_card_number": "122220312",
+      "client_name": "Alice Johnson",
+      "date_sell": "1745436612899",
+      "id": "-OOZ7IrJdUyqRqywD1sG",
+      "id_vehicle": "174543661289212",
+      "sell_price": 7070532
+    },
+    "-OOZ7IrKc1ahz1QyhivQ": {
+      "client_id_card_number": "122220313",
+      "client_name": "Bob Brown",
+      "date_sell": "1745436612899",
+      "id": "-OOZ7IrKc1ahz1QyhivQ",
+      "id_vehicle": "174543661289213",
+      "sell_price": 19652454
+    },
+    "-OOZ7IrL1s86rR3kJBf7": {
+      "client_id_card_number": "122220314",
+      "client_name": "Charlie Davis",
+      "date_sell": "1745436612899",
+      "id": "-OOZ7IrL1s86rR3kJBf7",
+      "id_vehicle": "174543661289214",
+      "sell_price": 16402885
+    },
+    "-OOZ7IrMOda8ZmcLEAXS": {
+      "client_id_card_number": "122220315",
+      "client_name": "Diana Evans",
+      "date_sell": "1745436612899",
+      "id": "-OOZ7IrMOda8ZmcLEAXS",
+      "id_vehicle": "17454366128900",
+      "sell_price": 3070256
+    },
+    "-OOZ7IrQ9tMN5hH42_H9": {
+      "client_id_card_number": "122220316",
+      "client_name": "Frank Green",
+      "date_sell": "1745436612899",
+      "id": "-OOZ7IrQ9tMN5hH42_H9",
+      "id_vehicle": "17454366128921",
+      "sell_price": 13550527
+    },
+    "-OOZ7IrTkoLZ8Lqohef7": {
+      "client_id_card_number": "122220317",
+      "client_name": "Grace Harris",
+      "date_sell": "1745436612899",
+      "id": "-OOZ7IrTkoLZ8Lqohef7",
+      "id_vehicle": "17454366128922",
+      "sell_price": 13120135
+    },
+    "-OOZ7IrV9uRZnmhb5Rm7": {
+      "client_id_card_number": "122220318",
+      "client_name": "Henry Jackson",
+      "date_sell": "1745436612899",
+      "id": "-OOZ7IrV9uRZnmhb5Rm7",
+      "id_vehicle": "17454366128923",
+      "sell_price": 7635455
+    },
+    "-OOZ7IrWtIamui9XGKYs": {
+      "client_id_card_number": "122220319",
+      "client_name": "Ivy King",
+      "date_sell": "1745436612899",
+      "id": "-OOZ7IrWtIamui9XGKYs",
+      "id_vehicle": "17454366128924",
+      "sell_price": 11756707
+    },
+    "-OOZ7IrYLHJYsflz3krf": {
+      "client_id_card_number": "122220320",
+      "client_name": "John Doe",
+      "date_sell": "1745436612899",
+      "id": "-OOZ7IrYLHJYsflz3krf",
+      "id_vehicle": "17454366128925",
+      "sell_price": 18504132
+    },
+    "-OOZ7Irb7CdbX3GxLP6o": {
+      "client_id_card_number": "122220321",
+      "client_name": "Jane Smith",
+      "date_sell": "1745436612899",
+      "id": "-OOZ7Irb7CdbX3GxLP6o",
+      "id_vehicle": "17454366128926",
+      "sell_price": 19512203
+    },
+    "-OOZ7Irf2o2DPyt2ySes": {
+      "client_id_card_number": "122220322",
+      "client_name": "Alice Johnson",
+      "date_sell": "1745436612899",
+      "id": "-OOZ7Irf2o2DPyt2ySes",
+      "id_vehicle": "17454366128927",
+      "sell_price": 10692124
+    },
+    "-OOZ7IrhJV77YDf5zZIg": {
+      "client_id_card_number": "122220323",
+      "client_name": "Bob Brown",
+      "date_sell": "1745436612899",
+      "id": "-OOZ7IrhJV77YDf5zZIg",
+      "id_vehicle": "17454366128928",
+      "sell_price": 18927655
+    },
+    "-OOZ7Irjz9HbZz5M3T8C": {
+      "client_id_card_number": "122220324",
+      "client_name": "Charlie Davis",
+      "date_sell": "1745436612899",
+      "id": "-OOZ7Irjz9HbZz5M3T8C",
+      "id_vehicle": "17454366128929",
+      "sell_price": 11774142
+    },
+    "-OOZ7IrlrIelQ1nCtzRg": {
+      "client_id_card_number": "122220325",
+      "client_name": "Diana Evans",
+      "date_sell": "1745436612899",
+      "id": "-OOZ7IrlrIelQ1nCtzRg",
+      "id_vehicle": "174543661289210",
+      "sell_price": 12179260
+    },
+    "-OOZ7IroZh_cGBKR7Zj6": {
+      "client_id_card_number": "122220326",
+      "client_name": "Frank Green",
+      "date_sell": "1745436612899",
+      "id": "-OOZ7IroZh_cGBKR7Zj6",
+      "id_vehicle": "174543661289211",
+      "sell_price": 18472106
+    },
+    "-OOZ7Irrpp4xw9VV7r6X": {
+      "client_id_card_number": "122220327",
+      "client_name": "Grace Harris",
+      "date_sell": "1745436612899",
+      "id": "-OOZ7Irrpp4xw9VV7r6X",
+      "id_vehicle": "174543661289212",
+      "sell_price": 16877342
+    },
+    "-OOZ7IrtUL9m-gKQIUky": {
+      "client_id_card_number": "122220328",
+      "client_name": "Henry Jackson",
+      "date_sell": "1745436612899",
+      "id": "-OOZ7IrtUL9m-gKQIUky",
+      "id_vehicle": "174543661289213",
+      "sell_price": 3960774
+    },
+    "-OOZ7IrvHlhReqtLtaLn": {
+      "client_id_card_number": "122220329",
+      "client_name": "Ivy King",
+      "date_sell": "1745436612899",
+      "id": "-OOZ7IrvHlhReqtLtaLn",
+      "id_vehicle": "174543661289214",
+      "sell_price": 18086634
+    },
+    "-OOZ7Irx8LcFcMgqXDH2": {
+      "client_id_card_number": "122220330",
+      "client_name": "John Doe",
+      "date_sell": "1745436612899",
+      "id": "-OOZ7Irx8LcFcMgqXDH2",
+      "id_vehicle": "17454366128900",
+      "sell_price": 11359831
+    },
+    "-OOZ7Is-j9ex88-uzfDC": {
+      "client_id_card_number": "122220331",
+      "client_name": "Jane Smith",
+      "date_sell": "1745436612899",
+      "id": "-OOZ7Is-j9ex88-uzfDC",
+      "id_vehicle": "17454366128921",
+      "sell_price": 19786996
+    },
+    "-OOZ7Is1kQhJjgsmo86T": {
+      "client_id_card_number": "122220332",
+      "client_name": "Alice Johnson",
+      "date_sell": "1745436612899",
+      "id": "-OOZ7Is1kQhJjgsmo86T",
+      "id_vehicle": "17454366128922",
+      "sell_price": 18477002
+    },
+    "-OOZ7Is6D9irob_ENny0": {
+      "client_id_card_number": "122220333",
+      "client_name": "Bob Brown",
+      "date_sell": "1745436612899",
+      "id": "-OOZ7Is6D9irob_ENny0",
+      "id_vehicle": "17454366128923",
+      "sell_price": 18076967
+    },
+    "-OOZ7Is9KlFndkkL2Vs3": {
+      "client_id_card_number": "122220334",
+      "client_name": "Charlie Davis",
+      "date_sell": "1745436612899",
+      "id": "-OOZ7Is9KlFndkkL2Vs3",
+      "id_vehicle": "17454366128924",
+      "sell_price": 16953629
+    },
+    "-OOZ7IsBbxfG48fQn6ky": {
+      "client_id_card_number": "122220335",
+      "client_name": "Diana Evans",
+      "date_sell": "1745436612899",
+      "id": "-OOZ7IsBbxfG48fQn6ky",
+      "id_vehicle": "17454366128925",
+      "sell_price": 7413833
+    },
+    "-OOZ7IsDh8ebFCDzZkTI": {
+      "client_id_card_number": "122220336",
+      "client_name": "Frank Green",
+      "date_sell": "1745436612899",
+      "id": "-OOZ7IsDh8ebFCDzZkTI",
+      "id_vehicle": "17454366128926",
+      "sell_price": 17978801
+    },
+    "-OOZ7IsFmdJVmUuXKrVv": {
+      "client_id_card_number": "122220337",
+      "client_name": "Grace Harris",
+      "date_sell": "1745436612899",
+      "id": "-OOZ7IsFmdJVmUuXKrVv",
+      "id_vehicle": "17454366128927",
+      "sell_price": 7396708
+    },
+    "-OOZ7IsI_mr2OD0iGgfM": {
+      "client_id_card_number": "122220338",
+      "client_name": "Henry Jackson",
+      "date_sell": "1745436612899",
+      "id": "-OOZ7IsI_mr2OD0iGgfM",
+      "id_vehicle": "17454366128928",
+      "sell_price": 6493463
+    },
+    "-OOZ7IsKCG-kHj3yaxPP": {
+      "client_id_card_number": "122220339",
+      "client_name": "Ivy King",
+      "date_sell": "1745436612899",
+      "id": "-OOZ7IsKCG-kHj3yaxPP",
+      "id_vehicle": "17454366128929",
+      "sell_price": 9776506
+    },
+    "-OOZ7IsNvFIY7bpzWbAE": {
+      "client_id_card_number": "122220340",
+      "client_name": "John Doe",
+      "date_sell": "1745436612899",
+      "id": "-OOZ7IsNvFIY7bpzWbAE",
+      "id_vehicle": "174543661289210",
+      "sell_price": 13597523
+    },
+    "-OOZ7IsPJvQx5-1cpJPM": {
+      "client_id_card_number": "122220341",
+      "client_name": "Jane Smith",
+      "date_sell": "1745436612899",
+      "id": "-OOZ7IsPJvQx5-1cpJPM",
+      "id_vehicle": "174543661289211",
+      "sell_price": 19422494
+    },
+    "-OOZ7IsSaZkOiQ1-CWOx": {
+      "client_id_card_number": "122220342",
+      "client_name": "Alice Johnson",
+      "date_sell": "1745436612899",
+      "id": "-OOZ7IsSaZkOiQ1-CWOx",
+      "id_vehicle": "174543661289212",
+      "sell_price": 19950302
+    },
+    "-OOZ7IsWuquLiYpLZJE4": {
+      "client_id_card_number": "122220343",
+      "client_name": "Bob Brown",
+      "date_sell": "1745436612899",
+      "id": "-OOZ7IsWuquLiYpLZJE4",
+      "id_vehicle": "174543661289213",
+      "sell_price": 11693618
+    },
+    "-OOZ7IsZsoM0aFh75uAI": {
+      "client_id_card_number": "122220344",
+      "client_name": "Charlie Davis",
+      "date_sell": "1745436612899",
+      "id": "-OOZ7IsZsoM0aFh75uAI",
+      "id_vehicle": "174543661289214",
+      "sell_price": 14847018
+    },
+    "-OOZ7Isbw81__aqCmmjv": {
+      "client_id_card_number": "122220345",
+      "client_name": "Diana Evans",
+      "date_sell": "1745436612899",
+      "id": "-OOZ7Isbw81__aqCmmjv",
+      "id_vehicle": "17454366128900",
+      "sell_price": 3205770
+    },
+    "-OOZ7J-bBL-TcbhhxcMz": {
+      "client_id_card_number": "122220346",
+      "client_name": "Frank Green",
+      "date_sell": "1745436612899",
+      "id": "-OOZ7J-bBL-TcbhhxcMz",
+      "id_vehicle": "17454366128921",
+      "sell_price": 10503658
+    },
+    "-OOZ7J-mwgC3RK8zWmjY": {
+      "client_id_card_number": "122220347",
+      "client_name": "Grace Harris",
+      "date_sell": "1745436612899",
+      "id": "-OOZ7J-mwgC3RK8zWmjY",
+      "id_vehicle": "17454366128922",
+      "sell_price": 8292525
+    },
+    "-OOZ7J0Euu3dnKBW5znY": {
+      "client_id_card_number": "122220348",
+      "client_name": "Henry Jackson",
+      "date_sell": "1745436612899",
+      "id": "-OOZ7J0Euu3dnKBW5znY",
+      "id_vehicle": "17454366128923",
+      "sell_price": 17123058
+    },
+    "-OOZ7J0LTScjTdIMZ_RK": {
+      "client_id_card_number": "122220349",
+      "client_name": "Ivy King",
+      "date_sell": "1745436612899",
+      "id": "-OOZ7J0LTScjTdIMZ_RK",
+      "id_vehicle": "17454366128924",
+      "sell_price": 6000793
+    },
+    "-OOZ7J0aW3ffRAYMOzPd": {
+      "client_id_card_number": "122220350",
+      "client_name": "John Doe",
+      "date_sell": "1745436612899",
+      "id": "-OOZ7J0aW3ffRAYMOzPd",
+      "id_vehicle": "17454366128925",
+      "sell_price": 9903301
+    },
+    "-OOZ7J0go-mS43iKRP0W": {
+      "client_id_card_number": "122220351",
+      "client_name": "Jane Smith",
+      "date_sell": "1745436612899",
+      "id": "-OOZ7J0go-mS43iKRP0W",
+      "id_vehicle": "17454366128926",
+      "sell_price": 2744110
+    },
+    "-OOZ7J0lhzjuCCQZjaIj": {
+      "client_id_card_number": "122220352",
+      "client_name": "Alice Johnson",
+      "date_sell": "1745436612899",
+      "id": "-OOZ7J0lhzjuCCQZjaIj",
+      "id_vehicle": "17454366128927",
+      "sell_price": 14052303
+    },
+    "-OOZ7J1Ig-ZwvjAbprht": {
+      "client_id_card_number": "122220353",
+      "client_name": "Bob Brown",
+      "date_sell": "1745436612899",
+      "id": "-OOZ7J1Ig-ZwvjAbprht",
+      "id_vehicle": "17454366128928",
+      "sell_price": 9802413
+    },
+    "-OOZ7J1NpuI7J6l7QyZy": {
+      "client_id_card_number": "122220354",
+      "client_name": "Charlie Davis",
+      "date_sell": "1745436612899",
+      "id": "-OOZ7J1NpuI7J6l7QyZy",
+      "id_vehicle": "17454366128929",
+      "sell_price": 8977095
+    },
+    "-OOZ7J1_v93-5BnlCzyn": {
+      "client_id_card_number": "122220355",
+      "client_name": "Diana Evans",
+      "date_sell": "1745436612899",
+      "id": "-OOZ7J1_v93-5BnlCzyn",
+      "id_vehicle": "174543661289210",
+      "sell_price": 13520327
+    },
+    "-OOZ7J1ihr2pVaTForOw": {
+      "client_id_card_number": "122220356",
+      "client_name": "Frank Green",
+      "date_sell": "1745436612899",
+      "id": "-OOZ7J1ihr2pVaTForOw",
+      "id_vehicle": "174543661289211",
+      "sell_price": 2132121
+    },
+    "-OOZ7J1zJUOwCgCObGjq": {
+      "client_id_card_number": "122220357",
+      "client_name": "Grace Harris",
+      "date_sell": "1745436612899",
+      "id": "-OOZ7J1zJUOwCgCObGjq",
+      "id_vehicle": "174543661289212",
+      "sell_price": 9122200
+    },
+    "-OOZ7J28V18r6GYzG3bT": {
+      "client_id_card_number": "122220358",
+      "client_name": "Henry Jackson",
+      "date_sell": "1745436612899",
+      "id": "-OOZ7J28V18r6GYzG3bT",
+      "id_vehicle": "174543661289213",
+      "sell_price": 6410390
+    },
+    "-OOZ7J2FI0_zwIx2AA0S": {
+      "client_id_card_number": "122220359",
+      "client_name": "Ivy King",
+      "date_sell": "1745436612899",
+      "id": "-OOZ7J2FI0_zwIx2AA0S",
+      "id_vehicle": "174543661289214",
+      "sell_price": 17397388
+    }
+  },
+  "Users": {
+    "-OOZ7J2q5rnnAk73aAZM": {
+      "email": "admin@mail.com",
+      "id": "-OOZ7J2q5rnnAk73aAZM",
+      "name": "admin",
+      "password": "admin",
+      "role": 500
+    }
+  },
+  "Vehicles": {
+    "-OOZ7IhwttinM9a6VldQ": {
+      "active": true,
+      "id": "-OOZ7IhwttinM9a6VldQ",
+      "image_carousel": "cla_a_sedan.png",
+      "model": "Sedán",
+      "name": "Clase A Sedán Editado",
+      "page_content": "T_TITLE_1Diseño___T_TITLE_2El primer Clase A en diseño de zaga escalonada.___T_IMGhttps://www.mercedes-benz.cr/documents/17944382/45813184/Galeria_EXTERIOR-1.jpg/b06c72cc-6a4e-ce1c-f2ab-6058401645a7?t=1710805990553___T_PPTecho suavemente descendente. Fascinación claramente en ascenso. Cuando de pequeños dibujábamos un auto, intuitivamente trazábamos un modelo de tres volúmenes. Con el Clase A Sedán puedes volver a soñar con un auto así. Su silueta aúna de forma magistral dinamismo y elegancia intemporal.___T_BR___T_TITLE_3Diseño interior___T_PPEl habitáculo de la Clase A Sedán parece abrazar a los ocupantes. Las transiciones entre el tablero de instrumentos, la consola central y los revestimientos de las puertas son casi imperceptibles, generando el agradable efecto envolvente. Este concepto es tan excepcional en esta categoría de vehículos como los ajustes de confort en asientos, las molduras de adorno y el paquete de alumbrado del interior.___T_IMGhttps://www.mercedes-benz.cr/documents/17944382/45813184/Dise%C3%B1o-2.jpg/d1b694bf-1299-ab70-fdf7-c7315962844f?t=1710806445808___T_IMGhttps://www.mercedes-benz.cr/documents/17944382/45813184/DISE%C3%91O+Clase+A+Sed%C3%A1n+-+Texto+1+Imagen+1.png/8a9e5d3b-5124-5f8f-2fee-e93d3aa1d37c?t=1710806575452___T_BR___T_TITLE_1Confort___T_TITLE_2La Clase A habla, entiende, piensa y causa una impresión asombrosamente humana.___T_IMGhttps://www.mercedes-benz.cr/documents/17944382/45813184/Confort-1.jpg/1ddb00ec-d123-4fa1-bd09-c0b5383aed0c?t=1710806885780___T_TITLE_3MBUX (Mercedes-Benz user experience)___T_PPEl sistema multimedia MBUX de manejo intuitivo ha sido creado para una sola persona en todo el mundo: para ti. Por ese motivo, es posible adaptar la Clase A a tus deseos, tus preferencias y tu estilo de conducción. Basta con mover la mano sobre el panel táctil, en el volante o bien, por primera vez, también sobre la pantalla táctil. Además, puedes crear una conexión emocional con tu vehículo gracias a sus funciones ampliadas MBUX.___T_T_WEBVIEWDescargar Catálogo__https://www.mercedes-benz.cr/documents/17944382/45813184/Cat%C3%A1logo+A+Sed%C3%A1n+%281%29.pdf___T_BR___T_RESERVA___T_BR",
+      "price": 12000000,
+      "promoted": false,
+      "state": "NEW",
+      "year": 2025
+    },
+    "-OOZ7IprsWlBTCR3wJSq": {
+      "active": true,
+      "id": "-OOZ7IprsWlBTCR3wJSq",
+      "image_carousel": "eqs_sedan.png",
+      "model": "Sedán",
+      "name": "EQS Sedán",
+      "page_content": "T_TITLE_1Kilometraje___T_TITLE_2Hasta 660km___T_TITLE_1Batería___T_TITLE_290.56 kWh___T_TITLE_1Velocidad máxima___T_TITLE_2210 km/h___T_TITLE_1Diseño___T_TITLE_2Formas intemporales para una nueva era.___T_TITLE_3Diseño Exterior___T_PPEl nuevo EQE incopora un diseño aerodinámico puro, un equilibrio brillante entre innovación técnica y estética moderna.___T_IMGhttps://www.mercedes-benz.cr/documents/17944382/18096691/Dise%C3%B1o+Exterior.jpg___T_IMGhttps://www.mercedes-benz.cr/documents/17944382/18096691/Dise%C3%B1o+Interior.jpg___T_BR___T_TITLE_2Diseño Interior___T_PPEl puesto de conducción digital con la futurista MBUX Hyperscreen harán de tu conducción toda una experiencia a bordo.___T_BR___T_TITLE_1Confort___T_TITLE_2Ampliá tu zona de confort. Sistema de filtrado de aire con filtro HEPA___T_PPAspirá profundamente y expirá de nuevo el aire. El nuevo filtro de polvo fino HEPA (High Efficiency Particulate Air) puede retener partículas especialmente finas transportadas por el aire del exterior, como polen y partículas ultra finas, con un rendimiento de filtrado de hasta el 99,65%. También puede neutralizar olores desagradables.___T_IMGhttps://www.mercedes-benz.cr/documents/17944382/18096691/Confort+1.jpg/8525afd5-d92d-cae9-cf2e-390d2844a0f1?t=1648694584809___T_BR___T_RESERVA___T_BR",
+      "price": 12000000,
+      "promoted": false,
+      "state": "NEW",
+      "year": 2025
+    },
+    "-OOZ7Ipu6EEx_JBD8igg": {
+      "active": true,
+      "id": "-OOZ7Ipu6EEx_JBD8igg",
+      "image_carousel": "clase_a_sedan.png",
+      "model": "Sedán",
+      "name": "Mercedes AMG Clase A Sedan",
+      "page_content": "T_IMGhttps://www.mercedes-benz.cr/documents/17944382/18096821/MBMX-2022-AMG-A35-SEDAN-HERO-DR.jpg/a58d6ba9-1530-2980-fedf-943ebfe95f6e?t=1649266887539___T_BR___T_RESERVA___T_TITLE_1Diseño: Instant Wow!!___T_TITLE_2Diseño Exterior___T_PPEl Mercedes-AMG A 35 4MATIC Sedán brinda un acceso ideal al mundo de la Driving Performance de AMG. La parrilla del radiador específica de AMG y las grandes tomas de aire con flics en el faldón delantero irradian una estética extremadamente deportiva y ponen en evidencia los genes de AMG. Por otro lado, la nueva interpretación en clave deportiva del clásico concepto de tres volúmenes confiere a este Mercedes-AMG una elegancia rebosante de dinamismo.___T_IMGhttps://www.mercedes-benz.cr/documents/17944382/18096821/dise%C3%B1o+exterior.jpg___T_IMGhttps://www.mercedes-benz.cr/documents/17944382/18096821/dise%C3%B1o+exterior+2.jpg___T_BR___T_TITLE_2Faldón trasero AMG___T_PPEl llamativo faldón trasero AMG con efecto difusor específico, cuatro perfiles verticales y dos embellecedores redondos cromados de la salida de escape de 90 milímetros de diámetro le confieren una imagen inconfundible.___T_TITLE_1Diseño interior___T_PPEn el interior llaman la atención el puesto de conducción widescreen con pantalla táctil de alta resolución, el sistema multimedia MBUX y la consola central AMG. La pantalla táctil permite controlar determinadas funciones de conducción, tales como el ESP, el modo manual del cambio o el tren de rodaje opcional AMG RIDE CONTROL. El cuentarrevoluciones redondo en el centro subraya el carácter de bólido de competición de la berlina, especialmente en el modo Supersport. El volante deportivo multifunción con botones Touch Control transmite también una sensación de automovilismo deportivo de lo más pura.___T_IMGhttps://www.mercedes-benz.cr/documents/17944382/18096821/dise%C3%B1o+interior.jpg___T_IMGhttps://www.mercedes-benz.cr/documents/17944382/18096821/dise%C3%B1o+1.jpeg___T_TITLE_3Consola central AMG___T_PPLa exclusiva consola central AMG en negro de alto brillo con teclas para las funciones de control del dinamismo revela el enorme potencial técnico del vehículo, antes incluso de ponerse en marcha. Cuenta con interruptores integrados para el manejo del modo de cambio manual, el ESP® de 3 niveles y el tren de rodaje AMG RIDE CONTROL (*opcional).___T_IMGhttps://www.mercedes-benz.cr/documents/17944382/18096821/dise%C3%B1o+2.jpeg/0c4ede8d-052a-1454-c4fd-3bc3315f5eb7?t=1649266891717___T_TITLE_1Datos técnicos___T_TITLE_2Instant Power___T_PPEl motor sobrealimentado de cuatro cilindros y 2,0 litros de nuevo desarrollo con una potencia de 225 kW (306 CV) es el encargado de propulsar al Mercedes-AMG A 35 4MATIC Sedán. Con su ayuda, el vehículo puede acelerar de 0 a 100 km/h en 4,7 segundos. La tracción integral 4MATIC incorporada de serie distribuye la fuerza de propulsión de forma completamente variable, desde una tracción exclusivamente delantera hasta una distribución equilibrada 50:50 entre los dos ejes. Gracias a su excelente capacidad de aceleración en cualquier margen de velocidad, el cambio de doble embrague con 7 marchas SPEEDSHIFT DCT AMG proporciona una respuesta inmediata.___T_IMGhttps://www.mercedes-benz.cr/documents/17944382/18096821/confort+1.jpeg___T_BR___T_RESERVA___T_BR",
+      "price": 38000000,
+      "promoted": true,
+      "state": "NEW",
+      "year": 2025
+    },
+    "-OOZ7Iq6kq02rPkVR7Ek": {
+      "active": true,
+      "id": "-OOZ7Iq6kq02rPkVR7Ek",
+      "image_carousel": "clase_c_sedan.png",
+      "model": "Sedán",
+      "name": "Clase C Sedán",
+      "page_content": "T_TITLE_1Diseño___T_TITLE_2La primera impresión es la que cuenta.___T_IMGhttps://www.mercedes-benz.cr/documents/17944382/45827586/Dise%C3%B1o+Mercedes+AMG-Night.png/8b465303-c66f-49b0-f820-c6e1b7157677?t=1710797399487___T_TITLE_3Diseño exterior___T_PPEl expresivo diseño exterior del Mercedes-AMG C 43 4MATIC constituye el acceso al mundo de Mercedes-AMG. La deportividad de tu vehículo se manifiesta a través de los dinámicos detalles del AMG Styling de diseño específico. De ese modo, tu Mercedes-AMG C 43 4MATIC exhibe su excepcional personalidad desde cualquier perspectiva. En conjunto con el Paquete AMG Night, demuestra una clara sensibilidad y criterio por el diseño dinámico en función de la carrocería para crear demarcados contrastes o suaves transiciones.___T_TITLE_3Diseño interior___T_PPTeclas AMG en el volante que, gracias a sus características inspiradas en el habitáculo de la Fórmula 1 y ergonómica posición en el radio directo del conductor, permiten disfrutar de la máxima deportividad de la conducción AMG.___T_IMGhttps://www.mercedes-benz.cr/documents/17944382/45827586/Pantalla+Mercedes-AMG.png/f176fd25-5e0f-fc9d-407f-63648917c1ef?t=1710797586551___T_IMGhttps://www.mercedes-benz.cr/documents/17944382/45827586/Teclas+volante+Mercedes-AMG.png/7cd2248f-c4cd-0ec7-7a60-c64f51690256?t=1710797843649___T_BR___T_TITLE_2Visualizador central con estilos de visualizado específico de AMG___T_PPGracias a su acristalamiento completo, a su ampliación del área activa de un 103% en comparación al modelo anterior y a su detallada integración, como si estuviera suspendido en la consola central, el visualizador central contribuye a la impresión de alta calidad del puesto de conducción con sus 11,9 pulgadas.___T_TITLE_2Cambio AMG SPEEDSHIFT MCT 9G___T_PPEl cambio AMG SPEEDSHIFT MCT 9G seduce por su disposición constante a desarrollar toda la fuerza del motor y por el insuperable confort de arranque y cambio. Los programas de conducción «Sport» y «Sport+» hacen que los procesos de cambio sean sumamente rápidos y sugestivos, al más puro estilo AMG. Si deseas disfrutar plenamente de la capacidad de aceleración del vehículo puedes determinar libremente el régimen de arranque con las levas de cambio y activar la función RACE START.___T_IMGhttps://www.mercedes-benz.cr/documents/17944382/45827586/4MATIC.png/8f3ca9ff-08e4-3bcf-06dc-a66c4386bc4d?t=1710799439224___T_BR___T_RESERVA___T_BR",
+      "price": 10000000,
+      "promoted": false,
+      "state": "NEW",
+      "year": 2025
+    },
+    "-OOZ7Iq8KpAOfHfbQAvk": {
+      "active": true,
+      "id": "-OOZ7Iq8KpAOfHfbQAvk",
+      "image_carousel": "clase_e_sedan.png",
+      "model": "Sedán",
+      "name": "Clase E Sedán",
+      "page_content": "T_TITLE_1Diseño___T_TITLE_2El primer Clase A en diseño de zaga escalonada.___T_IMGhttps://www.mercedes-benz.cr/documents/17944382/45813184/Galeria_EXTERIOR-1.jpg/b06c72cc-6a4e-ce1c-f2ab-6058401645a7?t=1710805990553___T_PPTecho suavemente descendente. Fascinación claramente en ascenso. Cuando de pequeños dibujábamos un auto, intuitivamente trazábamos un modelo de tres volúmenes. Con el Clase A Sedán puedes volver a soñar con un auto así. Su silueta aúna de forma magistral dinamismo y elegancia intemporal.___T_BR___T_TITLE_3Diseño interior___T_PPEl habitáculo de la Clase A Sedán parece abrazar a los ocupantes. Las transiciones entre el tablero de instrumentos, la consola central y los revestimientos de las puertas son casi imperceptibles, generando el agradable efecto envolvente. Este concepto es tan excepcional en esta categoría de vehículos como los ajustes de confort en asientos, las molduras de adorno y el paquete de alumbrado del interior.___T_IMGhttps://www.mercedes-benz.cr/documents/17944382/45813184/Dise%C3%B1o-2.jpg/d1b694bf-1299-ab70-fdf7-c7315962844f?t=1710806445808___T_IMGhttps://www.mercedes-benz.cr/documents/17944382/45813184/DISE%C3%91O+Clase+A+Sed%C3%A1n+-+Texto+1+Imagen+1.png/8a9e5d3b-5124-5f8f-2fee-e93d3aa1d37c?t=1710806575452___T_BR___T_TITLE_1Confort___T_TITLE_2La Clase A habla, entiende, piensa y causa una impresión asombrosamente humana.___T_IMGhttps://www.mercedes-benz.cr/documents/17944382/45813184/Confort-1.jpg/1ddb00ec-d123-4fa1-bd09-c0b5383aed0c?t=1710806885780___T_TITLE_3MBUX (Mercedes-Benz user experience)___T_PPEl sistema multimedia MBUX de manejo intuitivo ha sido creado para una sola persona en todo el mundo: para ti. Por ese motivo, es posible adaptar la Clase A a tus deseos, tus preferencias y tu estilo de conducción. Basta con mover la mano sobre el panel táctil, en el volante o bien, por primera vez, también sobre la pantalla táctil. Además, puedes crear una conexión emocional con tu vehículo gracias a sus funciones ampliadas MBUX.___T_T_WEBVIEWDescargar Catálogo__https://www.mercedes-benz.cr/documents/17944382/45813184/Cat%C3%A1logo+A+Sed%C3%A1n+%281%29.pdf___T_BR___T_RESERVA___T_BR",
+      "price": 10000000,
+      "promoted": false,
+      "state": "NEW",
+      "year": 2025
+    },
+    "-OOZ7IqB8W5KgxmzhV5v": {
+      "active": true,
+      "id": "-OOZ7IqB8W5KgxmzhV5v",
+      "image_carousel": "cla_amg.png",
+      "model": "Coupé",
+      "name": "CLA",
+      "page_content": "T_TITLE_1Diseño___T_TITLE_2El primer Clase A en diseño de zaga escalonada.___T_IMGhttps://www.mercedes-benz.cr/documents/17944382/45813184/Galeria_EXTERIOR-1.jpg/b06c72cc-6a4e-ce1c-f2ab-6058401645a7?t=1710805990553___T_PPTecho suavemente descendente. Fascinación claramente en ascenso. Cuando de pequeños dibujábamos un auto, intuitivamente trazábamos un modelo de tres volúmenes. Con el Clase A Sedán puedes volver a soñar con un auto así. Su silueta aúna de forma magistral dinamismo y elegancia intemporal.___T_BR___T_TITLE_3Diseño interior___T_PPEl habitáculo de la Clase A Sedán parece abrazar a los ocupantes. Las transiciones entre el tablero de instrumentos, la consola central y los revestimientos de las puertas son casi imperceptibles, generando el agradable efecto envolvente. Este concepto es tan excepcional en esta categoría de vehículos como los ajustes de confort en asientos, las molduras de adorno y el paquete de alumbrado del interior.___T_IMGhttps://www.mercedes-benz.cr/documents/17944382/45813184/Dise%C3%B1o-2.jpg/d1b694bf-1299-ab70-fdf7-c7315962844f?t=1710806445808___T_IMGhttps://www.mercedes-benz.cr/documents/17944382/45813184/DISE%C3%91O+Clase+A+Sed%C3%A1n+-+Texto+1+Imagen+1.png/8a9e5d3b-5124-5f8f-2fee-e93d3aa1d37c?t=1710806575452___T_BR___T_TITLE_1Confort___T_TITLE_2La Clase A habla, entiende, piensa y causa una impresión asombrosamente humana.___T_IMGhttps://www.mercedes-benz.cr/documents/17944382/45813184/Confort-1.jpg/1ddb00ec-d123-4fa1-bd09-c0b5383aed0c?t=1710806885780___T_TITLE_3MBUX (Mercedes-Benz user experience)___T_PPEl sistema multimedia MBUX de manejo intuitivo ha sido creado para una sola persona en todo el mundo: para ti. Por ese motivo, es posible adaptar la Clase A a tus deseos, tus preferencias y tu estilo de conducción. Basta con mover la mano sobre el panel táctil, en el volante o bien, por primera vez, también sobre la pantalla táctil. Además, puedes crear una conexión emocional con tu vehículo gracias a sus funciones ampliadas MBUX.___T_T_WEBVIEWDescargar Catálogo__https://www.mercedes-benz.cr/documents/17944382/45813184/Cat%C3%A1logo+A+Sed%C3%A1n+%281%29.pdf___T_BR___T_RESERVA___T_BR",
+      "price": 0,
+      "promoted": false,
+      "state": "NEW",
+      "year": 2025
+    },
+    "-OOZ7IqERsSAfnLumr1K": {
+      "active": true,
+      "id": "-OOZ7IqERsSAfnLumr1K",
+      "image_carousel": "gle_coupe_amg.png",
+      "model": "Coupé",
+      "name": "GLE Coupé",
+      "page_content": "T_TITLE_1Diseño___T_TITLE_2El primer Clase A en diseño de zaga escalonada.___T_IMGhttps://www.mercedes-benz.cr/documents/17944382/45813184/Galeria_EXTERIOR-1.jpg/b06c72cc-6a4e-ce1c-f2ab-6058401645a7?t=1710805990553___T_PPTecho suavemente descendente. Fascinación claramente en ascenso. Cuando de pequeños dibujábamos un auto, intuitivamente trazábamos un modelo de tres volúmenes. Con el Clase A Sedán puedes volver a soñar con un auto así. Su silueta aúna de forma magistral dinamismo y elegancia intemporal.___T_BR___T_TITLE_3Diseño interior___T_PPEl habitáculo de la Clase A Sedán parece abrazar a los ocupantes. Las transiciones entre el tablero de instrumentos, la consola central y los revestimientos de las puertas son casi imperceptibles, generando el agradable efecto envolvente. Este concepto es tan excepcional en esta categoría de vehículos como los ajustes de confort en asientos, las molduras de adorno y el paquete de alumbrado del interior.___T_IMGhttps://www.mercedes-benz.cr/documents/17944382/45813184/Dise%C3%B1o-2.jpg/d1b694bf-1299-ab70-fdf7-c7315962844f?t=1710806445808___T_IMGhttps://www.mercedes-benz.cr/documents/17944382/45813184/DISE%C3%91O+Clase+A+Sed%C3%A1n+-+Texto+1+Imagen+1.png/8a9e5d3b-5124-5f8f-2fee-e93d3aa1d37c?t=1710806575452___T_BR___T_TITLE_1Confort___T_TITLE_2La Clase A habla, entiende, piensa y causa una impresión asombrosamente humana.___T_IMGhttps://www.mercedes-benz.cr/documents/17944382/45813184/Confort-1.jpg/1ddb00ec-d123-4fa1-bd09-c0b5383aed0c?t=1710806885780___T_TITLE_3MBUX (Mercedes-Benz user experience)___T_PPEl sistema multimedia MBUX de manejo intuitivo ha sido creado para una sola persona en todo el mundo: para ti. Por ese motivo, es posible adaptar la Clase A a tus deseos, tus preferencias y tu estilo de conducción. Basta con mover la mano sobre el panel táctil, en el volante o bien, por primera vez, también sobre la pantalla táctil. Además, puedes crear una conexión emocional con tu vehículo gracias a sus funciones ampliadas MBUX.___T_T_WEBVIEWDescargar Catálogo__https://www.mercedes-benz.cr/documents/17944382/45813184/Cat%C3%A1logo+A+Sed%C3%A1n+%281%29.pdf___T_BR___T_RESERVA___T_BR",
+      "price": 0,
+      "promoted": false,
+      "state": "NEW",
+      "year": 2025
+    },
+    "-OOZ7IqGJC9yRYcPYJd8": {
+      "active": true,
+      "id": "-OOZ7IqGJC9yRYcPYJd8",
+      "image_carousel": "roadster_amg_sl.png",
+      "model": "Hatchback",
+      "name": "Mercedes AMG SL",
+      "page_content": "T_TITLE_1Diseño___T_TITLE_2El primer Clase A en diseño de zaga escalonada.___T_IMGhttps://www.mercedes-benz.cr/documents/17944382/45813184/Galeria_EXTERIOR-1.jpg/b06c72cc-6a4e-ce1c-f2ab-6058401645a7?t=1710805990553___T_PPTecho suavemente descendente. Fascinación claramente en ascenso. Cuando de pequeños dibujábamos un auto, intuitivamente trazábamos un modelo de tres volúmenes. Con el Clase A Sedán puedes volver a soñar con un auto así. Su silueta aúna de forma magistral dinamismo y elegancia intemporal.___T_BR___T_TITLE_3Diseño interior___T_PPEl habitáculo de la Clase A Sedán parece abrazar a los ocupantes. Las transiciones entre el tablero de instrumentos, la consola central y los revestimientos de las puertas son casi imperceptibles, generando el agradable efecto envolvente. Este concepto es tan excepcional en esta categoría de vehículos como los ajustes de confort en asientos, las molduras de adorno y el paquete de alumbrado del interior.___T_IMGhttps://www.mercedes-benz.cr/documents/17944382/45813184/Dise%C3%B1o-2.jpg/d1b694bf-1299-ab70-fdf7-c7315962844f?t=1710806445808___T_IMGhttps://www.mercedes-benz.cr/documents/17944382/45813184/DISE%C3%91O+Clase+A+Sed%C3%A1n+-+Texto+1+Imagen+1.png/8a9e5d3b-5124-5f8f-2fee-e93d3aa1d37c?t=1710806575452___T_BR___T_TITLE_1Confort___T_TITLE_2La Clase A habla, entiende, piensa y causa una impresión asombrosamente humana.___T_IMGhttps://www.mercedes-benz.cr/documents/17944382/45813184/Confort-1.jpg/1ddb00ec-d123-4fa1-bd09-c0b5383aed0c?t=1710806885780___T_TITLE_3MBUX (Mercedes-Benz user experience)___T_PPEl sistema multimedia MBUX de manejo intuitivo ha sido creado para una sola persona en todo el mundo: para ti. Por ese motivo, es posible adaptar la Clase A a tus deseos, tus preferencias y tu estilo de conducción. Basta con mover la mano sobre el panel táctil, en el volante o bien, por primera vez, también sobre la pantalla táctil. Además, puedes crear una conexión emocional con tu vehículo gracias a sus funciones ampliadas MBUX.___T_T_WEBVIEWDescargar Catálogo__https://www.mercedes-benz.cr/documents/17944382/45813184/Cat%C3%A1logo+A+Sed%C3%A1n+%281%29.pdf___T_BR___T_RESERVA___T_BR",
+      "price": 0,
+      "promoted": true,
+      "state": "NEW",
+      "year": 2025
+    },
+    "-OOZ7IqY6q40MuieegAq": {
+      "active": true,
+      "id": "-OOZ7IqY6q40MuieegAq",
+      "image_carousel": "clase_a_hatchback.png",
+      "model": "Hatchback",
+      "name": "Clase A Hatchback",
+      "page_content": "T_TITLE_1Diseño___T_TITLE_2El primer Clase A en diseño de zaga escalonada.___T_IMGhttps://www.mercedes-benz.cr/documents/17944382/45813184/Galeria_EXTERIOR-1.jpg/b06c72cc-6a4e-ce1c-f2ab-6058401645a7?t=1710805990553___T_PPTecho suavemente descendente. Fascinación claramente en ascenso. Cuando de pequeños dibujábamos un auto, intuitivamente trazábamos un modelo de tres volúmenes. Con el Clase A Sedán puedes volver a soñar con un auto así. Su silueta aúna de forma magistral dinamismo y elegancia intemporal.___T_BR___T_TITLE_3Diseño interior___T_PPEl habitáculo de la Clase A Sedán parece abrazar a los ocupantes. Las transiciones entre el tablero de instrumentos, la consola central y los revestimientos de las puertas son casi imperceptibles, generando el agradable efecto envolvente. Este concepto es tan excepcional en esta categoría de vehículos como los ajustes de confort en asientos, las molduras de adorno y el paquete de alumbrado del interior.___T_IMGhttps://www.mercedes-benz.cr/documents/17944382/45813184/Dise%C3%B1o-2.jpg/d1b694bf-1299-ab70-fdf7-c7315962844f?t=1710806445808___T_IMGhttps://www.mercedes-benz.cr/documents/17944382/45813184/DISE%C3%91O+Clase+A+Sed%C3%A1n+-+Texto+1+Imagen+1.png/8a9e5d3b-5124-5f8f-2fee-e93d3aa1d37c?t=1710806575452___T_BR___T_TITLE_1Confort___T_TITLE_2La Clase A habla, entiende, piensa y causa una impresión asombrosamente humana.___T_IMGhttps://www.mercedes-benz.cr/documents/17944382/45813184/Confort-1.jpg/1ddb00ec-d123-4fa1-bd09-c0b5383aed0c?t=1710806885780___T_TITLE_3MBUX (Mercedes-Benz user experience)___T_PPEl sistema multimedia MBUX de manejo intuitivo ha sido creado para una sola persona en todo el mundo: para ti. Por ese motivo, es posible adaptar la Clase A a tus deseos, tus preferencias y tu estilo de conducción. Basta con mover la mano sobre el panel táctil, en el volante o bien, por primera vez, también sobre la pantalla táctil. Además, puedes crear una conexión emocional con tu vehículo gracias a sus funciones ampliadas MBUX.___T_T_WEBVIEWDescargar Catálogo__https://www.mercedes-benz.cr/documents/17944382/45813184/Cat%C3%A1logo+A+Sed%C3%A1n+%281%29.pdf___T_BR___T_RESERVA___T_BR",
+      "price": 0,
+      "promoted": false,
+      "state": "NEW",
+      "year": 2025
+    },
+    "-OOZ7Iqm4w7c8jp3QfBB": {
+      "active": true,
+      "id": "-OOZ7Iqm4w7c8jp3QfBB",
+      "image_carousel": "glc_suv.png",
+      "model": "SUV",
+      "name": "GLC SUV",
+      "page_content": "T_TITLE_1Diseño___T_TITLE_2El primer Clase A en diseño de zaga escalonada.___T_IMGhttps://www.mercedes-benz.cr/documents/17944382/45813184/Galeria_EXTERIOR-1.jpg/b06c72cc-6a4e-ce1c-f2ab-6058401645a7?t=1710805990553___T_PPTecho suavemente descendente. Fascinación claramente en ascenso. Cuando de pequeños dibujábamos un auto, intuitivamente trazábamos un modelo de tres volúmenes. Con el Clase A Sedán puedes volver a soñar con un auto así. Su silueta aúna de forma magistral dinamismo y elegancia intemporal.___T_BR___T_TITLE_3Diseño interior___T_PPEl habitáculo de la Clase A Sedán parece abrazar a los ocupantes. Las transiciones entre el tablero de instrumentos, la consola central y los revestimientos de las puertas son casi imperceptibles, generando el agradable efecto envolvente. Este concepto es tan excepcional en esta categoría de vehículos como los ajustes de confort en asientos, las molduras de adorno y el paquete de alumbrado del interior.___T_IMGhttps://www.mercedes-benz.cr/documents/17944382/45813184/Dise%C3%B1o-2.jpg/d1b694bf-1299-ab70-fdf7-c7315962844f?t=1710806445808___T_IMGhttps://www.mercedes-benz.cr/documents/17944382/45813184/DISE%C3%91O+Clase+A+Sed%C3%A1n+-+Texto+1+Imagen+1.png/8a9e5d3b-5124-5f8f-2fee-e93d3aa1d37c?t=1710806575452___T_BR___T_TITLE_1Confort___T_TITLE_2La Clase A habla, entiende, piensa y causa una impresión asombrosamente humana.___T_IMGhttps://www.mercedes-benz.cr/documents/17944382/45813184/Confort-1.jpg/1ddb00ec-d123-4fa1-bd09-c0b5383aed0c?t=1710806885780___T_TITLE_3MBUX (Mercedes-Benz user experience)___T_PPEl sistema multimedia MBUX de manejo intuitivo ha sido creado para una sola persona en todo el mundo: para ti. Por ese motivo, es posible adaptar la Clase A a tus deseos, tus preferencias y tu estilo de conducción. Basta con mover la mano sobre el panel táctil, en el volante o bien, por primera vez, también sobre la pantalla táctil. Además, puedes crear una conexión emocional con tu vehículo gracias a sus funciones ampliadas MBUX.___T_T_WEBVIEWDescargar Catálogo__https://www.mercedes-benz.cr/documents/17944382/45813184/Cat%C3%A1logo+A+Sed%C3%A1n+%281%29.pdf___T_BR___T_RESERVA___T_BR",
+      "price": 0,
+      "promoted": false,
+      "state": "NEW",
+      "year": 2025
+    },
+    "-OOZ7IqoD4mt-kJ2ND4q": {
+      "active": true,
+      "id": "-OOZ7IqoD4mt-kJ2ND4q",
+      "image_carousel": "eqe_suv.png",
+      "model": "SUV",
+      "name": "EQE SUV",
+      "page_content": "T_TITLE_1Diseño___T_TITLE_2El primer Clase A en diseño de zaga escalonada.___T_IMGhttps://www.mercedes-benz.cr/documents/17944382/45813184/Galeria_EXTERIOR-1.jpg/b06c72cc-6a4e-ce1c-f2ab-6058401645a7?t=1710805990553___T_PPTecho suavemente descendente. Fascinación claramente en ascenso. Cuando de pequeños dibujábamos un auto, intuitivamente trazábamos un modelo de tres volúmenes. Con el Clase A Sedán puedes volver a soñar con un auto así. Su silueta aúna de forma magistral dinamismo y elegancia intemporal.___T_BR___T_TITLE_3Diseño interior___T_PPEl habitáculo de la Clase A Sedán parece abrazar a los ocupantes. Las transiciones entre el tablero de instrumentos, la consola central y los revestimientos de las puertas son casi imperceptibles, generando el agradable efecto envolvente. Este concepto es tan excepcional en esta categoría de vehículos como los ajustes de confort en asientos, las molduras de adorno y el paquete de alumbrado del interior.___T_IMGhttps://www.mercedes-benz.cr/documents/17944382/45813184/Dise%C3%B1o-2.jpg/d1b694bf-1299-ab70-fdf7-c7315962844f?t=1710806445808___T_IMGhttps://www.mercedes-benz.cr/documents/17944382/45813184/DISE%C3%91O+Clase+A+Sed%C3%A1n+-+Texto+1+Imagen+1.png/8a9e5d3b-5124-5f8f-2fee-e93d3aa1d37c?t=1710806575452___T_BR___T_TITLE_1Confort___T_TITLE_2La Clase A habla, entiende, piensa y causa una impresión asombrosamente humana.___T_IMGhttps://www.mercedes-benz.cr/documents/17944382/45813184/Confort-1.jpg/1ddb00ec-d123-4fa1-bd09-c0b5383aed0c?t=1710806885780___T_TITLE_3MBUX (Mercedes-Benz user experience)___T_PPEl sistema multimedia MBUX de manejo intuitivo ha sido creado para una sola persona en todo el mundo: para ti. Por ese motivo, es posible adaptar la Clase A a tus deseos, tus preferencias y tu estilo de conducción. Basta con mover la mano sobre el panel táctil, en el volante o bien, por primera vez, también sobre la pantalla táctil. Además, puedes crear una conexión emocional con tu vehículo gracias a sus funciones ampliadas MBUX.___T_T_WEBVIEWDescargar Catálogo__https://www.mercedes-benz.cr/documents/17944382/45813184/Cat%C3%A1logo+A+Sed%C3%A1n+%281%29.pdf___T_BR___T_RESERVA___T_BR",
+      "price": 0,
+      "promoted": false,
+      "state": "NEW",
+      "year": 2025
+    },
+    "-OOZ7IqrE93C-B1mFv9c": {
+      "active": true,
+      "id": "-OOZ7IqrE93C-B1mFv9c",
+      "image_carousel": "gla_suv.png",
+      "model": "SUV",
+      "name": "GLA SUV",
+      "page_content": "T_TITLE_1Diseño___T_TITLE_2El primer Clase A en diseño de zaga escalonada.___T_IMGhttps://www.mercedes-benz.cr/documents/17944382/45813184/Galeria_EXTERIOR-1.jpg/b06c72cc-6a4e-ce1c-f2ab-6058401645a7?t=1710805990553___T_PPTecho suavemente descendente. Fascinación claramente en ascenso. Cuando de pequeños dibujábamos un auto, intuitivamente trazábamos un modelo de tres volúmenes. Con el Clase A Sedán puedes volver a soñar con un auto así. Su silueta aúna de forma magistral dinamismo y elegancia intemporal.___T_BR___T_TITLE_3Diseño interior___T_PPEl habitáculo de la Clase A Sedán parece abrazar a los ocupantes. Las transiciones entre el tablero de instrumentos, la consola central y los revestimientos de las puertas son casi imperceptibles, generando el agradable efecto envolvente. Este concepto es tan excepcional en esta categoría de vehículos como los ajustes de confort en asientos, las molduras de adorno y el paquete de alumbrado del interior.___T_IMGhttps://www.mercedes-benz.cr/documents/17944382/45813184/Dise%C3%B1o-2.jpg/d1b694bf-1299-ab70-fdf7-c7315962844f?t=1710806445808___T_IMGhttps://www.mercedes-benz.cr/documents/17944382/45813184/DISE%C3%91O+Clase+A+Sed%C3%A1n+-+Texto+1+Imagen+1.png/8a9e5d3b-5124-5f8f-2fee-e93d3aa1d37c?t=1710806575452___T_BR___T_TITLE_1Confort___T_TITLE_2La Clase A habla, entiende, piensa y causa una impresión asombrosamente humana.___T_IMGhttps://www.mercedes-benz.cr/documents/17944382/45813184/Confort-1.jpg/1ddb00ec-d123-4fa1-bd09-c0b5383aed0c?t=1710806885780___T_TITLE_3MBUX (Mercedes-Benz user experience)___T_PPEl sistema multimedia MBUX de manejo intuitivo ha sido creado para una sola persona en todo el mundo: para ti. Por ese motivo, es posible adaptar la Clase A a tus deseos, tus preferencias y tu estilo de conducción. Basta con mover la mano sobre el panel táctil, en el volante o bien, por primera vez, también sobre la pantalla táctil. Además, puedes crear una conexión emocional con tu vehículo gracias a sus funciones ampliadas MBUX.___T_T_WEBVIEWDescargar Catálogo__https://www.mercedes-benz.cr/documents/17944382/45813184/Cat%C3%A1logo+A+Sed%C3%A1n+%281%29.pdf___T_BR___T_RESERVA___T_BR",
+      "price": 0,
+      "promoted": false,
+      "state": "NEW",
+      "year": 2025
+    },
+    "-OOZ7IqtSphMkrmkttys": {
+      "active": true,
+      "id": "-OOZ7IqtSphMkrmkttys",
+      "image_carousel": "gle_suv.png",
+      "model": "SUV",
+      "name": "GLE SUV",
+      "page_content": "T_TITLE_1Diseño___T_TITLE_2El primer Clase A en diseño de zaga escalonada.___T_IMGhttps://www.mercedes-benz.cr/documents/17944382/45813184/Galeria_EXTERIOR-1.jpg/b06c72cc-6a4e-ce1c-f2ab-6058401645a7?t=1710805990553___T_PPTecho suavemente descendente. Fascinación claramente en ascenso. Cuando de pequeños dibujábamos un auto, intuitivamente trazábamos un modelo de tres volúmenes. Con el Clase A Sedán puedes volver a soñar con un auto así. Su silueta aúna de forma magistral dinamismo y elegancia intemporal.___T_BR___T_TITLE_3Diseño interior___T_PPEl habitáculo de la Clase A Sedán parece abrazar a los ocupantes. Las transiciones entre el tablero de instrumentos, la consola central y los revestimientos de las puertas son casi imperceptibles, generando el agradable efecto envolvente. Este concepto es tan excepcional en esta categoría de vehículos como los ajustes de confort en asientos, las molduras de adorno y el paquete de alumbrado del interior.___T_IMGhttps://www.mercedes-benz.cr/documents/17944382/45813184/Dise%C3%B1o-2.jpg/d1b694bf-1299-ab70-fdf7-c7315962844f?t=1710806445808___T_IMGhttps://www.mercedes-benz.cr/documents/17944382/45813184/DISE%C3%91O+Clase+A+Sed%C3%A1n+-+Texto+1+Imagen+1.png/8a9e5d3b-5124-5f8f-2fee-e93d3aa1d37c?t=1710806575452___T_BR___T_TITLE_1Confort___T_TITLE_2La Clase A habla, entiende, piensa y causa una impresión asombrosamente humana.___T_IMGhttps://www.mercedes-benz.cr/documents/17944382/45813184/Confort-1.jpg/1ddb00ec-d123-4fa1-bd09-c0b5383aed0c?t=1710806885780___T_TITLE_3MBUX (Mercedes-Benz user experience)___T_PPEl sistema multimedia MBUX de manejo intuitivo ha sido creado para una sola persona en todo el mundo: para ti. Por ese motivo, es posible adaptar la Clase A a tus deseos, tus preferencias y tu estilo de conducción. Basta con mover la mano sobre el panel táctil, en el volante o bien, por primera vez, también sobre la pantalla táctil. Además, puedes crear una conexión emocional con tu vehículo gracias a sus funciones ampliadas MBUX.___T_T_WEBVIEWDescargar Catálogo__https://www.mercedes-benz.cr/documents/17944382/45813184/Cat%C3%A1logo+A+Sed%C3%A1n+%281%29.pdf___T_BR___T_RESERVA___T_BR",
+      "price": 0,
+      "promoted": false,
+      "state": "NEW",
+      "year": 2025
+    },
+    "-OOZ7IqudxiPFBj1K6Ua": {
+      "active": true,
+      "id": "-OOZ7IqudxiPFBj1K6Ua",
+      "image_carousel": "clase_g_suv.png",
+      "model": "SUV",
+      "name": "Clase G",
+      "page_content": "T_TITLE_1Diseño___T_TITLE_2El primer Clase A en diseño de zaga escalonada.___T_IMGhttps://www.mercedes-benz.cr/documents/17944382/45813184/Galeria_EXTERIOR-1.jpg/b06c72cc-6a4e-ce1c-f2ab-6058401645a7?t=1710805990553___T_PPTecho suavemente descendente. Fascinación claramente en ascenso. Cuando de pequeños dibujábamos un auto, intuitivamente trazábamos un modelo de tres volúmenes. Con el Clase A Sedán puedes volver a soñar con un auto así. Su silueta aúna de forma magistral dinamismo y elegancia intemporal.___T_BR___T_TITLE_3Diseño interior___T_PPEl habitáculo de la Clase A Sedán parece abrazar a los ocupantes. Las transiciones entre el tablero de instrumentos, la consola central y los revestimientos de las puertas son casi imperceptibles, generando el agradable efecto envolvente. Este concepto es tan excepcional en esta categoría de vehículos como los ajustes de confort en asientos, las molduras de adorno y el paquete de alumbrado del interior.___T_IMGhttps://www.mercedes-benz.cr/documents/17944382/45813184/Dise%C3%B1o-2.jpg/d1b694bf-1299-ab70-fdf7-c7315962844f?t=1710806445808___T_IMGhttps://www.mercedes-benz.cr/documents/17944382/45813184/DISE%C3%91O+Clase+A+Sed%C3%A1n+-+Texto+1+Imagen+1.png/8a9e5d3b-5124-5f8f-2fee-e93d3aa1d37c?t=1710806575452___T_BR___T_TITLE_1Confort___T_TITLE_2La Clase A habla, entiende, piensa y causa una impresión asombrosamente humana.___T_IMGhttps://www.mercedes-benz.cr/documents/17944382/45813184/Confort-1.jpg/1ddb00ec-d123-4fa1-bd09-c0b5383aed0c?t=1710806885780___T_TITLE_3MBUX (Mercedes-Benz user experience)___T_PPEl sistema multimedia MBUX de manejo intuitivo ha sido creado para una sola persona en todo el mundo: para ti. Por ese motivo, es posible adaptar la Clase A a tus deseos, tus preferencias y tu estilo de conducción. Basta con mover la mano sobre el panel táctil, en el volante o bien, por primera vez, también sobre la pantalla táctil. Además, puedes crear una conexión emocional con tu vehículo gracias a sus funciones ampliadas MBUX.___T_T_WEBVIEWDescargar Catálogo__https://www.mercedes-benz.cr/documents/17944382/45813184/Cat%C3%A1logo+A+Sed%C3%A1n+%281%29.pdf___T_BR___T_RESERVA___T_BR",
+      "price": 0,
+      "promoted": false,
+      "state": "NEW",
+      "year": 2025
+    },
+    "-OOZ7IqvzYVwTAKgoeop": {
+      "active": true,
+      "id": "-OOZ7IqvzYVwTAKgoeop",
+      "image_carousel": "clase_g63_suv.png",
+      "model": "SUV",
+      "name": "Clase G63",
+      "page_content": "T_TITLE_1Diseño___T_TITLE_2El primer Clase A en diseño de zaga escalonada.___T_IMGhttps://www.mercedes-benz.cr/documents/17944382/45813184/Galeria_EXTERIOR-1.jpg/b06c72cc-6a4e-ce1c-f2ab-6058401645a7?t=1710805990553___T_PPTecho suavemente descendente. Fascinación claramente en ascenso. Cuando de pequeños dibujábamos un auto, intuitivamente trazábamos un modelo de tres volúmenes. Con el Clase A Sedán puedes volver a soñar con un auto así. Su silueta aúna de forma magistral dinamismo y elegancia intemporal.___T_BR___T_TITLE_3Diseño interior___T_PPEl habitáculo de la Clase A Sedán parece abrazar a los ocupantes. Las transiciones entre el tablero de instrumentos, la consola central y los revestimientos de las puertas son casi imperceptibles, generando el agradable efecto envolvente. Este concepto es tan excepcional en esta categoría de vehículos como los ajustes de confort en asientos, las molduras de adorno y el paquete de alumbrado del interior.___T_IMGhttps://www.mercedes-benz.cr/documents/17944382/45813184/Dise%C3%B1o-2.jpg/d1b694bf-1299-ab70-fdf7-c7315962844f?t=1710806445808___T_IMGhttps://www.mercedes-benz.cr/documents/17944382/45813184/DISE%C3%91O+Clase+A+Sed%C3%A1n+-+Texto+1+Imagen+1.png/8a9e5d3b-5124-5f8f-2fee-e93d3aa1d37c?t=1710806575452___T_BR___T_TITLE_1Confort___T_TITLE_2La Clase A habla, entiende, piensa y causa una impresión asombrosamente humana.___T_IMGhttps://www.mercedes-benz.cr/documents/17944382/45813184/Confort-1.jpg/1ddb00ec-d123-4fa1-bd09-c0b5383aed0c?t=1710806885780___T_TITLE_3MBUX (Mercedes-Benz user experience)___T_PPEl sistema multimedia MBUX de manejo intuitivo ha sido creado para una sola persona en todo el mundo: para ti. Por ese motivo, es posible adaptar la Clase A a tus deseos, tus preferencias y tu estilo de conducción. Basta con mover la mano sobre el panel táctil, en el volante o bien, por primera vez, también sobre la pantalla táctil. Además, puedes crear una conexión emocional con tu vehículo gracias a sus funciones ampliadas MBUX.___T_T_WEBVIEWDescargar Catálogo__https://www.mercedes-benz.cr/documents/17944382/45813184/Cat%C3%A1logo+A+Sed%C3%A1n+%281%29.pdf___T_BR___T_RESERVA___T_BR",
+      "price": 0,
+      "promoted": true,
+      "state": "NEW",
+      "year": 2025
+    }
+  }
+}
